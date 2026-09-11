@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isAdmin() {
+      return signedIn()
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['totoriverce@gmail.com'];
+    }
+
+    // 방문 기록: 로그인한 본인만 추가, 관리자만 열람, 수정·삭제 불가
+    match /visits/{id} {
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['uid','email','name','ts','path','lang','ua','ref','w','h','country','standalone']);
+      allow read: if isAdmin();
+      allow update, delete: if false;
+    }
+
+    // 사용자 프로필/방문 횟수: 본인이 갱신, 본인 또는 관리자만 열람
+    match /users/{uid} {
+      allow read: if isAdmin() || (signedIn() && request.auth.uid == uid);
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && request.resource.data.uid == uid
+        && request.resource.data.keys().hasOnly(['uid','email','name','photo','lastSeen','visits','country','lang']);
+      allow delete: if false;
+    }
+  }
+}
