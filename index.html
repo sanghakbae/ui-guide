@@ -50,14 +50,16 @@ a{color:inherit}
 .switch.on::after{left:18px}
 
 /* ── 히어로 ── */
-.hero{text-align:center;padding:64px 20px 28px}
-.hero h1{margin:0 0 12px;font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.hero p{margin:0 auto;max-width:520px;color:var(--muted);font-size:15px}
-.hero .meta{margin-top:18px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+.hero{text-align:center;padding:40px 20px 12px}
+.hero h1{margin:0 0 8px;font-size:clamp(28px,4.5vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.mo{display:none}
+.hero p{margin:0 auto;color:var(--muted);font-size:15px}
+@media (min-width:900px){.hero p{white-space:nowrap}}
+.hero .meta{margin-top:12px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
 .hero .meta span{font-size:12px;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
 
 /* ── 검색바 ── */
-.search{position:relative;max-width:520px;margin:28px auto 48px}
+.search{position:relative;max-width:520px;margin:18px auto 36px}
 .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
 .search input{width:100%;padding:13px 70px 13px 42px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:15px;font-family:inherit;outline:none;transition:border-color .2s,box-shadow .2s}
 .search input::placeholder{color:var(--muted)}
@@ -281,7 +283,8 @@ footer a{text-decoration:none;color:var(--ink2)}
 @media (max-width:760px){
   .grid{grid-template-columns:1fr;gap:14px}
   .wrap{padding:0 16px}
-  .hero{padding:44px 20px 20px}
+  .hero{padding:32px 20px 8px}
+  .mo{display:inline}
   .sec{margin-bottom:48px}
   .sec-h h2{font-size:21px}
   .ch{padding:0 16px}
@@ -312,7 +315,7 @@ footer a{text-decoration:none;color:var(--ink2)}
 </header>
 
 <section class="hero">
-  <h1>화면 만들 때 쓰는 말들,<br>그림으로 한 번에</h1>
+  <h1>화면 만들 때 쓰는 말들,<br class="mo"> 그림으로 한 번에</h1>
   <p>디자이너·개발자·AI한테 화면을 설명하려면 이름을 알아야 해요. 이름을 아는 순간 수정 요청이 한 번에 통해요.</p>
   <div class="meta"><span>8개 카테고리</span><span>106개 용어</span><span>한국어 · 영어 병기</span></div>
 </section>
