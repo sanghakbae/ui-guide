@@ -58,9 +58,9 @@ a{color:inherit}
 .switch.on{background:var(--ink)}
 .switch.on::after{left:18px}
 .auth{display:flex;align-items:center;position:relative;flex-shrink:0}
-.gbtn{cursor:pointer;padding:7px 14px 7px 11px;border-radius:999px;background:#fff;color:#1f1f1f;border:1px solid #dadce0;box-shadow:0 1px 2px rgba(0,0,0,.06);gap:8px;font-weight:600}
-.gbtn:hover{box-shadow:0 2px 6px rgba(0,0,0,.12);background:#fff}
-.glogo{width:18px;height:18px;flex-shrink:0;display:block}
+.gbtn{cursor:pointer;height:34px;padding:0 12px 0 10px;border-radius:17px;background:#fff;color:#1f1f1f;border:1px solid #dadce0;box-shadow:none;gap:8px;font-weight:500;font-size:13px}
+.gbtn:hover{background:#f8f9fa;box-shadow:0 1px 3px rgba(60,64,67,.2)}
+.glogo{width:16px;height:16px;flex-shrink:0;display:block}
 html[data-theme="dark"] .gbtn{background:#fff;color:#1f1f1f;border-color:#fff}
 .avatarbtn{width:28px;height:28px;min-width:28px;max-width:28px;border-radius:50%;border:0;padding:0;cursor:pointer;background:var(--ink);color:var(--card);font-weight:700;font-size:12px;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;font-family:inherit;flex-shrink:0}
 .avatarbtn img{width:28px;height:28px;max-width:100%;object-fit:cover;display:block;border-radius:50%}
@@ -435,10 +435,10 @@ body:not(.locked) .gate{display:none}
 .gate-box .mark{width:56px;height:56px;border-radius:16px;background:var(--ink);color:var(--card);font-weight:800;font-size:22px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px;letter-spacing:-.02em}
 .gate-box h1{margin:0 0 10px;font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.25}
 .gate-box p{margin:0 0 24px;color:var(--muted);font-size:15px}
-.gate-cta{min-height:52px;display:flex;align-items:center;justify-content:center}
-.gbig{padding:13px 24px 13px 18px;font-size:15px;border-radius:999px;gap:12px;cursor:pointer;background:#fff;color:#1f1f1f;border:1px solid #dadce0;box-shadow:0 2px 8px rgba(0,0,0,.08);font-weight:600}
-.gbig:hover{box-shadow:0 4px 14px rgba(0,0,0,.14)}
-.gbig .glogo{width:22px;height:22px}
+.gate-cta{min-height:44px;display:flex;align-items:center;justify-content:center}
+.gbig{height:40px;padding:0 16px 0 12px;font-size:14px;border-radius:20px;gap:10px;cursor:pointer;background:#fff;color:#1f1f1f;border:1px solid #dadce0;box-shadow:none;font-weight:500;letter-spacing:0}
+.gbig:hover{background:#f8f9fa;box-shadow:0 1px 3px rgba(60,64,67,.2)}
+.gbig .glogo{width:18px;height:18px}
 .gate-box small{display:block;margin-top:18px;color:var(--muted);font-size:12px;line-height:1.6}
 .gate-box small a{color:var(--ink2)}
 .gate-box .preview{display:flex;gap:8px;justify-content:center;margin:0 0 26px;opacity:.9}
@@ -476,7 +476,7 @@ body:not(.locked) .gate{display:none}
     <div class="preview" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="gate-cta">
       <span class="spin" id="gateSpin" aria-label="로그인 상태 확인 중"></span>
-      <button class="btn gbig" id="gateLogin" hidden><svg class="glogo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google로 로그인하고 보기</button>
+      <button class="btn gbig" id="gateLogin" hidden><svg class="glogo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google로 로그인</button>
     </div>
     <small>Google 계정의 이름·이메일·프로필 사진만 받아요. <a href="./privacy.html">개인정보처리방침</a></small>
   </div>
