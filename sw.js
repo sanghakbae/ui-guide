@@ -1,5 +1,5 @@
 /* UI 용어 사전 · Service Worker */
-const CACHE = 'ui-guide-v5';
+const CACHE = 'ui-guide-v6';
 const SHELL = ['./', './index.html', './privacy.html', './admin.html', './manifest.json', './i18n/en.json',
   './icons/icon-192.png', './icons/icon-512.png', './icons/favicon.svg'];
 const SDK = ['https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js', 'https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js'];
