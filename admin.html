@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>관리자 · UI 용어 사전</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{--bg:#F3F2EE;--card:#FFFFFF;--stage:#FAFAF8;--line:#E6E5E0;--soft:#EDECE8;--soft2:#DDDCD6;--ink:#1A1A1A;--ink2:#4A4A48;--muted:#8C8B86;--red:#B93A2F;--green:#2E6B4E}
+html[data-theme="dark"]{--bg:#121212;--card:#1C1C1C;--stage:#181818;--line:#2C2C2C;--soft:#2A2A2A;--soft2:#383838;--ink:#F2F2F0;--ink2:#C9C9C5;--muted:#8A8A86;--red:#E06055;--green:#5CB08A}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]){--bg:#121212;--card:#1C1C1C;--stage:#181818;--line:#2C2C2C;--soft:#2A2A2A;--soft2:#383838;--ink:#F2F2F0;--ink2:#C9C9C5;--muted:#8A8A86;--red:#E06055;--green:#5CB08A}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;line-height:1.5;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+[hidden]{display:none!important}
+.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:12px;height:58px;padding:0 clamp(16px,3vw,48px)}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:16px;text-decoration:none;white-space:nowrap}
+.logo i{width:20px;height:20px;border-radius:6px;background:var(--ink);display:inline-block}
+.logo span{color:var(--muted);font-weight:500;font-size:13px;margin-left:4px}
+.right{margin-left:auto;display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted)}
+.right a{text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:999px}
+.right a:hover{background:var(--soft);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 14px;height:34px;border-radius:17px;background:var(--ink);color:var(--card);font-weight:600;font-size:13px;border:0;cursor:pointer;font-family:inherit;white-space:nowrap}
+.btn.light{background:#fff;color:#1f1f1f;border:1px solid #dadce0;font-weight:500}
+.btn.ghost{background:transparent;color:var(--ink2);border:1px solid var(--line)}
+.glogo{width:16px;height:16px}
+main{max-width:1100px;margin:0 auto;padding:28px clamp(16px,3vw,48px) 80px}
+h1{font-size:24px;font-weight:800;letter-spacing:-.02em;margin:0 0 4px}
+.sub{color:var(--muted);font-size:13.5px;margin:0 0 22px}
+.gate{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:14px;color:var(--muted);font-size:14px}
+.gate b{color:var(--ink);font-size:18px}
+.notice{background:color-mix(in srgb,var(--red) 8%,var(--card));border:1px solid color-mix(in srgb,var(--red) 30%,var(--line));border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--ink2);margin-bottom:18px;line-height:1.6}
+.notice b{color:var(--red)}
+.notice code{background:var(--soft);padding:1px 6px;border-radius:5px;font-size:12px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:18px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.tile small{display:block;color:var(--muted);font-size:12px}
+.tile b{display:block;font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-top:4px;font-variant-numeric:tabular-nums}
+.tile em{font-style:normal;font-size:12px;color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:16px}
+.panel h2{font-size:15px;font-weight:800;margin:0 0 2px}
+.panel .hint{color:var(--muted);font-size:12px;margin:0 0 14px}
+.grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
+@media (max-width:820px){.grid2{grid-template-columns:1fr}}
+/* 막대 차트: 단일 계열 · 한 가지 색 · 얇은 막대 · 4px 둥근 끝 · 2px 간격 */
+.chart{position:relative;height:190px;display:flex;align-items:flex-end;gap:2px;padding:14px 0 22px;border-bottom:1px solid var(--line)}
+.chart .gl{position:absolute;left:0;right:0;border-top:1px dashed var(--line);pointer-events:none}
+.chart .gl span{position:absolute;right:0;top:-16px;font-size:10.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{flex:1;min-width:4px;height:100%;display:flex;align-items:flex-end;position:relative;cursor:default}
+.bar i{display:block;width:100%;background:var(--ink);border-radius:4px 4px 0 0;min-height:2px;transition:opacity .15s}
+.bar.z i{background:var(--soft2)}
+.bar:hover i{opacity:.7}
+.bar .x{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:10.5px;color:var(--muted);white-space:nowrap}
+.bar .v{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--ink);white-space:nowrap}
+.tip{position:absolute;z-index:5;background:var(--ink);color:var(--card);font-size:12px;padding:6px 10px;border-radius:8px;pointer-events:none;white-space:nowrap;transform:translate(-50%,-110%);display:none}
+.tip b{font-weight:700}
+.hbars{display:grid;gap:8px;font-size:12.5px}
+.hbars div{display:grid;grid-template-columns:96px 1fr 40px;align-items:center;gap:10px}
+.hbars .lb{color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hbars i{display:block;height:8px;border-radius:4px;background:var(--ink)}
+.hbars .n{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;color:var(--muted);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:middle;white-space:nowrap}
+td.wrap{white-space:normal;word-break:break-all}
+tr:last-child td{border-bottom:0}
+.who{display:flex;align-items:center;gap:8px;min-width:0}
+.who img,.who i{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--card);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-style:normal;object-fit:cover;flex-shrink:0}
+.who small{color:var(--muted);font-size:11.5px}
+.tbl-wrap{overflow-x:auto}
+details{margin-top:10px;font-size:12.5px;color:var(--muted)}
+details summary{cursor:pointer}
+.chip{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--soft);font-size:11px;color:var(--ink2)}
+.spin{width:26px;height:26px;border-radius:50%;border:3px solid var(--soft2);border-top-color:var(--ink);animation:spin .9s linear infinite;margin:0 auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="logo" href="./"><i></i>UI 용어 사전<span>관리자</span></a>
+    <div class="right"><span id="who"></span><a href="./">← 사전으로</a><button class="btn ghost" id="logoutBtn" hidden>로그아웃</button></div>
+  </div>
+</header>
+
+<main>
+  <div class="gate" id="gate">
+    <div class="spin" id="spin"></div>
+    <div id="gateMsg" hidden></div>
+    <button class="btn light" id="loginBtn" hidden><svg class="glogo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google로 로그인</button>
+  </div>
+
+  <div id="dash" hidden>
+    <h1>접속 통계</h1>
+    <p class="sub">로그인한 사용자의 방문만 기록돼요. 시간은 이 기기 기준이에요. <span id="updated"></span></p>
+    <div class="notice" id="notice" hidden></div>
+
+    <div class="tiles">
+      <div class="tile"><small>오늘 방문</small><b id="tToday">–</b></div>
+      <div class="tile"><small>최근 7일</small><b id="t7">–</b></div>
+      <div class="tile"><small>최근 30일</small><b id="t30">–</b></div>
+      <div class="tile"><small>전체 방문</small><b id="tAll">–</b></div>
+      <div class="tile"><small>가입 사용자</small><b id="tUsers">–</b></div>
+    </div>
+
+    <div class="panel">
+      <h2>일별 방문 · 최근 30일</h2>
+      <p class="hint">막대에 마우스를 올리면 날짜와 횟수가 보여요.</p>
+      <div class="chart" id="chart"><div class="tip" id="tip"></div></div>
+      <details><summary>표로 보기</summary><div class="tbl-wrap"><table id="dayTable"></table></div></details>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h2>국가 · 최근 30일</h2><p class="hint">IP 기준 대략적인 국가예요. 비어 있으면 감지 실패.</p>
+        <div class="hbars" id="byCountry"></div>
+      </div>
+      <div class="panel">
+        <h2>기기 · 언어 · 최근 30일</h2><p class="hint">브라우저 정보로 추정했어요.</p>
+        <div class="hbars" id="byDevice"></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>최근 방문 30건</h2><p class="hint">가장 최근 순이에요.</p>
+      <div class="tbl-wrap"><table id="recent"><thead><tr><th>사용자</th><th>시각</th><th>페이지</th><th>국가</th><th>언어</th><th>기기</th><th>유입</th></tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <div class="panel">
+      <h2>사용자</h2><p class="hint">마지막 방문 순, 최대 100명.</p>
+      <div class="tbl-wrap"><table id="users"><thead><tr><th>사용자</th><th>이메일</th><th>방문</th><th>마지막 방문</th><th>국가</th></tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <p class="sub" style="margin-top:10px">더 자세한 분석은 <a href="https://console.firebase.google.com/project/ui-guide-d84db/analytics" target="_blank" rel="noopener">Firebase Analytics</a>에서 볼 수 있어요.</p>
+  </div>
+</main>
+
+<script>try{var t=localStorage.getItem('ui-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
+  import { getFirestore, collection, query, where, orderBy, limit, getDocs, getCountFromServer, Timestamp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
+
+  const ADMIN_EMAILS = ['totoriverce@gmail.com'];
+  const app = initializeApp({
+    apiKey: "AIzaSyBW7-KrHVUbxsQhrKSj52Oq9tCK-DRSnkc", authDomain: "ui-guide-d84db.firebaseapp.com", projectId: "ui-guide-d84db",
+    storageBucket: "ui-guide-d84db.firebasestorage.app", messagingSenderId: "497255037736", appId: "1:497255037736:web:87032308d79a239ec52e1d", measurementId: "G-CX6E38PVJV"
+  });
+  const auth = getAuth(app); auth.languageCode = 'ko';
+  const db = getFirestore(app);
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  const provider = new GoogleAuthProvider(); provider.setCustomParameters({ prompt: 'select_account' });
+  $('loginBtn').addEventListener('click', async () => {
+    try { await signInWithPopup(auth, provider); }
+    catch (e) { if (e.code === 'auth/popup-blocked') await signInWithRedirect(auth, provider); else showGate('로그인에 실패했어요 (' + e.code + ')', true); }
+  });
+  $('logoutBtn').addEventListener('click', () => signOut(auth));
+
+  function showGate(msg, canLogin) {
+    $('gate').hidden = false; $('dash').hidden = true; $('spin').hidden = true;
+    $('gateMsg').hidden = !msg; $('gateMsg').innerHTML = msg || ''; $('loginBtn').hidden = !canLogin;
+  }
+
+  onAuthStateChanged(auth, user => {
+    $('logoutBtn').hidden = !user; $('who').textContent = user ? (user.email || '') : '';
+    if (!user) return showGate('<b>관리자만 볼 수 있어요</b><br>관리자 Google 계정으로 로그인해 주세요.', true);
+    if (!ADMIN_EMAILS.includes(user.email)) return showGate('<b>권한이 없어요</b><br>' + esc(user.email) + ' 계정은 관리자가 아니에요.', false);
+    $('gate').hidden = true; $('dash').hidden = false;
+    load().catch(err => {
+      const denied = err && (err.code === 'permission-denied' || /permission/i.test(err.message || ''));
+      $('notice').hidden = false;
+      $('notice').innerHTML = denied
+        ? '<b>Firestore 보안 규칙이 아직 배포되지 않았어요.</b> 저장소의 <code>firestore.rules</code>를 배포하면 통계가 보여요. 터미널에서 프로젝트 소유 계정으로 <code>firebase login</code> 후 <code>firebase deploy --only firestore:rules</code>'
+        : '<b>불러오기 실패:</b> ' + esc(err.code || err.message);
+    });
+  });
+
+  const dayKey = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const fmtTime = d => `${String(d.getMonth() + 1).padStart(2, '0')}.${String(d.getDate()).padStart(2, '0')} ${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+  const device = ua => /iPhone|Android.+Mobile|Mobile/i.test(ua) ? '모바일' : /iPad|Tablet/i.test(ua) ? '태블릿' : 'PC';
+  const nf = n => n.toLocaleString('ko-KR');
+
+  async function load() {
+    const now = new Date();
+    const startToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const start7 = new Date(startToday); start7.setDate(start7.getDate() - 6);
+    const start30 = new Date(startToday); start30.setDate(start30.getDate() - 29);
+    const visits = collection(db, 'visits');
+
+    const [cAll, cToday, c7, c30, cUsers] = await Promise.all([
+      getCountFromServer(visits),
+      getCountFromServer(query(visits, where('ts', '>=', Timestamp.fromDate(startToday)))),
+      getCountFromServer(query(visits, where('ts', '>=', Timestamp.fromDate(start7)))),
+      getCountFromServer(query(visits, where('ts', '>=', Timestamp.fromDate(start30)))),
+      getCountFromServer(collection(db, 'users')),
+    ]);
+    $('tAll').textContent = nf(cAll.data().count); $('tToday').textContent = nf(cToday.data().count);
+    $('t7').textContent = nf(c7.data().count); $('t30').textContent = nf(c30.data().count); $('tUsers').textContent = nf(cUsers.data().count);
+
+    const snap = await getDocs(query(visits, where('ts', '>=', Timestamp.fromDate(start30)), orderBy('ts', 'desc'), limit(3000)));
+    const rows = snap.docs.map(d => d.data()).filter(r => r.ts && r.ts.toDate);
+
+    // 일별
+    const days = []; for (let i = 0; i < 30; i++) { const d = new Date(start30); d.setDate(d.getDate() + i); days.push({ key: dayKey(d), d, n: 0 }); }
+    const idx = Object.fromEntries(days.map((x, i) => [x.key, i]));
+    rows.forEach(r => { const k = dayKey(r.ts.toDate()); if (k in idx) days[idx[k]].n++; });
+    drawChart(days);
+
+    // 국가 · 기기/언어
+    const count = (arr, fn) => { const m = {}; arr.forEach(r => { const k = fn(r) || '(없음)'; m[k] = (m[k] || 0) + 1; }); return Object.entries(m).sort((a, b) => b[1] - a[1]); };
+    drawHBars($('byCountry'), count(rows, r => r.country).slice(0, 8), rows.length);
+    const dev = count(rows, r => device(r.ua || '')), lang = count(rows, r => (r.lang || '').toUpperCase()), sa = [['앱(설치)', rows.filter(r => r.standalone).length], ['브라우저', rows.filter(r => !r.standalone).length]];
+    drawHBars($('byDevice'), [...dev, ...lang.map(([k, v]) => ['언어 ' + k, v]), ...sa], rows.length);
+
+    // 최근 30건
+    $('recent').querySelector('tbody').innerHTML = rows.slice(0, 30).map(r => `<tr>
+      <td><div class="who"><i>${esc((r.name || r.email || '?').slice(0, 1))}</i><div>${esc(r.name || '')}<br><small>${esc(r.email || '')}</small></div></div></td>
+      <td>${fmtTime(r.ts.toDate())}</td><td>${esc(r.path || '/')}</td><td>${esc(r.country || '–')}</td><td>${esc((r.lang || '').toUpperCase())}</td>
+      <td>${device(r.ua || '')}${r.standalone ? ' <span class="chip">앱</span>' : ''} <small style="color:var(--muted)">${r.w || ''}×${r.h || ''}</small></td>
+      <td class="wrap" style="max-width:220px">${esc((r.ref || '').replace(/^https?:\/\//, '')) || '직접'}</td></tr>`).join('') || '<tr><td colspan="7" style="color:var(--muted)">아직 방문 기록이 없어요.</td></tr>';
+
+    // 사용자
+    const us = await getDocs(query(collection(db, 'users'), orderBy('lastSeen', 'desc'), limit(100)));
+    $('users').querySelector('tbody').innerHTML = us.docs.map(d => d.data()).map(u => `<tr>
+      <td><div class="who">${u.photo ? `<img src="${esc(u.photo)}" alt="" referrerpolicy="no-referrer">` : `<i>${esc((u.name || '?').slice(0, 1))}</i>`}${esc(u.name || '')}</div></td>
+      <td>${esc(u.email || '')}</td><td>${nf(u.visits || 0)}</td><td>${u.lastSeen && u.lastSeen.toDate ? fmtTime(u.lastSeen.toDate()) : '–'}</td><td>${esc(u.country || '–')}</td></tr>`).join('') || '<tr><td colspan="5" style="color:var(--muted)">아직 사용자가 없어요.</td></tr>';
+
+    $('updated').textContent = '(' + fmtTime(now) + ' 기준)';
+  }
+
+  function drawChart(days) {
+    const el = $('chart'), tip = $('tip');
+    const max = Math.max(1, ...days.map(d => d.n));
+    const nice = max <= 5 ? max : Math.ceil(max / 5) * 5;
+    el.querySelectorAll('.bar,.gl').forEach(n => n.remove());
+    [0.5, 1].forEach(f => { const g = document.createElement('div'); g.className = 'gl'; g.style.bottom = (22 + (190 - 36) * f) + 'px'; g.innerHTML = `<span>${nf(Math.round(nice * f))}</span>`; el.appendChild(g); });
+    const maxIdx = days.reduce((m, d, i) => d.n > days[m].n ? i : m, 0);
+    days.forEach((d, i) => {
+      const b = document.createElement('div'); b.className = 'bar' + (d.n ? '' : ' z');
+      const h = d.n ? Math.max(2, Math.round((d.n / nice) * (190 - 36))) : 2;
+      const label = (i === 0 || i === 29 || i % 7 === 0) ? `${d.d.getMonth() + 1}/${d.d.getDate()}` : '';
+      b.innerHTML = `<i style="height:${h}px"></i>${label ? `<span class="x">${label}</span>` : ''}${(i === maxIdx && d.n) ? `<span class="v" style="bottom:${h + 4}px;top:auto">${nf(d.n)}</span>` : ''}`;
+      b.addEventListener('mouseenter', () => { tip.style.display = 'block'; tip.innerHTML = `${d.d.getMonth() + 1}월 ${d.d.getDate()}일 · <b>${nf(d.n)}</b>회`; const r = b.getBoundingClientRect(), p = el.getBoundingClientRect(); tip.style.left = (r.left - p.left + r.width / 2) + 'px'; tip.style.top = (190 - 22 - h - 6) + 'px'; });
+      b.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+      el.appendChild(b);
+    });
+    $('dayTable').innerHTML = '<thead><tr><th>날짜</th><th>방문</th></tr></thead><tbody>' + days.slice().reverse().map(d => `<tr><td>${d.key}</td><td>${nf(d.n)}</td></tr>`).join('') + '</tbody>';
+  }
+
+  function drawHBars(el, entries, total) {
+    if (!entries.length || !total) { el.innerHTML = '<div style="grid-template-columns:1fr;color:var(--muted)">데이터가 없어요.</div>'; return; }
+    const max = Math.max(...entries.map(e => e[1]));
+    el.innerHTML = entries.map(([k, v]) => `<div><span class="lb" title="${esc(k)}">${esc(k)}</span><span><i style="width:${Math.max(2, Math.round(v / max * 100))}%"></i></span><span class="n">${nf(v)}</span></div>`).join('');
+  }
+</script>
+</body>
+</html>

@@ -4,8 +4,23 @@
     {
       "name": "ui-guide",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "5173", "--bind", "127.0.0.1"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5173",
+        "--bind",
+        "127.0.0.1"
+      ],
       "port": 5173
+    },
+    {
+      "name": "ui-guide-slow",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "/private/tmp/claude-501/-Users-shbae-pc-Tools-ui-guide/103a0ae9-0a22-4989-87ad-d485456bcbd3/scratchpad/slowserver.py",
+        "8765"
+      ],
+      "port": 8765
     }
   ]
 }

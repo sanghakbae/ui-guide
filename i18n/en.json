@@ -1,0 +1,806 @@
+{
+"cards": {
+"Header": {
+"cap": "Logo and menu strip at the very top",
+"desc": "The same strip at the top of every page. Usually holds the logo, menu, and a signup button."
+},
+"Navbar / GNB": {
+"cap": "The menu part inside the header",
+"desc": "The menu for moving between pages. In Korea it's also called the GNB (Global Navigation Bar)."
+},
+"Hero": {
+"cap": "First screen's big headline and button",
+"desc": "The first thing visitors see. Says what the site does in one line and offers a single button."
+},
+"Sidebar": {
+"cap": "Vertical menu panel along the side",
+"desc": "A menu column pinned to one side of the screen. Common in admin dashboards and docs sites."
+},
+"Footer": {
+"cap": "Info strip at the very bottom",
+"desc": "The bottom area for less-urgent stuff like company info, terms, and contact details."
+},
+"Layout": {
+"cap": "Where header, sidebar, body, footer go",
+"desc": "The skeleton that decides where the big areas of a screen go. Layout first, content second."
+},
+"Section": {
+"cap": "One of the chunks a page is split into",
+"desc": "A big chunk of the page on one topic. You can just say \"add a reviews section.\""
+},
+"Container": {
+"cap": "Dotted = screen / inside = max width",
+"desc": "Keeps content centered so it doesn't spread too wide. Stays readable even on big monitors."
+},
+"Grid": {
+"cap": "3-column grid",
+"desc": "A way to arrange items in rows and columns. Say \"3-column grid\" and you get three across."
+},
+"Card": {
+"cap": "A box holding one bundle of info",
+"desc": "A photo, title, and description grouped in one box. A border or shadow sets it apart."
+},
+"Card Grid": {
+"cap": "Cards lined up in a grid",
+"desc": "Several cards laid out in neat rows. Common for product lists and portfolios."
+},
+"Table": {
+"cap": "Rows and columns of data",
+"desc": "Data of the same kind organized in rows and columns. Great for things like an applicant list."
+},
+"Tabs": {
+"cap": "Menu that swaps just the content",
+"desc": "A menu that swaps content in the same spot. Switches views without loading a new page."
+},
+"Hamburger Menu": {
+"cap": "Three-line (≡) menu button",
+"desc": "The three-line button that hides the menu on mobile. Tap it and the menu unfolds."
+},
+"Drawer": {
+"cap": "Menu panel that slides in from the side",
+"desc": "A panel that slides in from the screen's edge. Tapping a hamburger menu usually opens one."
+},
+"Dropdown Menu": {
+"cap": "Menu that unfolds below a button",
+"desc": "A list that drops down when you tap a button. Like a select, but also used for action menus."
+},
+"Kebab / Overflow Menu": {
+"cap": "Menu behind the three dots (⋮)",
+"desc": "A menu that hides rarely used actions behind three dots. Usually where Edit and Delete live."
+},
+"Accordion": {
+"cap": "List that expands and collapses on tap",
+"desc": "Tap a heading to expand its content; tap again to collapse it. Perfect for FAQs."
+},
+"Breadcrumb": {
+"cap": "Home > Category > Current page",
+"desc": "Shows where you are as a path. Makes it easy to jump back up a level."
+},
+"Pagination": {
+"cap": "1 2 3 … numbers for the next pages",
+"desc": "Splits a long list into pages you hop between by number. Common on forums and message boards."
+},
+"Stepper": {
+"cap": "Step 1 → Step 2 → Step 3",
+"desc": "Shows which step you're on out of several. Used in signup flows and checkout."
+},
+"Bottom Tab Bar": {
+"cap": "Icon menu row at the bottom of a phone",
+"desc": "Icon menu pinned to the bottom of an app. Usually 3 to 5 items, easy to reach with a thumb."
+},
+"Carousel": {
+"cap": "Slide banner you swipe sideways",
+"desc": "A set of slides you flip through sideways. The dots below (●○○) show which one you're on."
+},
+"Filter / Sort": {
+"cap": "Narrow the list and change its order",
+"desc": "Filter keeps only what matches; sort changes the order. Both usually sit together above a list."
+},
+"Button": {
+"cap": "Anything you press is a button",
+"desc": "Something happens when you press it. Shape doesn't matter: if you press it, it's a button."
+},
+"Primary": {
+"cap": "Solid fill · only one per screen",
+"desc": "The most important button. Solid color so it stands out, and only one per screen."
+},
+"Secondary": {
+"cap": "Outline only · second in importance",
+"desc": "The second choice, placed next to the primary. Just an outline, so it stands out less."
+},
+"Ghost / Text": {
+"cap": "Just text, no background",
+"desc": "Text-only button, no background or border. For optional actions like Cancel or Skip."
+},
+"Destructive": {
+"cap": "Red only for things you can't undo",
+"desc": "Red button for actions you can't undo, like Delete. Use red everywhere and it loses its punch."
+},
+"CTA": {
+"cap": "The one action that matters most",
+"desc": "Call To Action. The one thing you want people to do on this page: sign up, buy, get started."
+},
+"Icon Button": {
+"cap": "Icon only · no text",
+"desc": "A button with only an icon, no label. Use when the meaning is obvious: close, like, share."
+},
+"FAB": {
+"cap": "Round button floating in a corner",
+"desc": "Round button that floats in a corner even as you scroll. Save it for one frequent action."
+},
+"Link": {
+"cap": "Not a button, a text link",
+"desc": "Text that jumps you somewhere else when clicked. Usually underlined or a different color."
+},
+"Button Group": {
+"cap": "Several buttons joined together",
+"desc": "Related buttons joined together in one row. Often used for switching between views."
+},
+"Social Login": {
+"cap": "Kakao yellow, Naver green, Google white",
+"desc": "One-tap login with another service's account, in its brand colors. Kakao and Naver are Korean."
+},
+"Chat Widget": {
+"cap": "",
+"desc": "Floating support button that opens a chat. Kakao Channel and Channel Talk are common in Korea."
+},
+"Form": {
+"cap": "Input fields and a button, together",
+"desc": "A group of fields that collects user info. Applications, inquiries, and logins are all forms."
+},
+"Input": {
+"cap": "A single line for typing text",
+"desc": "A one-line text field. For short things like a name, email, or phone number."
+},
+"Textarea": {
+"cap": "A big box for several lines",
+"desc": "A larger box for typing several lines. Used for inquiry messages and short bios."
+},
+"Search Bar": {
+"cap": "Field for typing a search",
+"desc": "An input field for search terms. Comes with a magnifying-glass icon."
+},
+"Autocomplete": {
+"cap": "Suggestions pop up as you type",
+"desc": "Type a few letters and matching suggestions appear. Great for search boxes and address fields."
+},
+"Select": {
+"cap": "Pick one from a list",
+"desc": "A field you click to open a list and pick one option. Also called a dropdown."
+},
+"Checkbox": {
+"cap": "Square boxes · pick several",
+"desc": "Little squares you check to make a choice. You can pick as many as you like at once."
+},
+"Radio": {
+"cap": "Round buttons · pick just one",
+"desc": "Round buttons where only one can be on. Pick a new one and the old one turns off."
+},
+"Toggle": {
+"cap": "On / off",
+"desc": "An on/off switch that applies instantly. This page's dark mode switch, top right, is one."
+},
+"Slider": {
+"cap": "Drag to set a value",
+"desc": "Drag the handle to set a value. Common for price ranges and volume."
+},
+"Number Stepper": {
+"cap": "Also called a counter",
+"desc": "Plus and minus buttons that adjust a number. You see it a lot for cart quantities."
+},
+"Rating": {
+"cap": "Half stars work too",
+"desc": "Score something by how many stars you give it. Used for reviews."
+},
+"Color Picker": {
+"cap": "Pick a color",
+"desc": "A tool for choosing a color. A code like #E1785C is more precise than saying \"orange.\""
+},
+"Date Picker": {
+"cap": "Pick a date on a calendar",
+"desc": "Opens a calendar so you can click a date. Fewer mistakes than typing it in by hand."
+},
+"Time Picker": {
+"cap": "Pick a time",
+"desc": "Lets you choose hours and minutes. Used for bookings and reminders."
+},
+"OTP Input": {
+"cap": "Jumps to the next box on its own",
+"desc": "One box per digit of the verification code texted to you. Fill one and it hops to the next."
+},
+"Tag Input": {
+"cap": "Press Enter to turn words into chips",
+"desc": "A field where each word you add becomes a chip. Used for interests and keywords."
+},
+"File Upload": {
+"cap": "Box for adding files",
+"desc": "An area for adding files. Click to choose one or drag it in."
+},
+"Drag and Drop": {
+"cap": "Grab it, move it, drop it",
+"desc": "Grab an item with the mouse and drop it where you want. Used for reordering and file uploads."
+},
+"Label": {
+"cap": "",
+"desc": "The name tag that says what goes in a field. A red star means it's required."
+},
+"Placeholder": {
+"cap": "",
+"desc": "The faint example text inside a field. It disappears once you start typing."
+},
+"Helper Text": {
+"cap": "",
+"desc": "The small note under a field. It tells you the rules or gives a hint before you type."
+},
+"Validation": {
+"cap": "Checks that the format is right",
+"desc": "Checks whether what you typed follows the rules. Mistakes turn red right away."
+},
+"Submit": {
+"cap": "Sending the form",
+"desc": "Sending what you filled in to the server. The \"Send\" button is the submit button."
+},
+"Terms Agreement": {
+"cap": "Agree to all + [required] [optional]",
+"desc": "Checkboxes to accept terms all at once or one by one. Korean sites split required vs. optional."
+},
+"Identity Verification": {
+"cap": "Pick your carrier → verify by phone",
+"desc": "Phone-based check that you're really you. A common step when signing up for Korean services."
+},
+"Address Search": {
+"cap": "Search zip code → address auto-fills",
+"desc": "Search a zip code and the address auto-fills. You only type the unit number. Common in Korea."
+},
+"Default": {
+"cap": "Nothing touched yet",
+"desc": "How it looks before anyone touches it. Every other state starts from here."
+},
+"Hover": {
+"cap": "When the mouse is over it",
+"desc": "A slight change when the mouse is over it, hinting it's clickable. Phones don't have hover."
+},
+"Active / Pressed": {
+"cap": "The moment you press",
+"desc": "How it looks the instant you press it. Gives a slightly pushed-in feel."
+},
+"Focus": {
+"cap": "Picked with the Tab key",
+"desc": "An outline showing where you are as you Tab through a page. A must for accessibility."
+},
+"Disabled": {
+"cap": "Grayed out so you can't press it",
+"desc": "Can't be pressed because some condition isn't met yet. Shown grayed out and faded."
+},
+"Loading": {
+"cap": "Working on it",
+"desc": "While the server works on it. Blocks a second press and shows a spinner in the meantime."
+},
+"Selected": {
+"cap": "The one you picked",
+"desc": "The one picked out of several. A filled-in color sets it apart."
+},
+"Error / Invalid": {
+"cap": "Something's wrong",
+"desc": "When what you typed is wrong. Shows a red outline along with the reason why."
+},
+"Success": {
+"cap": "It worked",
+"desc": "When things went right. Shows a green check mark to confirm."
+},
+"Read-only": {
+"cap": "Visible but can't be edited",
+"desc": "You can see the value but not change it. Unlike disabled, you can still copy it."
+},
+"Badge": {
+"cap": "A number or a dot",
+"desc": "A tiny number or dot pinned to the corner of an icon. Think unread notification counts."
+},
+"Status Dot": {
+"cap": "A dot whose color shows status",
+"desc": "A single colored dot that tells you the status. Green means online, gray means offline."
+},
+"Chip": {
+"cap": "Often tapped to filter a list",
+"desc": "A small pill-shaped label, also called a tag. Often a filter; an ✕ means you can remove it."
+},
+"Kbd": {
+"cap": "Shortcuts drawn as keyboard keys",
+"desc": "Keyboard shortcuts drawn to look like real keys. Used in docs and help pages."
+},
+"Avatar": {
+"cap": "First initial when there's no photo",
+"desc": "A round photo that stands for a person. No photo? It shows the first letter of their name."
+},
+"Avatar Group": {
+"cap": "Overlapping avatars",
+"desc": "Several avatars overlapping each other. Used to show \"these people are taking part.\""
+},
+"Divider": {
+"cap": "Thin line that splits content",
+"desc": "A thin line between chunks of content. Use it when white space alone isn't enough."
+},
+"Icon": {
+"cap": "Say \"use Lucide icons\"",
+"desc": "A small picture that stands for a meaning. Name a set like Lucide so they all match in style."
+},
+"Modal / Dialog": {
+"cap": "",
+"desc": "A window in the middle that blocks the page until you close it. Save it for big confirmations."
+},
+"Overlay": {
+"cap": "",
+"desc": "The dark, see-through layer behind a modal. It pulls your eyes to what's in front."
+},
+"Bottom Sheet": {
+"cap": "",
+"desc": "A panel that slides up from the bottom of the screen. A popular stand-in for modals on mobile."
+},
+"Confirmation": {
+"cap": "A window that asks \"Are you sure?\"",
+"desc": "A window that double-checks before an action you can't easily undo. It's a kind of modal."
+},
+"Toast": {
+"cap": "",
+"desc": "A quick message that pops up at the top or bottom, then fades on its own. Like \"Saved!\""
+},
+"Alert": {
+"cap": "Color-coded message strip",
+"desc": "A message strip built into the page. Green means success, yellow caution, red error."
+},
+"Field Error": {
+"cap": "Better than an alert",
+"desc": "Error text right under the wrong field. It shows exactly what to fix, so it beats an alert."
+},
+"Cookie Banner": {
+"cap": "",
+"desc": "A strip asking permission to use cookies. You'll need one if you have visitors from Europe."
+},
+"Tooltip": {
+"cap": "Small note that appears on hover",
+"desc": "A short note in a bubble that shows when you hover your mouse. It vanishes when you move away."
+},
+"Popover": {
+"cap": "Small panel you click to open",
+"desc": "A small panel that opens when you click. Bigger than a tooltip, and it can hold buttons."
+},
+"Progress Bar": {
+"cap": "Bar showing how far along you are",
+"desc": "A bar that fills up to show progress. Use it when you know how long the wait will be."
+},
+"Spinner": {
+"cap": "Loading…",
+"desc": "A spinning loading sign. Use it when you don't know how long the wait will be."
+},
+"Skeleton": {
+"cap": "Gray shapes where content will load",
+"desc": "Gray blocks that hold the spot until content arrives. Feels less stuck than a spinner."
+},
+"Empty State": {
+"cap": "What shows when there's nothing",
+"desc": "The screen you see when there's nothing yet. Don't leave it blank; suggest what to do next."
+},
+"Promo Popup": {
+"cap": "",
+"desc": "A promo window that pops up the moment you arrive. Always add a \"Don't show today\" option."
+},
+"App Install Banner": {
+"cap": "\"Open in app\" strip at the top",
+"desc": "A strip on mobile web nudging you to install the app. Once closed, it shouldn't come back."
+},
+"Share Sheet": {
+"cap": "",
+"desc": "The panel that slides up when you tap Share. It's a kind of bottom sheet."
+},
+"List": {
+"cap": "Same-shaped items stacked vertically",
+"desc": "Items of the same shape stacked top to bottom. Think post lists or sign-up lists."
+},
+"Timeline": {
+"cap": "Events lined up in time order",
+"desc": "Events pinned to a vertical line in time order. Good for progress steps or company history."
+},
+"Notification": {
+"cap": "List of new updates",
+"desc": "A list of new updates, newest first. Unread ones get a little dot."
+},
+"Gallery": {
+"cap": "Photos laid out in a grid",
+"desc": "Photos arranged in a grid. Great for portfolios and product shots."
+},
+"Lightbox": {
+"cap": "",
+"desc": "Tap a photo and it opens big, filling the screen. Goes hand in hand with a gallery."
+},
+"Stats": {
+"cap": "Three big numbers",
+"desc": "Numbers worth bragging about, shown big. Three is the sweet spot."
+},
+"Stat Card": {
+"cap": "A number with its change",
+"desc": "A card with one number plus how much it changed. A dashboard staple."
+},
+"Pricing Table": {
+"cap": "Side-by-side plan comparison",
+"desc": "Plans lined up side by side so people can compare. Mark the one you recommend as \"Popular.\""
+},
+"Testimonial": {
+"cap": "A quote from a user",
+"desc": "A quote from a real user. Adding a name and company makes it more believable."
+},
+"Logo Cloud": {
+"cap": "Row of customer logos",
+"desc": "Logos of companies that use your product, shown in gray. It's there to build trust."
+},
+"Profile Card": {
+"cap": "Card introducing a person",
+"desc": "A card about a person: avatar, name, one-line bio, and a button."
+},
+"Blockquote": {
+"cap": "Quoted paragraph with a left bar",
+"desc": "Someone else's words or a line worth highlighting, set apart with a bar on the left."
+},
+"Code Block": {
+"cap": "Box that shows code as is",
+"desc": "A dark box that shows code or commands in a monospace font. Pair it with a copy button."
+},
+"Banner": {
+"cap": "Notice strip stuck to the top",
+"desc": "A notice strip stuck to the top of the page. Always give it a close button."
+},
+"FAQ": {
+"cap": "Tap a question to reveal the answer",
+"desc": "Common questions collected in an accordion. Cuts down on support requests."
+},
+"Feature Grid": {
+"cap": "Icon, title, and blurb, three across",
+"desc": "Three or so icon + title + one-liner blocks in a row. A landing page staple."
+},
+"How It Works": {
+"cap": "Numbered steps 1, 2, 3",
+"desc": "Shows how to use something in three steps. The numbered circles are the signature touch."
+},
+"Comparison Table": {
+"cap": "Us vs. them checkmark table",
+"desc": "Compares features against competitors with ✓ and ✕. Highlight your own column."
+},
+"Table of Contents": {
+"cap": "List of headings, tap to jump",
+"desc": "A list of a long article's headings. Tap one to jump straight to that section."
+},
+"Newsletter Signup": {
+"cap": "Email field + subscribe button, one row",
+"desc": "A short form that asks for just an email. Put it in the footer or at the end of a post."
+},
+"Countdown": {
+"cap": "Numbers ticking down to a deadline",
+"desc": "Shows the time left until a deadline, live. Used for events and early-bird deals."
+},
+"Video Embed": {
+"cap": "YouTube video dropped into the page",
+"desc": "Puts a YouTube-style video right on the page. All you need is the link."
+},
+"Team Section": {
+"cap": "Grid of team photos, names, and titles",
+"desc": "Shows the people behind the product with photos, names, and roles. Builds trust."
+},
+"Product Card": {
+"cap": "Photo · name · price · star rating",
+"desc": "One product per card: photo, name, price, star rating. The basic unit of any shop listing."
+},
+"Discount Price": {
+"cap": "Old price crossed out, % off in red",
+"desc": "Crosses out the original price, then shows the percent off and the real price. Percent in red."
+},
+"Coupon": {
+"cap": "Coupon shape with a dotted tear line",
+"desc": "A card styled to look like a real paper coupon. The dotted tear-off line is the key detail."
+},
+"Wishlist": {
+"cap": "Tap ♡ to save, it fills in as ♥",
+"desc": "A heart button for saving things you like. Tap it and the heart fills in."
+},
+"Review Card": {
+"cap": "Star rating + review text + photo",
+"desc": "One buyer's star rating, review, and photo in a card. The shopping version of a testimonial."
+},
+"Rating Breakdown": {
+"cap": "Bars for how many gave 5, 4, 3 stars",
+"desc": "Bars showing where the star ratings cluster, from 5 down to 1. Sits next to the average score."
+},
+"Sticky Bottom Bar": {
+"cap": "",
+"desc": "A row of buy buttons glued to the bottom as you scroll. A must on product detail pages."
+},
+"Responsive": {
+"cap": "More columns as the screen gets wider",
+"desc": "Layout adapts to the screen: one column on phones, three on desktop. This page does it too."
+},
+"Mobile First": {
+"cap": "Instagram visitors are all on phones",
+"desc": "Build for phones first, then widen for desktop. Go the other way and it breaks on phones."
+},
+"Breakpoint": {
+"cap": "The width where the layout switches",
+"desc": "The screen width where the layout changes. 768px and 1024px are the usual ones."
+},
+"Sticky": {
+"cap": "Header stays at the top as you scroll",
+"desc": "Snaps to the top and follows you as you scroll. The header on this page is sticky."
+},
+"Fixed": {
+"cap": "Pinned to the screen, scroll or not",
+"desc": "Always in the same spot no matter how far you scroll. Think floating buttons and chat icons."
+},
+"Margin": {
+"cap": "Space <b>outside</b> · distance to neighbors",
+"desc": "The empty space outside an element. It sets how far it sits from its neighbors."
+},
+"Padding": {
+"cap": "Space <b>inside</b> · between border and text",
+"desc": "The empty space inside an element. Breathing room between the border and the text."
+},
+"Gap / Spacing": {
+"cap": "Space <b>between</b> elements",
+"desc": "The distance between side-by-side elements. In a grid, one gap value handles them all."
+},
+"Border Radius": {
+"cap": "Bigger number, rounder corners",
+"desc": "How rounded a box's corners are. Set it to 999px and it becomes a full circle."
+},
+"Box Shadow": {
+"cap": "Looks like it's floating",
+"desc": "A shadow under an element that makes it look like it's floating. Subtle usually looks best."
+},
+"Dark Mode": {
+"cap": "Dark background / light text",
+"desc": "A flipped theme: dark background, light text. Try the switch at the top right of this page."
+},
+"Opacity": {
+"cap": "0% invisible ~ 100% fully solid",
+"desc": "How see-through something is. 100% is solid, 0% is invisible. Use it to fade things out."
+},
+"Border": {
+"cap": "Thickness · color · solid or dashed",
+"desc": "The line around an element. You set its thickness, color, and whether it's solid or dashed."
+},
+"Gradient": {
+"cap": "A background that slowly shifts color",
+"desc": "A background that blends from one color into another. You can pick the direction too."
+},
+"Aspect Ratio": {
+"cap": "16:9 · 4:3 · 1:1 square",
+"desc": "Width-to-height ratio. Say \"make the photo box 16:9\" and it keeps its shape at any size."
+},
+"Fade In": {
+"cap": "Slowly appears · usually 0.6 seconds",
+"desc": "Starts invisible and slowly comes into view. About 0.6 seconds feels natural."
+},
+"Scroll Reveal": {
+"cap": "Appears as it scrolls into view",
+"desc": "Things appear as you scroll them into view. The cards on this page do exactly that."
+},
+"Transition": {
+"cap": "Shifts <b>smoothly</b>, no sudden jump",
+"desc": "When something changes, it moves smoothly instead of snapping. 0.2 seconds is plenty."
+},
+"Alignment": {
+"cap": "Left · center · right",
+"desc": "Which side text or elements line up to. Just say \"center it\" or \"align it left.\""
+},
+"Centering": {
+"cap": "Dead center, both across and down",
+"desc": "Placing something in the exact middle, both across and down. Say \"dead center of the screen.\""
+},
+"Horizontal Scroll": {
+"cap": "A list you swipe sideways to browse",
+"desc": "Cards line up side by side and you swipe across to see more. Very common on mobile."
+},
+"Overflow": {
+"cap": "Content spilling out of its box",
+"desc": "When content is bigger than its box and pokes out. You either hide it or make it scroll."
+},
+"z-index": {
+"cap": "Which layer sits on top or underneath",
+"desc": "Decides what shows on top when elements overlap. The higher the number, the higher it sits."
+},
+"Font Size": {
+"cap": "12px · 16px · 24px · 36px",
+"desc": "How big the text is. Body text is usually 16px, and never below 14px on phones."
+},
+"Font Weight": {
+"cap": "Regular · medium · bold",
+"desc": "How thick the letters are. 400 is regular, 700 is bold. Using numbers keeps it precise."
+},
+"Hierarchy": {
+"cap": "Heading > subheading > body text",
+"desc": "Heading, subheading, and body text step down in size and weight so the eye knows where to go."
+},
+"Ellipsis": {
+"cap": "Cut long text off with …",
+"desc": "Text too long for its box gets cut to \"…\" so it fits on one line. Common in title lists."
+},
+"Line Break": {
+"cap": "Keeps words from breaking in half",
+"desc": "Keeps a word from being split when text wraps to a new line. Say \"wrap by whole words.\""
+}
+},
+"sections": {
+"layout": {
+"desc": "The big bones of a screen. Words for where things sit."
+},
+"nav": {
+"desc": "Getting around. Words for how you move from here to there."
+},
+"button": {
+"desc": "Things you press. The look changes with importance."
+},
+"form": {
+"desc": "Fields that collect info. Signup, contact, login: all forms."
+},
+"state": {
+"desc": "One button, many looks. Say \"make it darker on hover.\""
+},
+"element": {
+"desc": "Tiny bits all over the screen. Just say \"add a badge here.\""
+},
+"feedback": {
+"desc": "Things that say what happened, or cover the screen."
+},
+"content": {
+"desc": "Blocks that hold content. Mix these to build a landing page."
+},
+"commerce": {
+"desc": "Online store parts. Show one product, get it bought."
+},
+"concept": {
+"desc": "Not parts, but words you'll need: size, space, motion."
+}
+},
+"groups": [
+{
+"title": "Page Skeleton",
+"sub": "Top to bottom"
+},
+{
+"title": "Arranging Content",
+"sub": "What goes inside, and how"
+},
+{
+"title": "Menus",
+"sub": "Open, close, hide"
+},
+{
+"title": "Where You Are",
+"sub": "Here now, and where to next"
+},
+{
+"title": "By Importance",
+"sub": "Most important first"
+},
+{
+"title": "By Shape",
+"sub": "Icons instead of text, groups"
+},
+{
+"title": "Signup · Support",
+"sub": "Buttons to outside services"
+},
+{
+"title": "Typing Text",
+"sub": "Fields you type into"
+},
+{
+"title": "Picking",
+"sub": "Choose from set options"
+},
+{
+"title": "Special Inputs",
+"sub": "Date · time · code · file"
+},
+{
+"title": "Text Around Fields",
+"sub": "Label · hint · help · check"
+},
+{
+"title": "Korean Signup Flow",
+"sub": "Fields every Korean site has"
+},
+{
+"title": "Button States",
+"sub": "From untouched to loading"
+},
+{
+"title": "Field States",
+"sub": "Picked, wrong, right"
+},
+{
+"title": "Indicators",
+"sub": "Counts · status · labels"
+},
+{
+"title": "People",
+"sub": "Who's here"
+},
+{
+"title": "Decoration",
+"sub": "Separate and show meaning"
+},
+{
+"title": "Overlays",
+"sub": "Things that float on top"
+},
+{
+"title": "Notifying",
+"sub": "Flash by, or stick around"
+},
+{
+"title": "Explaining",
+"sub": "Hover or click to see"
+},
+{
+"title": "Waiting · Empty",
+"sub": "When content isn't there yet"
+},
+{
+"title": "Common in Korea",
+"sub": "Pops up the moment you land"
+},
+{
+"title": "Lists · Order",
+"sub": "Lining things up"
+},
+{
+"title": "Numbers · Pricing",
+"sub": "Brag and compare"
+},
+{
+"title": "Trust · People",
+"sub": "What makes people believe"
+},
+{
+"title": "Other",
+"sub": "Code · notices"
+},
+{
+"title": "Landing Page Blocks",
+"sub": "Ask for these as \"sections\""
+},
+{
+"title": "Products",
+"sub": "Showing them off"
+},
+{
+"title": "Reviews · Buying",
+"sub": "Getting the sale"
+},
+{
+"title": "Screen Size",
+"sub": "Phone · tablet · desktop"
+},
+{
+"title": "Position",
+"sub": "Stays put while you scroll"
+},
+{
+"title": "Spacing",
+"sub": "Outside · inside · between"
+},
+{
+"title": "Looks",
+"sub": "Corners · shadows · theme"
+},
+{
+"title": "Motion",
+"sub": "How things appear and change"
+},
+{
+"title": "Placement",
+"sub": "Where and how things sit"
+},
+{
+"title": "Text",
+"sub": "Size · weight · lines"
+}
+]
+}

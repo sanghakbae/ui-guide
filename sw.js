@@ -1,6 +1,6 @@
 /* UI 용어 사전 · Service Worker */
-const CACHE = 'ui-guide-v2';
-const SHELL = ['./', './index.html', './privacy.html', './manifest.json',
+const CACHE = 'ui-guide-v3';
+const SHELL = ['./', './index.html', './privacy.html', './admin.html', './manifest.json', './i18n/en.json',
   './icons/icon-192.png', './icons/icon-512.png', './icons/favicon.svg'];
 const CDN = /(^https:\/\/www\.gstatic\.com\/firebasejs\/)|(^https:\/\/cdn\.jsdelivr\.net\/)/;
 
