@@ -1359,5 +1359,21 @@ footer a{text-decoration:none;color:var(--ink2)}
   top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
 </script>
+<!-- Firebase Analytics -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyBW7-KrHVUbxsQhrKSj52Oq9tCK-DRSnkc",
+    authDomain: "ui-guide-d84db.firebaseapp.com",
+    projectId: "ui-guide-d84db",
+    storageBucket: "ui-guide-d84db.firebasestorage.app",
+    messagingSenderId: "497255037736",
+    appId: "1:497255037736:web:87032308d79a239ec52e1d",
+    measurementId: "G-CX6E38PVJV"
+  };
+  const app = initializeApp(firebaseConfig);
+  isSupported().then(ok => { if (ok) getAnalytics(app); }).catch(() => {});
+</script>
 </body>
 </html>
