@@ -1999,7 +1999,7 @@ body.locked{min-height:100vh;min-height:100dvh;display:flex;flex-direction:colum
     document.body.classList.toggle('checking',state==='checking');
     gateSpin.hidden=state!=='checking';
     gateLogin.hidden=state==='checking'||state==='open';
-    if(state==='locked'&&!msg){ if(window.__authEnv.inApp)msg=T('inApp'); else if(window.__authEnv.iosStandalone)msg=T('iosApp'); }
+    if(state==='locked'&&!msg){ if(window.__authEnv.inApp){ msg=T('inApp'); if(/KAKAOTALK/i.test(ua)) msg+=' <a class="btn sm" style="margin-top:8px" href="kakaotalk://web/openExternal?url='+encodeURIComponent(location.href)+'">'+T('openExternal')+'</a>'; } else if(window.__authEnv.iosStandalone)msg=T('iosApp'); }
     gateNote.hidden=!msg; gateNote.innerHTML=msg||'';
     if(state==='open')window.dispatchEvent(new Event('scroll'));
   };
@@ -2021,8 +2021,8 @@ body.locked{min-height:100vh;min-height:100dvh;display:flex;flex-direction:colum
     gateBtn:'Sign in with Google',gateSmall:'We only receive your Google name, email, and profile photo. <a href="./privacy.html">Privacy Policy</a>',
     darkMode:'Dark mode',install:'Install app',login:'Sign in',logout:'Sign out',admin:'Admin page',menu:'Account menu',
     footer1:'UI Glossary · Use these names when you describe a screen.',privacy:'Privacy Policy',langBtn:'한국어',
-    t:{out:'Signed out',inSuffix:', signed in',installed:'Installed as an app',closed:'Sign-in window was closed',notAllowed:'Enable Google sign-in in the Firebase console',domain:'This domain is not authorized',network:'Network error. Please try again',fail:'Sign-in failed',slow:'Taking longer than usual. Check your connection and tap the button to retry.',redirectFail:'Sign-in didn\'t complete. Allow pop-ups and try again.',inApp:'Google sign-in is blocked inside KakaoTalk/Instagram. Open this page in Safari or Chrome.',iosApp:'Sign-in may not work in the installed app. If it fails, open ug.sanghak.kr in Safari.'}};
-  var UI_KO={t:{out:'로그아웃됐어요',inSuffix:'님, 로그인됐어요',installed:'앱으로 설치됐어요',closed:'로그인 창이 닫혔어요',notAllowed:'Firebase 콘솔에서 Google 로그인을 켜 주세요',domain:'허용되지 않은 도메인이에요',network:'네트워크 오류예요. 다시 시도해 주세요',fail:'로그인에 실패했어요',slow:'연결이 평소보다 느려요. 인터넷을 확인하고 버튼을 눌러 다시 시도해 주세요.',redirectFail:'로그인이 완료되지 않았어요. 팝업 차단을 해제하고 다시 시도해 주세요.',inApp:'카카오톡·인스타그램 안 브라우저에서는 Google 로그인이 막혀 있어요. 오른쪽 위 메뉴에서 \'다른 브라우저로 열기\'를 눌러 주세요.',iosApp:'홈 화면에 설치한 앱에서는 Google 로그인이 안 될 수 있어요. 안 되면 Safari에서 ug.sanghak.kr을 열어 로그인해 주세요.'},langBtn:'EN'};
+    t:{out:'Signed out',inSuffix:', signed in',installed:'Installed as an app',closed:'Sign-in window was closed',notAllowed:'Enable Google sign-in in the Firebase console',domain:'This domain is not authorized',network:'Network error. Please try again',fail:'Sign-in failed',slow:'Taking longer than usual. Check your connection and tap the button to retry.',redirectFail:'Sign-in didn\'t complete. Allow pop-ups and try again.',timeout:'The sign-in window didn\'t respond. Try again, or open the site in Safari/Chrome.',openExternal:'Open in browser',inApp:'Google sign-in is blocked inside KakaoTalk/Instagram. Open this page in Safari or Chrome.',iosApp:'Sign-in may not work in the installed app. If it fails, open ug.sanghak.kr in Safari.'}};
+  var UI_KO={t:{out:'로그아웃됐어요',inSuffix:'님, 로그인됐어요',installed:'앱으로 설치됐어요',closed:'로그인 창이 닫혔어요',notAllowed:'Firebase 콘솔에서 Google 로그인을 켜 주세요',domain:'허용되지 않은 도메인이에요',network:'네트워크 오류예요. 다시 시도해 주세요',fail:'로그인에 실패했어요',slow:'연결이 평소보다 느려요. 인터넷을 확인하고 버튼을 눌러 다시 시도해 주세요.',redirectFail:'로그인이 완료되지 않았어요. 팝업 차단을 해제하고 다시 시도해 주세요.',timeout:'로그인 창이 응답하지 않아요. 다시 시도하거나 Safari·Chrome에서 열어 주세요.',openExternal:'외부 브라우저로 열기',inApp:'카카오톡·인스타그램 안 브라우저에서는 Google 로그인이 막혀 있어요. 오른쪽 위 메뉴에서 \'다른 브라우저로 열기\'를 눌러 주세요.',iosApp:'홈 화면에 설치한 앱에서는 Google 로그인이 안 될 수 있어요. 안 되면 Safari에서 ug.sanghak.kr을 열어 로그인해 주세요.'},langBtn:'EN'};
   var LANG='ko',EN=null,enLoading=null,langBtn=document.getElementById('langBtn');
   window.T=function(k){return ((typeof LANG!=='undefined'&&LANG==='en')?UI_EN:UI_KO).t[k];};
   function loadEn(){if(EN)return Promise.resolve(EN);if(!enLoading)enLoading=fetch('./i18n/en.json').then(function(r){return r.json();}).then(function(j){EN=j;return j;});return enLoading;}
@@ -2062,11 +2062,9 @@ body.locked{min-height:100vh;min-height:100dvh;display:flex;flex-direction:colum
 })();
 </script>
 <!-- Firebase: Analytics · Google 로그인 -->
-<script type="module">
+<script type="module" onerror="if(window.__setGate){window.__setGate('error',window.T?T('slow'):'');}">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-  import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
   import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
-  import { getFirestore, collection, addDoc, doc, setDoc, serverTimestamp, increment } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
   const firebaseConfig = {
     apiKey: "AIzaSyBW7-KrHVUbxsQhrKSj52Oq9tCK-DRSnkc",
     authDomain: "ui-guide-d84db.firebaseapp.com",
@@ -2077,7 +2075,7 @@ body.locked{min-height:100vh;min-height:100dvh;display:flex;flex-direction:colum
     measurementId: "G-CX6E38PVJV"
   };
   const app = initializeApp(firebaseConfig);
-  isSupported().then(ok => { if (ok) getAnalytics(app); }).catch(() => {});
+  import('https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js').then(m => m.isSupported().then(ok => { if (ok) m.getAnalytics(app); })).catch(() => {});
 
   // ── Google 로그인 ──
   const auth = getAuth(app);
@@ -2090,12 +2088,13 @@ body.locked{min-height:100vh;min-height:100dvh;display:flex;flex-direction:colum
   const fail = e => showToast(MSG[e.code] ? T(MSG[e.code]) : (T('fail') + ' (' + (e.code || e.message) + ')'));
 
   // ── 방문 기록 (Firestore): 로그인한 사용자만, 페이지 로드당 1회 ──
-  const db = getFirestore(app);
   const ADMIN_EMAILS = ['totoriverce@gmail.com'];
   let visitLogged = false;
   async function logVisit(user) {
     if (visitLogged) return; visitLogged = true;
     try {
+      const { getFirestore, collection, addDoc, doc, setDoc, serverTimestamp, increment } = await import('https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js');
+      const db = getFirestore(app);
       const geo = await (window.__geoReady || Promise.resolve({}));
       const base = { uid: user.uid, email: user.email || '', name: user.displayName || '', country: (geo && geo.country) || '' };
       const lang = document.documentElement.lang || 'ko';
@@ -2112,13 +2111,14 @@ body.locked{min-height:100vh;min-height:100dvh;display:flex;flex-direction:colum
 
   async function doLogin(btn) {
     btn.disabled = true; btn.setAttribute('aria-busy', 'true');
-    try { await signInWithPopup(auth, provider); }
+    const timeout = new Promise((_, rej) => setTimeout(() => rej({ code: 'auth/timeout' }), 45000));
+    try { await Promise.race([signInWithPopup(auth, provider), timeout]); }
     catch (e) {
       if (e.code === 'auth/popup-blocked' || e.code === 'auth/operation-not-supported-in-this-environment') {
         try { sessionStorage.setItem('ui-redirect', '1'); await signInWithRedirect(auth, provider); } catch (e2) { sessionStorage.removeItem('ui-redirect'); fail(e2); }
-      } else fail(e);
-    }
-    btn.disabled = false; btn.removeAttribute('aria-busy');
+      } else if (e.code === 'auth/timeout') { showToast(T('timeout')); if (window.__authEnv.iosStandalone) setGate('locked', T('iosApp')); }
+      else fail(e);
+    } finally { btn.disabled = false; btn.removeAttribute('aria-busy'); }
   }
   window.__doLogin = doLogin;
   loginBtn.addEventListener('click', () => doLogin(loginBtn));
