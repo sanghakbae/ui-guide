@@ -6,6 +6,8 @@
 <title>관리자 · UI 용어 사전</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" id="themeColor" content="#F3F2EE">
+<script>try{var t=localStorage.getItem('ui-theme');if(t){document.documentElement.setAttribute('data-theme',t);var m=document.getElementById('themeColor');if(m)m.content=t==='dark'?'#121212':'#F3F2EE';}}catch(e){}</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" crossorigin="anonymous">
 <style>
 :root{--bg:#F3F2EE;--card:#FFFFFF;--stage:#FAFAF8;--line:#E6E5E0;--soft:#EDECE8;--soft2:#DDDCD6;--ink:#1A1A1A;--ink2:#4A4A48;--muted:#8C8B86;--red:#B93A2F;--green:#2E6B4E}
@@ -27,7 +29,7 @@ a{color:inherit}
 .btn.light{background:#fff;color:#1f1f1f;border:1px solid #dadce0;font-weight:500}
 .btn.ghost{background:transparent;color:var(--ink2);border:1px solid var(--line)}
 .glogo{width:16px;height:16px}
-main{width:100%;max-width:2560px;margin:0 auto;padding:28px clamp(16px,3vw,48px) 80px}
+main{width:100%;margin:0;padding:28px clamp(16px,3vw,48px) 80px}
 h1{font-size:24px;font-weight:800;letter-spacing:-.02em;margin:0 0 4px}
 .sub{color:var(--muted);font-size:13.5px;margin:0 0 22px}
 .gate{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;gap:14px;color:var(--muted);font-size:14px}
@@ -139,7 +141,6 @@ details summary{cursor:pointer}
   </div>
 </main>
 
-<script>try{var t=localStorage.getItem('ui-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
   import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
