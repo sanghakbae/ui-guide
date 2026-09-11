@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>UI 용어 사전</title>
-<meta name="description" content="화면 만들 때 쓰는 UI 용어 106개를 그림과 한 줄 설명으로 정리했어요. AI한테 화면을 설명할 때 그대로 쓰세요.">
+<meta name="description" content="화면 만들 때 쓰는 UI 용어 156개를 그림과 한 줄 설명으로 정리했어요. AI한테 화면을 설명할 때 그대로 쓰세요.">
 <meta property="og:title" content="UI 용어 사전">
-<meta property="og:description" content="화면 만들 때 쓰는 UI 용어 106개, 그림으로 한 번에.">
+<meta property="og:description" content="화면 만들 때 쓰는 UI 용어 156개, 그림으로 한 번에.">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" id="themeColor" content="#F3F2EE">
 <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
@@ -296,6 +296,100 @@ html[data-theme="dark"] .btn.active{background:#c8c8c8}
 .btn.focus{outline:3px solid color-mix(in srgb,var(--ink) 25%,transparent);outline-offset:2px}
 .btn.disabled{background:var(--soft2);color:var(--muted)}
 
+/* ── 추가 부품 ── */
+.tabs{display:flex;border-bottom:1px solid var(--line);width:100%;max-width:280px;font-size:13px;background:var(--card);border-radius:10px 10px 0 0}
+.tabs span{padding:9px 14px;color:var(--muted)}
+.tabs span.on{color:var(--ink);font-weight:700;border-bottom:2px solid var(--ink);margin-bottom:-1px}
+.pager{display:flex;gap:6px;align-items:center;font-size:13px}
+.pager span{min-width:30px;height:30px;padding:0 4px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;color:var(--muted);border:1px solid transparent}
+.pager span.on{background:var(--ink);color:var(--card);font-weight:700}
+.pager span.nav{border-color:var(--line);background:var(--card)}
+.burger{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--card);display:inline-flex;flex-direction:column;gap:5px;align-items:center;justify-content:center}
+.burger i{width:18px;height:2px;background:var(--ink);border-radius:2px;display:block}
+.crumb{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.crumb b{color:var(--ink)}
+.tabbar{width:100%;max-width:250px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 6px;display:flex;justify-content:space-around}
+.tabbar div{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:var(--muted)}
+.tabbar div.on{color:var(--ink);font-weight:700}
+.tabbar .icon{width:20px;height:20px}
+.acc{width:100%;max-width:280px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13px;text-align:left}
+.acc div{padding:10px 14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--ink)}
+.acc div:first-child{border-top:0}
+.acc div.open{font-weight:700}
+.acc p{margin:0;padding:0 14px 11px;color:var(--muted);font-size:12.5px;line-height:1.5}
+.steps{display:flex;align-items:flex-start;font-size:11px}
+.steps div{display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);width:66px}
+.steps div i{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--soft2);background:var(--card);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;font-weight:700}
+.steps div.done i{background:var(--ink);border-color:var(--ink);color:var(--card)}
+.steps div.cur{color:var(--ink);font-weight:700}
+.steps div.cur i{border-color:var(--ink);color:var(--ink)}
+.steps hr{border:0;border-top:1.5px solid var(--soft2);width:34px;margin:13px -14px 0}
+.carousel{width:100%;max-width:280px}
+.carousel .track{display:flex;gap:8px;overflow:hidden}
+.carousel .track i{flex:0 0 80%;height:84px;border-radius:10px;background:var(--soft);display:block}
+.carousel .track i:nth-child(2){background:var(--soft2)}
+.dots{display:flex;gap:5px;justify-content:center;margin-top:8px}
+.dots i{width:6px;height:6px;border-radius:3px;background:var(--soft2);display:block}
+.dots i.on{background:var(--ink);width:16px}
+.drawerdemo{width:100%;max-width:250px;height:126px;position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.drawerdemo .dimm{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.drawerdemo .panel{position:absolute;top:0;bottom:0;left:0;width:56%;background:var(--card);padding:12px;display:grid;gap:8px;align-content:start;box-shadow:4px 0 16px rgba(0,0,0,.15)}
+.kebab{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:var(--card);display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1;font-weight:700}
+.dd{width:150px;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.1);font-size:13px;overflow:hidden;text-align:left}
+.dd div{padding:8px 12px}
+.dd div.on{background:var(--soft);font-weight:600}
+.dd div.danger{color:var(--red);border-top:1px solid var(--line)}
+.social{display:grid;gap:6px;width:100%;max-width:220px}
+.social span{display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:8px;font-size:12.5px;font-weight:600}
+.pcard{width:150px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:12px;text-align:left}
+.pcard .img{height:84px;background:var(--soft);position:relative}
+.pcard .body{padding:10px}
+.pcard .body small{color:var(--muted);font-size:11px}
+.price{font-weight:800;font-size:15px}
+.price s{color:var(--muted);font-weight:400;font-size:11px;margin-right:4px}
+.price em{color:var(--red);font-style:normal;font-size:12px;margin-right:4px}
+.bars{width:100%;max-width:200px;font-size:11px;display:grid;gap:5px}
+.bars div{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.bars div i{flex:1;height:6px;background:var(--soft);border-radius:3px;overflow:hidden;display:block}
+.bars div i::after{content:"";display:block;height:100%;background:var(--ink);width:var(--w)}
+.coupon{display:flex;width:100%;max-width:250px;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.coupon .l{flex:1;padding:12px 14px;text-align:left}
+.coupon .l b{font-size:17px;display:block}
+.coupon .l small{color:var(--muted);font-size:11px}
+.coupon .r{width:56px;border-left:1.5px dashed var(--soft2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.toc{font-size:12.5px;text-align:left;display:grid;gap:6px;color:var(--muted)}
+.toc b{color:var(--ink)}
+.toc .sub{padding-left:14px}
+.featg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:290px}
+.featg div{text-align:center;font-size:11px;color:var(--muted)}
+.featg div i{display:block;width:32px;height:32px;border-radius:10px;background:var(--soft);margin:0 auto 6px}
+.featg div b{display:block;color:var(--ink);font-size:12px}
+.cmp{width:100%;max-width:260px;font-size:12px;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.cmp th,.cmp td{padding:7px 10px;border-top:1px solid var(--line);text-align:center}
+.cmp th{background:var(--soft);color:var(--muted);font-weight:500;border-top:0}
+.cmp td:first-child{text-align:left;color:var(--muted)}
+.cmp .us{font-weight:700}
+.cd{display:flex;gap:8px}
+.cd div{background:var(--ink);color:var(--card);border-radius:8px;width:46px;padding:8px 0 6px;text-align:center;font-weight:800;font-size:18px;line-height:1}
+.cd div small{display:block;font-size:9px;font-weight:400;opacity:.7;margin-top:5px}
+.team{display:flex;gap:16px}
+.team div{text-align:center;font-size:11px;color:var(--muted)}
+.team div b{display:block;color:var(--ink);font-size:12px;margin-top:6px}
+.ali{width:100%;max-width:240px;display:grid;gap:6px}
+.ali div{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:6px 8px;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted)}
+.ali div i{width:70px;height:8px;border-radius:4px;background:var(--ink);display:block}
+.hscroll{width:100%;max-width:280px;display:flex;gap:8px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,#000 75%,transparent);mask-image:linear-gradient(90deg,#000 75%,transparent)}
+.hscroll i{flex:0 0 96px;height:72px;border-radius:10px;background:var(--soft);display:block}
+.stack3{position:relative;width:140px;height:110px}
+.stack3 div{position:absolute;width:90px;height:64px;border-radius:10px;border:1px solid var(--line);background:var(--card);display:flex;align-items:flex-end;justify-content:flex-end;padding:6px;font-size:11px;font-weight:700;color:var(--muted)}
+.tsize{display:flex;align-items:baseline;gap:18px;font-weight:700;line-height:1}
+.tsize div{text-align:center}
+.tsize small{display:block;font-weight:400;font-size:10px;color:var(--muted);margin-top:8px}
+.hier{text-align:left;width:100%;max-width:240px}
+.hier .h1{font-size:20px;font-weight:800;line-height:1.2}
+.hier .h2{font-size:14px;font-weight:700;margin-top:6px}
+.hier .b{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
+
 /* ── 푸터 · FAB ── */
 footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 20px 60px;color:var(--muted);font-size:12.5px;text-align:center}
 footer a{text-decoration:none;color:var(--ink2)}
@@ -336,7 +430,7 @@ footer a{text-decoration:none;color:var(--ink2)}
   <div class="wrap top-in">
     <a class="logo" href="#"><i></i>UI 용어 사전</a>
     <nav class="gnb" id="gnb">
-      <a href="#layout">레이아웃</a><a href="#button">버튼</a><a href="#form">폼</a><a href="#state">상태</a><a href="#element">작은 요소</a><a href="#feedback">피드백</a><a href="#content">콘텐츠</a><a href="#concept">개념</a>
+      <a href="#layout">레이아웃</a><a href="#nav">내비게이션</a><a href="#button">버튼</a><a href="#form">폼</a><a href="#state">상태</a><a href="#element">작은 요소</a><a href="#feedback">피드백</a><a href="#content">콘텐츠</a><a href="#commerce">커머스</a><a href="#concept">개념</a>
     </nav>
     <div class="theme"><span>다크 모드</span><button class="switch" id="themeBtn" aria-label="다크 모드 켜기/끄기"></button></div>
     <button class="btn sm light" id="installBtn" hidden>앱 설치</button>
@@ -354,14 +448,14 @@ footer a{text-decoration:none;color:var(--ink2)}
 <section class="hero">
   <h1>화면 만들 때 쓰는 말들,<br class="mo"> 그림으로 한 번에</h1>
   <p>디자이너·개발자·AI한테 화면을 설명하려면 이름을 알아야 해요. 이름을 아는 순간 수정 요청이 한 번에 통해요.</p>
-  <div class="meta"><span>8개 카테고리</span><span>106개 용어</span><span>한국어 · 영어 병기</span></div>
+  <div class="meta"><span>10개 카테고리</span><span>156개 용어</span><span>한국어 · 영어 병기</span></div>
 </section>
 
 <div class="wrap">
   <div class="search">
     <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
     <input id="q" type="search" placeholder="용어 검색 · 예) 토스트, hover, 여백" autocomplete="off">
-    <span class="count" id="count">106개</span>
+    <span class="count" id="count">156개</span>
   </div>
   <div class="empty" id="empty"><b>검색 결과가 없어요</b>다른 말로 찾아보세요. 영어로 쳐도 돼요.</div>
 
@@ -513,6 +607,115 @@ footer a{text-decoration:none;color:var(--ink2)}
     </div>
   </section>
 
+
+  <!-- ══════════════ 내비게이션 ══════════════ -->
+  <section class="sec" id="nav">
+    <div class="sec-h"><h2>내비게이션</h2><span>Navigation</span></div>
+    <p class="sec-p">돌아다니는 데 쓰는 것들. "여기서 저기로 어떻게 가는지"를 말할 때 쓰는 이름들이에요.</p>
+    <div class="grid">
+
+      <h4 class="grp">메뉴 <small>펼치고 숨기고</small></h4>
+
+      <article class="card" data-k="tabs 탭 전환">
+        <div class="ch"><h3>탭 <span>Tabs</span></h3></div>
+        <div class="cb"><div class="tabs"><span class="on">전체</span><span>디자인</span><span>개발</span></div><div class="frame" style="width:100%;max-width:280px;height:56px;border-top:0;border-radius:0 0 10px 10px;margin-top:-12px"></div>
+          <p class="cap">눌러서 내용만 바꾸는 메뉴</p>
+        </div>
+        <p class="desc">같은 자리에서 내용만 바꿔 보여주는 메뉴예요. 페이지 이동 없이 전환돼요.</p>
+      </article>
+
+      <article class="card" data-k="hamburger menu 햄버거 메뉴 줄 세 개 모바일 메뉴">
+        <div class="ch"><h3>햄버거 메뉴 <span>Hamburger Menu</span></h3></div>
+        <div class="cb"><div class="screen" style="max-width:220px"><div class="bar"><span class="sq"></span><span style="margin-left:auto;display:flex;flex-direction:column;gap:3px"><i style="width:14px;height:2px;background:var(--ink);border-radius:2px;display:block"></i><i style="width:14px;height:2px;background:var(--ink);border-radius:2px;display:block"></i><i style="width:14px;height:2px;background:var(--ink);border-radius:2px;display:block"></i></span></div></div><span class="burger"><i></i><i></i><i></i></span>
+          <p class="cap">줄 세 개(≡) 메뉴 버튼</p>
+        </div>
+        <p class="desc">모바일에서 메뉴를 숨겨 두는 줄 세 개 버튼이에요. 누르면 메뉴가 펼쳐져요.</p>
+      </article>
+
+      <article class="card" data-k="drawer side panel 드로어 옆에서 나오는 메뉴">
+        <div class="ch"><h3>드로어 <span>Drawer</span></h3></div>
+        <div class="cb"><div class="drawerdemo"><div class="dimm"></div><div class="panel"><span class="ph" style="width:70%;background:var(--ink);height:12px"></span><span class="ph" style="width:80%"></span><span class="ph" style="width:60%"></span><span class="ph" style="width:75%"></span></div></div>
+          <p class="cap">옆에서 스르륵 나오는 메뉴 판</p>
+        </div>
+        <p class="desc">화면 옆에서 밀려 나오는 판이에요. 햄버거 메뉴를 누르면 보통 이게 열려요.</p>
+      </article>
+
+      <article class="card" data-k="dropdown menu 드롭다운 메뉴 펼침">
+        <div class="ch"><h3>드롭다운 메뉴 <span>Dropdown Menu</span></h3></div>
+        <div class="cb"><div style="text-align:left"><span class="btn sm light">정렬 ▾</span><div class="dd" style="margin-top:6px"><div class="on">최신순</div><div>인기순</div><div>가격순</div></div></div>
+          <p class="cap">버튼 아래로 펼쳐지는 메뉴</p>
+        </div>
+        <p class="desc">버튼을 누르면 아래로 펼쳐지는 목록이에요. 셀렉트와 비슷하지만 행동 메뉴로도 써요.</p>
+      </article>
+
+      <article class="card" data-k="kebab overflow menu 더보기 메뉴 점 세 개">
+        <div class="ch"><h3>더보기 메뉴 <span>Kebab / Overflow Menu</span></h3></div>
+        <div class="cb"><div style="display:flex;gap:10px;align-items:flex-start"><span class="kebab">⋮</span><div class="dd" style="width:120px"><div>수정</div><div>복사</div><div class="danger">삭제</div></div></div>
+          <p class="cap">점 세 개(⋮) 누르면 나오는 메뉴</p>
+        </div>
+        <p class="desc">자주 안 쓰는 행동을 점 세 개 뒤에 숨긴 메뉴예요. 수정·삭제가 주로 들어가요.</p>
+      </article>
+
+      <article class="card" data-k="accordion collapse 아코디언 펼치기 접기">
+        <div class="ch"><h3>아코디언 <span>Accordion</span></h3></div>
+        <div class="cb"><div class="acc"><div class="open">환불이 되나요? <span>˄</span></div><p>7일 안에는 전액 환불돼요.</p><div>결제 방법은요? <span>˅</span></div><div>세금계산서도 되나요? <span>˅</span></div></div>
+          <p class="cap">눌러서 펼치고 접는 목록</p>
+        </div>
+        <p class="desc">제목을 누르면 내용이 펼쳐지고 다시 누르면 접혀요. FAQ에 딱이에요.</p>
+      </article>
+
+      <h4 class="grp">위치 · 이동 <small>지금 어디인지, 어디로 갈지</small></h4>
+
+      <article class="card" data-k="breadcrumb 브레드크럼 경로 홈">
+        <div class="ch"><h3>브레드크럼 <span>Breadcrumb</span></h3></div>
+        <div class="cb"><div class="crumb">홈 <span>›</span> 강의 <span>›</span> <b>바이브코딩 입문</b></div>
+          <p class="cap">홈 > 카테고리 > 현재 페이지</p>
+        </div>
+        <p class="desc">지금 어디에 있는지 경로로 보여주는 거예요. 상위로 돌아가기 쉬워요.</p>
+      </article>
+
+      <article class="card" data-k="pagination 페이지네이션 페이지 번호 다음">
+        <div class="ch"><h3>페이지네이션 <span>Pagination</span></h3></div>
+        <div class="cb"><div class="pager"><span class="nav">‹</span><span class="on">1</span><span>2</span><span>3</span><span>…</span><span>12</span><span class="nav">›</span></div>
+          <p class="cap">1 2 3 … 다음 페이지 번호</p>
+        </div>
+        <p class="desc">긴 목록을 여러 페이지로 나누고 번호로 옮겨 다니는 거예요. 게시판에 흔해요.</p>
+      </article>
+
+      <article class="card" data-k="stepper steps 단계 표시 진행 단계">
+        <div class="ch"><h3>단계 표시 <span>Stepper</span></h3></div>
+        <div class="cb"><div class="steps"><div class="done"><i>✓</i>정보 입력</div><hr><div class="cur"><i>2</i>결제</div><hr><div><i>3</i>완료</div></div>
+          <p class="cap">1단계 → 2단계 → 3단계</p>
+        </div>
+        <p class="desc">여러 단계 중 지금 어디인지 보여줘요. 회원가입, 주문 과정에 써요.</p>
+      </article>
+
+      <article class="card" data-k="bottom tab bar navigation 하단 탭바 앱 하단 메뉴">
+        <div class="ch"><h3>하단 탭바 <span>Bottom Tab Bar</span></h3></div>
+        <div class="cb"><div class="tabbar"><div class="on"><svg viewBox="0 0 24 24" class="icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>홈</div><div><svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>검색</div><div><svg viewBox="0 0 24 24" class="icon"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>알림</div><div><svg viewBox="0 0 24 24" class="icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>내 정보</div></div>
+          <p class="cap">폰 맨 아래 아이콘 메뉴 줄</p>
+        </div>
+        <p class="desc">앱 화면 맨 아래 붙는 아이콘 메뉴예요. 보통 3~5개, 엄지로 누르기 좋아요.</p>
+      </article>
+
+      <article class="card" data-k="carousel slider swiper 캐러셀 슬라이드 배너">
+        <div class="ch"><h3>캐러셀 <span>Carousel</span></h3></div>
+        <div class="cb"><div class="carousel"><div class="track"><i></i><i></i></div><div class="dots"><i class="on"></i><i></i><i></i></div></div>
+          <p class="cap">옆으로 넘기는 슬라이드 배너</p>
+        </div>
+        <p class="desc">여러 장을 옆으로 넘겨 보는 거예요. 아래 점(●○○)이 몇 번째인지 알려줘요.</p>
+      </article>
+
+      <article class="card" data-k="filter sort 필터 정렬 거르기 순서">
+        <div class="ch"><h3>필터 · 정렬 <span>Filter / Sort</span></h3></div>
+        <div class="cb"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center"><span class="chip on">전체</span><span class="chip">무료</span><span class="chip">유료</span><span class="chip gray" style="margin-left:6px">최신순 ▾</span></div>
+          <p class="cap">조건으로 거르고 순서 바꾸기</p>
+        </div>
+        <p class="desc">필터는 조건에 맞는 것만 남기고, 정렬은 순서를 바꿔요. 목록 위에 같이 둬요.</p>
+      </article>
+    </div>
+  </section>
+
   <!-- ══════════════ 버튼 ══════════════ -->
   <section class="sec" id="button">
     <div class="sec-h"><h2>버튼</h2><span>Button</span></div>
@@ -591,6 +794,23 @@ footer a{text-decoration:none;color:var(--ink2)}
           <p class="cap">버튼 여러 개를 붙여놓은 것</p>
         </div>
         <p class="desc">관련 있는 버튼을 한 줄로 붙여 놓은 거예요. 보기 방식을 바꿀 때 많이 써요.</p>
+      </article>
+
+      <h4 class="grp">가입 · 상담 <small>외부 서비스와 이어지는 버튼</small></h4>
+
+      <article class="card" data-k="social login 소셜 로그인 버튼 카카오 네이버 구글">
+        <div class="ch"><h3>소셜 로그인 버튼 <span>Social Login</span></h3></div>
+        <div class="cb"><div class="social"><span style="background:#fff;color:#1a1a1a;border:1px solid #e6e5e0"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1C3.3 21.3 7.3 24 12 24z"/><path fill="#FBBC05" d="M5.3 14.3c-.2-.7-.4-1.5-.4-2.3s.1-1.6.4-2.3V6.6H1.3C.5 8.2 0 10 0 12s.5 3.8 1.3 5.4l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4C18 1.2 15.2 0 12 0 7.3 0 3.3 2.7 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>Google로 시작하기</span><span style="background:#FEE500;color:#191919">카카오로 시작하기</span><span style="background:#03C75A;color:#fff">네이버로 시작하기</span></div>
+          <p class="cap">카카오 노랑 · 네이버 초록 · Google 흰색</p>
+        </div>
+        <p class="desc">다른 서비스 계정으로 바로 로그인하는 버튼이에요. 각 브랜드 색을 그대로 써요.</p>
+      </article>
+
+      <article class="card" data-k="chat widget live chat 채팅 상담 버튼 카카오 채널 채널톡">
+        <div class="ch"><h3>채팅 상담 버튼 <span>Chat Widget</span></h3></div>
+        <div class="cb stretch" style="justify-content:flex-start;gap:8px"><span class="ph" style="width:85%"></span><span class="ph" style="width:70%"></span><span class="ph" style="width:78%"></span><span class="fab" style="position:absolute;right:18px;bottom:18px;background:#FEE500;color:#191919"><svg viewBox="0 0 24 24" class="icon" style="width:22px;height:22px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        </div>
+        <p class="desc">화면 구석에 떠 있는 상담 버튼이에요. 누르면 채팅창이 열려요. 카카오 채널, 채널톡이 대표예요.</p>
       </article>
     </div>
   </section>
@@ -824,6 +1044,32 @@ footer a{text-decoration:none;color:var(--ink2)}
         <div class="ch"><h3>제출 <span>Submit</span></h3></div>
         <div class="cb"><span class="btn">보내기</span><div style="font-size:13px;color:var(--green);display:flex;gap:6px;align-items:center"><span class="dot" style="width:16px;height:16px;background:var(--green);color:#fff;font-size:10px;display:inline-flex;align-items:center;justify-content:center">✓</span>신청 완료됐어요</div><p class="cap">폼 내용을 보내는 것</p></div>
         <p class="desc">폼에 적은 내용을 서버로 보내는 행동이에요. 보내기 버튼이 제출 버튼이에요.</p>
+      </article>
+
+      <h4 class="grp">한국식 가입 · 주문 <small>한국 서비스에서 꼭 나오는 칸</small></h4>
+
+      <article class="card" data-k="terms agreement 약관 전체 동의 필수 선택 체크">
+        <div class="ch"><h3>약관 전체 동의 <span>Terms Agreement</span></h3></div>
+        <div class="cb"><div class="field" style="max-width:230px"><div class="check" style="font-weight:700;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:4px"><i class="on">✓</i>전체 동의</div><div class="check"><i class="on">✓</i><span><span style="color:var(--red)">[필수]</span> 이용약관</span></div><div class="check"><i class="on">✓</i><span><span style="color:var(--red)">[필수]</span> 개인정보 수집</span></div><div class="check"><i></i><span><span style="color:var(--muted)">[선택]</span> 마케팅 수신</span></div></div>
+          <p class="cap">전체 동의 + [필수] [선택] 체크</p>
+        </div>
+        <p class="desc">가입할 때 약관을 한 번에 또는 하나씩 동의하는 칸이에요. 필수·선택을 구분해요.</p>
+      </article>
+
+      <article class="card" data-k="identity verification 본인인증 휴대폰 인증 PASS 통신사">
+        <div class="ch"><h3>본인인증 <span>Identity Verification</span></h3></div>
+        <div class="cb"><div class="field" style="max-width:250px"><div class="row" style="justify-content:flex-start;gap:6px;margin-bottom:8px"><span class="chip on xs" style="padding:4px 10px">SKT</span><span class="chip xs" style="padding:4px 10px">KT</span><span class="chip xs" style="padding:4px 10px">LG U+</span></div><div class="input p" style="margin-bottom:8px">휴대폰 번호</div><span class="btn block sm">인증번호 받기</span></div>
+          <p class="cap">통신사 선택 → 휴대폰 인증</p>
+        </div>
+        <p class="desc">휴대폰 번호로 진짜 본인인지 확인하는 절차예요. 한국 서비스 가입에 흔해요.</p>
+      </article>
+
+      <article class="card" data-k="address search postcode 주소 찾기 우편번호 검색">
+        <div class="ch"><h3>주소 찾기 <span>Address Search</span></h3></div>
+        <div class="cb"><div class="field" style="max-width:250px"><div style="display:flex;gap:6px;margin-bottom:6px"><div class="input" style="flex:1">06236</div><span class="btn sm light" style="white-space:nowrap">주소 찾기</span></div><div class="input" style="margin-bottom:6px">서울 강남구 테헤란로 152</div><div class="input p">상세 주소</div></div>
+          <p class="cap">우편번호 찾기 → 주소 자동 입력</p>
+        </div>
+        <p class="desc">우편번호를 검색하면 주소가 자동으로 채워지는 칸이에요. 상세 주소만 직접 써요.</p>
       </article>
     </div>
   </section>
@@ -1078,6 +1324,30 @@ footer a{text-decoration:none;color:var(--ink2)}
         <div class="cb"><div style="text-align:center"><div style="width:40px;height:40px;border:1.5px dashed var(--soft2);border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center"><span style="width:14px;height:14px;border:1.5px solid var(--soft2);border-radius:3px"></span></div><b style="font-size:14px">아직 신청이 없어요</b><div style="font-size:12px;color:var(--muted);margin:2px 0 10px">링크를 공유해보세요</div><span class="btn xs" style="padding:6px 12px;font-size:12px">링크 복사</span></div><p class="cap">비었을 때 보여주는 화면</p></div>
         <p class="desc">아무것도 없을 때 보여주는 화면이에요. 빈 채로 두지 말고 다음 할 일을 알려줘요.</p>
       </article>
+
+      <h4 class="grp">한국 웹에서 흔한 것 <small>들어오자마자 뜨는 것들</small></h4>
+
+      <article class="card" data-k="promo popup 팝업 배너 이벤트 팝업 오늘 하루 보지 않기">
+        <div class="ch"><h3>팝업 배너 <span>Promo Popup</span></h3></div>
+        <div class="cb tight"><div class="dim"></div><div class="dialog" style="padding:12px 14px 10px;width:170px"><div class="box" style="height:56px;margin-bottom:8px;background:#edece8"></div><b style="font-size:13px">9월 무료 이벤트</b><div style="display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:#888;margin-top:8px"><span>☐ 오늘 하루 보지 않기</span><span>닫기 ✕</span></div></div>
+        </div>
+        <p class="desc">들어오자마자 뜨는 이벤트 창이에요. "오늘 하루 보지 않기"를 꼭 같이 둬요.</p>
+      </article>
+
+      <article class="card" data-k="app install banner smart banner 앱 설치 배너 앱으로 보기">
+        <div class="ch"><h3>앱 설치 배너 <span>App Install Banner</span></h3></div>
+        <div class="cb stretch" style="justify-content:flex-start;gap:8px"><div class="frame" style="width:100%;display:flex;align-items:center;gap:8px;padding:8px 10px;font-size:11.5px"><span class="sq" style="width:26px;height:26px;border-radius:7px"></span><span style="flex:1;text-align:left"><b>앱에서 더 편하게</b><br><span style="color:var(--muted);font-size:10.5px">알림 · 오프라인 지원</span></span><span class="btn xs">앱 열기</span><span style="color:var(--muted)">✕</span></div><span class="ph" style="width:80%"></span><span class="ph" style="width:65%"></span>
+          <p class="cap">'앱으로 보기' 상단 띠</p>
+        </div>
+        <p class="desc">모바일 웹 위에 뜨는 앱 설치 유도 띠예요. 닫으면 다시 안 떠야 해요.</p>
+      </article>
+
+      <article class="card" data-k="share sheet 공유 시트 공유하기 카톡 링크 복사">
+        <div class="ch"><h3>공유 시트 <span>Share Sheet</span></h3></div>
+        <div class="cb tight" style="justify-content:flex-end;align-items:stretch"><div class="dim"></div><div style="position:relative;background:var(--card);border-radius:14px 14px 0 0;padding:8px 16px 16px;margin-top:auto"><div style="width:32px;height:4px;border-radius:2px;background:var(--soft2);margin:0 auto 10px"></div><div style="font-size:13px;font-weight:700;margin-bottom:10px">공유하기</div><div style="display:flex;justify-content:space-around;font-size:10px;color:var(--muted)"><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:#FEE500;display:block;margin:0 auto 4px"></span>카카오톡</div><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:var(--soft);display:block;margin:0 auto 4px"></span>링크 복사</div><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:var(--soft);display:block;margin:0 auto 4px"></span>문자</div><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:var(--soft);display:block;margin:0 auto 4px"></span>더보기</div></div></div>
+        </div>
+        <p class="desc">공유 버튼을 누르면 아래에서 올라오는 창이에요. 바텀 시트의 한 종류예요.</p>
+      </article>
     </div>
   </section>
 
@@ -1180,6 +1450,148 @@ footer a{text-decoration:none;color:var(--ink2)}
         <div class="ch"><h3>배너 <span>Banner</span></h3></div>
         <div class="cb stretch" style="justify-content:flex-start"><div class="banner" style="max-width:none">9월 한정 무료로 열려 있어요<span>✕</span></div><div class="frame" style="flex:1;min-height:60px"></div><p class="cap">위에 붙는 공지 띠</p></div>
         <p class="desc">페이지 위에 붙이는 공지 띠예요. 닫기 버튼을 꼭 같이 둬요.</p>
+      </article>
+
+      <h4 class="grp">랜딩 페이지 블록 <small>"○○ 섹션 넣어줘"라고 말하는 것들</small></h4>
+
+      <article class="card" data-k="faq 자주 묻는 질문 FAQ 섹션">
+        <div class="ch"><h3>FAQ <span>FAQ</span></h3></div>
+        <div class="cb"><div class="acc"><div class="open">Q. 코딩 몰라도 되나요? <span>˄</span></div><p>네, 말로 설명만 하면 돼요.</p><div>Q. 얼마나 걸리나요? <span>˅</span></div><div>Q. 환불되나요? <span>˅</span></div></div>
+          <p class="cap">질문 누르면 답이 펼쳐짐</p>
+        </div>
+        <p class="desc">자주 묻는 질문을 아코디언으로 모아둔 섹션이에요. 문의를 줄여줘요.</p>
+      </article>
+
+      <article class="card" data-k="feature grid 기능 소개 섹션 아이콘 제목 설명">
+        <div class="ch"><h3>기능 소개 <span>Feature Grid</span></h3></div>
+        <div class="cb"><div class="featg"><div><i></i><b>빠름</b>10분이면 끝</div><div><i></i><b>쉬움</b>말로 하면 됨</div><div><i></i><b>무료</b>기본 기능 0원</div></div>
+          <p class="cap">아이콘+제목+설명 3개 나란히</p>
+        </div>
+        <p class="desc">아이콘, 제목, 한 줄 설명을 세 개쯤 나란히 놓는 섹션이에요. 랜딩 페이지의 기본이에요.</p>
+      </article>
+
+      <article class="card" data-k="how it works steps 단계 안내 사용 방법 순서">
+        <div class="ch"><h3>단계 안내 <span>How It Works</span></h3></div>
+        <div class="cb"><div class="steps"><div class="done"><i>1</i>가입하기</div><hr><div class="done"><i>2</i>링크 공유</div><hr><div class="done"><i>3</i>신청 받기</div></div>
+          <p class="cap">1·2·3 번호 붙은 순서</p>
+        </div>
+        <p class="desc">어떻게 쓰는지 3단계로 보여주는 섹션이에요. 번호 동그라미가 포인트예요.</p>
+      </article>
+
+      <article class="card" data-k="comparison table 비교표 경쟁 비교 체크">
+        <div class="ch"><h3>비교표 <span>Comparison Table</span></h3></div>
+        <div class="cb"><table class="cmp"><tr><th></th><th class="us" style="color:var(--ink)">우리</th><th>남들</th></tr><tr><td>무제한 제작</td><td class="us up">✓</td><td class="down">✕</td></tr><tr><td>한국어 지원</td><td class="us up">✓</td><td class="down">✕</td></tr><tr><td>월 요금</td><td class="us">9,900원</td><td>19,000원</td></tr></table>
+          <p class="cap">우리 vs 남들 체크 표</p>
+        </div>
+        <p class="desc">경쟁 서비스와 기능을 ✓ ✕로 비교하는 표예요. 우리 쪽 열을 강조해요.</p>
+      </article>
+
+      <article class="card" data-k="table of contents 목차 toc 소제목">
+        <div class="ch"><h3>목차 <span>Table of Contents</span></h3></div>
+        <div class="cb"><div class="toc"><b>1. 시작하기</b><span>2. 화면 만들기</span><span class="sub">· 버튼</span><span class="sub">· 폼</span><span>3. 배포하기</span></div>
+          <p class="cap">소제목 목록, 누르면 이동</p>
+        </div>
+        <p class="desc">긴 글의 소제목을 모아 놓은 목록이에요. 누르면 그 부분으로 바로 이동해요.</p>
+      </article>
+
+      <article class="card" data-k="newsletter signup 뉴스레터 구독 이메일 구독">
+        <div class="ch"><h3>뉴스레터 구독 <span>Newsletter Signup</span></h3></div>
+        <div class="cb"><div class="field" style="max-width:270px;text-align:center"><div style="font-size:13px;font-weight:700;margin-bottom:8px">매주 팁을 받아보세요</div><div style="display:flex;gap:6px"><div class="input p" style="flex:1">이메일 주소</div><span class="btn sm">구독</span></div></div>
+          <p class="cap">이메일 칸+구독 버튼 한 줄</p>
+        </div>
+        <p class="desc">이메일 하나만 받는 짧은 폼이에요. 푸터나 글 끝에 둬요.</p>
+      </article>
+
+      <article class="card" data-k="countdown timer 카운트다운 남은 시간 마감">
+        <div class="ch"><h3>카운트다운 <span>Countdown</span></h3></div>
+        <div class="cb"><div class="cd"><div>02<small>일</small></div><div>14<small>시간</small></div><div>37<small>분</small></div><div>09<small>초</small></div></div>
+          <p class="cap">남은 시간이 줄어드는 숫자</p>
+        </div>
+        <p class="desc">마감까지 남은 시간을 실시간으로 보여줘요. 이벤트, 얼리버드에 써요.</p>
+      </article>
+
+      <article class="card" data-k="video embed 비디오 임베드 유튜브 영상">
+        <div class="ch"><h3>비디오 임베드 <span>Video Embed</span></h3></div>
+        <div class="cb"><div style="width:100%;max-width:220px;aspect-ratio:16/9;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center"><span style="width:0;height:0;border-left:18px solid var(--card);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px"></span></div>
+          <p class="cap">유튜브 영상 끼워 넣기</p>
+        </div>
+        <p class="desc">유튜브 같은 영상을 페이지 안에 넣는 거예요. 링크만 주면 돼요.</p>
+      </article>
+
+      <article class="card" data-k="team section 팀 소개 팀원 멤버">
+        <div class="ch"><h3>팀 소개 <span>Team Section</span></h3></div>
+        <div class="cb"><div class="team"><div><span class="avatar">배</span><b>배상학</b>대표</div><div><span class="avatar g2">이</span><b>이지우</b>디자인</div><div><span class="avatar g3">김</span><b>김하나</b>개발</div></div>
+          <p class="cap">팀원 사진·이름·직함 격자</p>
+        </div>
+        <p class="desc">만든 사람들을 사진과 이름, 역할로 보여주는 섹션이에요. 신뢰를 줘요.</p>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- ══════════════ 커머스 ══════════════ -->
+  <section class="sec" id="commerce">
+    <div class="sec-h"><h2>커머스</h2><span>Commerce</span></div>
+    <p class="sec-p">쇼핑몰 만들 때 나오는 것들. 상품 하나를 보여주고 사게 만드는 부품이에요.</p>
+    <div class="grid">
+
+      <h4 class="grp">상품 <small>보여주기</small></h4>
+
+      <article class="card" data-k="product card 상품 카드 쇼핑몰 상품">
+        <div class="ch"><h3>상품 카드 <span>Product Card</span></h3></div>
+        <div class="cb"><div class="pcard"><div class="img"></div><div class="body"><b>코튼 셔츠</b><div class="price" style="font-size:14px">29,000원</div><small>★ 4.8 (120)</small></div></div>
+          <p class="cap">사진 · 이름 · 가격 · 별점</p>
+        </div>
+        <p class="desc">사진, 이름, 가격, 별점이 든 상품 하나짜리 카드예요. 쇼핑몰 목록의 기본 단위예요.</p>
+      </article>
+
+      <article class="card" data-k="discount price 할인 가격 표시 정가 할인율">
+        <div class="ch"><h3>할인 가격 표시 <span>Discount Price</span></h3></div>
+        <div class="cb"><div class="price" style="font-size:22px"><s>39,000원</s><br><em>25%</em>29,000원</div>
+          <p class="cap">원래 가격 줄 긋고 할인율 빨강</p>
+        </div>
+        <p class="desc">원래 가격에 줄을 긋고 할인율과 실제 가격을 보여줘요. 할인율은 빨간색으로.</p>
+      </article>
+
+      <article class="card" data-k="coupon 쿠폰 할인 쿠폰">
+        <div class="ch"><h3>쿠폰 <span>Coupon</span></h3></div>
+        <div class="cb"><div class="coupon"><div class="l"><b>5,000원</b><small>첫 구매 할인 · 9.30까지</small></div><div class="r">받기</div></div>
+          <p class="cap">점선으로 뜯는 쿠폰 모양</p>
+        </div>
+        <p class="desc">할인 쿠폰을 진짜 쿠폰처럼 그린 카드예요. 점선 절취선이 포인트예요.</p>
+      </article>
+
+      <article class="card" data-k="wishlist like heart 찜 버튼 좋아요 하트">
+        <div class="ch"><h3>찜 버튼 <span>Wishlist</span></h3></div>
+        <div class="cb"><div class="row" style="gap:30px"><div style="text-align:center"><span class="iconbtn">♡</span><br><small style="color:var(--muted);font-size:11px">찜 전</small></div><div style="text-align:center"><span class="iconbtn" style="color:var(--red)">♥</span><br><small style="color:var(--muted);font-size:11px">찜 후</small></div></div>
+          <p class="cap">♡ 눌러 ♥ 저장</p>
+        </div>
+        <p class="desc">마음에 드는 것을 저장하는 하트 버튼이에요. 누르면 채워져요.</p>
+      </article>
+
+      <h4 class="grp">후기 · 구매 <small>사게 만들기</small></h4>
+
+      <article class="card" data-k="review card 리뷰 카드 구매 후기">
+        <div class="ch"><h3>리뷰 카드 <span>Review Card</span></h3></div>
+        <div class="cb"><div class="frame" style="width:100%;max-width:260px;padding:12px 14px;text-align:left;font-size:12.5px"><div class="stars" style="font-size:14px;letter-spacing:1px">★★★★★</div><div style="margin:4px 0 8px">핏이 예뻐요. 재구매 의사 있어요.</div><div style="display:flex;gap:8px;align-items:center"><span class="avatar sm">김</span><span style="font-size:11.5px"><b>김하나</b> <span style="color:var(--muted)">· 2일 전</span></span><span class="box" style="width:28px;height:28px;margin-left:auto;border-radius:6px"></span></div></div>
+          <p class="cap">별점 + 후기 글 + 사진</p>
+        </div>
+        <p class="desc">구매자 한 명의 별점과 후기, 사진을 담은 카드예요. 후기의 쇼핑몰 버전이에요.</p>
+      </article>
+
+      <article class="card" data-k="rating breakdown 별점 분포 별점 통계">
+        <div class="ch"><h3>별점 분포 <span>Rating Breakdown</span></h3></div>
+        <div class="cb"><div style="display:flex;gap:14px;align-items:center"><div style="text-align:center"><b style="font-size:28px;line-height:1">4.8</b><br><small style="color:var(--muted);font-size:11px">120개</small></div><div class="bars"><div>5★<i style="--w:70%"></i></div><div>4★<i style="--w:20%"></i></div><div>3★<i style="--w:6%"></i></div><div>2★<i style="--w:2%"></i></div><div>1★<i style="--w:2%"></i></div></div></div>
+          <p class="cap">5점 몇 명, 4점 몇 명 막대</p>
+        </div>
+        <p class="desc">별점이 몇 점에 몰려 있는지 막대로 보여줘요. 평균 점수 옆에 둬요.</p>
+      </article>
+
+      <article class="card" data-k="sticky bottom bar purchase bar 하단 고정 구매 바 구매하기 장바구니">
+        <div class="ch"><h3>하단 고정 구매 바 <span>Sticky Bottom Bar</span></h3></div>
+        <div class="cb stretch" style="justify-content:flex-start;gap:8px"><span class="ph" style="width:85%"></span><span class="ph" style="width:60%"></span><span class="ph" style="width:75%"></span><div style="margin-top:auto;display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px"><span class="iconbtn" style="width:36px;height:36px">♡</span><span class="btn sm light" style="flex:1">장바구니</span><span class="btn sm" style="flex:1.3">구매하기</span></div>
+        </div>
+        <p class="desc">스크롤해도 화면 아래 붙어 있는 구매 버튼 줄이에요. 상품 상세 페이지 필수예요.</p>
       </article>
     </div>
   </section>
@@ -1308,6 +1720,39 @@ footer a{text-decoration:none;color:var(--ink2)}
         <p class="desc">배경을 어둡게, 글자를 밝게 뒤집은 테마예요. 오른쪽 위 스위치로 이 페이지도 바꿔 보세요.</p>
       </article>
 
+
+      <article class="card" data-k="opacity 투명도 불투명 비침">
+        <div class="ch"><h3>투명도 <span>Opacity</span></h3></div>
+        <div class="cb"><div class="row" style="gap:14px"><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink)"></i><small style="color:var(--muted);font-size:11px">100%</small></div><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink);opacity:.6"></i><small style="color:var(--muted);font-size:11px">60%</small></div><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink);opacity:.3"></i><small style="color:var(--muted);font-size:11px">30%</small></div><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink);opacity:.08"></i><small style="color:var(--muted);font-size:11px">8%</small></div></div>
+          <p class="cap">0% 안 보임 ~ 100% 또렷</p>
+        </div>
+        <p class="desc">얼마나 비치게 할지예요. 100%는 또렷, 0%는 안 보여요. 흐리게 할 때 써요.</p>
+      </article>
+
+      <article class="card" data-k="border 테두리 선 실선 점선 굵기">
+        <div class="ch"><h3>테두리 <span>Border</span></h3></div>
+        <div class="cb"><div class="row" style="gap:16px"><div style="text-align:center"><i style="display:block;width:54px;height:54px;border-radius:10px;border:1px solid var(--ink);background:var(--card)"></i><small style="color:var(--muted);font-size:11px">1px 실선</small></div><div style="text-align:center"><i style="display:block;width:54px;height:54px;border-radius:10px;border:3px solid var(--ink);background:var(--card)"></i><small style="color:var(--muted);font-size:11px">3px 굵게</small></div><div style="text-align:center"><i style="display:block;width:54px;height:54px;border-radius:10px;border:1.5px dashed var(--ink);background:var(--card)"></i><small style="color:var(--muted);font-size:11px">점선</small></div></div>
+          <p class="cap">선 굵기 · 색 · 실선/점선</p>
+        </div>
+        <p class="desc">요소 둘레 선이에요. 굵기, 색, 실선인지 점선인지 정할 수 있어요.</p>
+      </article>
+
+      <article class="card" data-k="gradient 그라데이션 그라디언트 배경 색 변화">
+        <div class="ch"><h3>그라데이션 <span>Gradient</span></h3></div>
+        <div class="cb"><div class="row" style="gap:14px"><div style="width:110px;height:64px;border-radius:12px;background:linear-gradient(135deg,#1a1a1a,#9a9a9a)"></div><div style="width:110px;height:64px;border-radius:12px;background:linear-gradient(135deg,#E1785C,#B93A2F)"></div></div>
+          <p class="cap">색이 서서히 바뀌는 배경</p>
+        </div>
+        <p class="desc">한 색에서 다른 색으로 서서히 바뀌는 배경이에요. 방향도 정할 수 있어요.</p>
+      </article>
+
+      <article class="card" data-k="aspect ratio 비율 16:9 정사각형 가로세로">
+        <div class="ch"><h3>비율 <span>Aspect Ratio</span></h3></div>
+        <div class="cb"><div class="row" style="gap:12px;align-items:flex-end"><div style="text-align:center"><i class="box" style="display:block;width:96px;height:54px"></i><small style="color:var(--muted);font-size:11px">16:9</small></div><div style="text-align:center"><i class="box" style="display:block;width:72px;height:54px"></i><small style="color:var(--muted);font-size:11px">4:3</small></div><div style="text-align:center"><i class="box" style="display:block;width:54px;height:54px"></i><small style="color:var(--muted);font-size:11px">1:1</small></div></div>
+          <p class="cap">16:9 · 4:3 · 1:1 정사각형</p>
+        </div>
+        <p class="desc">가로세로 비율이에요. "사진 칸은 16:9로"라고 하면 크기가 달라도 모양이 같아요.</p>
+      </article>
+
       <h4 class="grp">움직임 <small>나타나고, 바뀌는 방식</small></h4>
 
       <article class="card" data-k="fade in 페이드인 서서히 나타남 투명도">
@@ -1339,6 +1784,90 @@ footer a{text-decoration:none;color:var(--ink2)}
         </div>
         <p class="desc">상태가 바뀔 때 뚝 바뀌지 않고 부드럽게 넘어가는 거예요. 0.2초면 충분해요.</p>
       </article>
+
+      <h4 class="grp">배치 <small>어디에 어떻게 놓을지</small></h4>
+
+      <article class="card" data-k="alignment align 정렬 왼쪽 가운데 오른쪽 맞춤">
+        <div class="ch"><h3>정렬 <span>Alignment</span></h3></div>
+        <div class="cb"><div class="ali"><div style="justify-content:flex-start"><i></i>왼쪽</div><div style="justify-content:center"><i></i>가운데</div><div style="justify-content:flex-end"><i></i>오른쪽</div></div>
+          <p class="cap">왼쪽 · 가운데 · 오른쪽 맞춤</p>
+        </div>
+        <p class="desc">글이나 요소를 어느 쪽에 맞출지예요. "가운데 정렬해줘"처럼 말해요.</p>
+      </article>
+
+      <article class="card" data-k="centering center 가운데 맞춤 정중앙 중앙">
+        <div class="ch"><h3>가운데 맞춤 <span>Centering</span></h3></div>
+        <div class="cb"><div class="frame" style="width:180px;height:110px;position:relative;display:flex;align-items:center;justify-content:center"><i style="position:absolute;left:50%;top:0;bottom:0;border-left:1px dashed var(--red);opacity:.6"></i><i style="position:absolute;top:50%;left:0;right:0;border-top:1px dashed var(--red);opacity:.6"></i><span class="box" style="width:56px;height:36px;position:relative;background:var(--ink)"></span></div>
+          <p class="cap">가로 · 세로 한복판에 두기</p>
+        </div>
+        <p class="desc">가로세로 모두 한복판에 두는 거예요. "화면 정중앙에"라고 말하면 돼요.</p>
+      </article>
+
+      <article class="card" data-k="horizontal scroll 가로 스크롤 옆으로 밀기">
+        <div class="ch"><h3>가로 스크롤 <span>Horizontal Scroll</span></h3></div>
+        <div class="cb"><div class="hscroll"><i></i><i></i><i></i><i></i></div><div style="font-size:11px;color:var(--muted)">← 밀어서 보기 →</div>
+          <p class="cap">옆으로 밀어서 보는 목록</p>
+        </div>
+        <p class="desc">카드가 옆으로 이어져서 손가락으로 밀어 보는 목록이에요. 모바일에서 많이 써요.</p>
+      </article>
+
+      <article class="card" data-k="overflow 넘침 삐져나감 오버플로">
+        <div class="ch"><h3>넘침 <span>Overflow</span></h3></div>
+        <div class="cb"><div style="position:relative;width:150px;height:70px;border:1.5px dashed var(--soft2);border-radius:10px"><div class="box" style="position:absolute;left:14px;top:14px;width:190px;height:42px;background:var(--ink);opacity:.85;display:flex;align-items:center;padding-left:10px;color:var(--card);font-size:11px;white-space:nowrap">내용이 틀보다 길어요 →</div></div>
+          <p class="cap">내용이 틀 밖으로 삐져나감</p>
+        </div>
+        <p class="desc">내용이 틀보다 커서 밖으로 나가는 상태예요. 숨기거나 스크롤로 처리해요.</p>
+      </article>
+
+      <article class="card" data-k="z-index layer 겹침 순서 레이어 위 아래">
+        <div class="ch"><h3>겹침 순서 <span>z-index</span></h3></div>
+        <div class="cb"><div class="stack3"><div style="left:0;top:0;background:var(--soft)">1</div><div style="left:24px;top:22px">2</div><div style="left:48px;top:44px;background:var(--ink);color:var(--card);border-color:var(--ink)">3</div></div>
+          <p class="cap">위에 올라올지 아래 깔릴지</p>
+        </div>
+        <p class="desc">요소가 겹칠 때 무엇이 위에 올지 정하는 순서예요. 숫자가 클수록 위예요.</p>
+      </article>
+
+      <h4 class="grp">글자 <small>크기 · 굵기 · 줄</small></h4>
+
+      <article class="card" data-k="font size 글자 크기 폰트 크기 px">
+        <div class="ch"><h3>글자 크기 <span>Font Size</span></h3></div>
+        <div class="cb"><div class="tsize"><div><span style="font-size:12px">가</span><small>12px</small></div><div><span style="font-size:16px">가</span><small>16px</small></div><div><span style="font-size:24px">가</span><small>24px</small></div><div><span style="font-size:36px">가</span><small>36px</small></div></div>
+          <p class="cap">12px · 16px · 24px · 36px</p>
+        </div>
+        <p class="desc">글자 크기예요. 본문은 보통 16px, 폰에서는 14px 아래로 안 내려가요.</p>
+      </article>
+
+      <article class="card" data-k="font weight 글자 굵기 볼드 bold 두께">
+        <div class="ch"><h3>글자 굵기 <span>Font Weight</span></h3></div>
+        <div class="cb"><div class="tsize" style="font-size:20px;gap:22px"><div><span style="font-weight:400">보내기</span><small>400 보통</small></div><div><span style="font-weight:600">보내기</span><small>600 중간</small></div><div><span style="font-weight:800">보내기</span><small>800 굵게</small></div></div>
+          <p class="cap">보통 · 중간 · 굵게</p>
+        </div>
+        <p class="desc">글자 두께예요. 400이 보통, 700이 굵게. 숫자로 말하면 정확해요.</p>
+      </article>
+
+      <article class="card" data-k="typography hierarchy heading 글자 위계 제목 소제목 본문">
+        <div class="ch"><h3>글자 위계 <span>Hierarchy</span></h3></div>
+        <div class="cb"><div class="hier"><div class="h1">제목은 크고 굵게</div><div class="h2">소제목은 중간</div><div class="b">본문은 작고 가볍게, 여러 줄이 편하게 읽히도록 회색으로 둬요.</div></div>
+          <p class="cap">제목 > 소제목 > 본문</p>
+        </div>
+        <p class="desc">제목, 소제목, 본문 순서로 크기와 굵기에 차이를 두는 거예요. 위계가 있어야 읽혀요.</p>
+      </article>
+
+      <article class="card" data-k="ellipsis truncate 말줄임표 말줄임 자르기">
+        <div class="ch"><h3>말줄임표 <span>Ellipsis</span></h3></div>
+        <div class="cb"><div class="field" style="max-width:220px"><div class="input" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:8px">바이브코딩으로 만든 신청 페이지 제작기 1편</div><div style="font-size:11px;color:var(--muted);text-align:center">한 줄 넘으면 …으로 잘림</div></div>
+          <p class="cap">길면 …으로 자르기</p>
+        </div>
+        <p class="desc">칸보다 긴 글을 "…"으로 잘라 한 줄에 맞추는 거예요. 제목 목록에 흔해요.</p>
+      </article>
+
+      <article class="card" data-k="line break word wrap keep-all 줄바꿈 단어 끊김">
+        <div class="ch"><h3>줄바꿈 <span>Line Break</span></h3></div>
+        <div class="cb"><div class="row" style="gap:10px;align-items:flex-start"><div style="text-align:center"><div class="frame" style="width:110px;padding:8px;font-size:11.5px;text-align:left;word-break:break-all;line-height:1.5">바이브코딩으로 신청페이지 만들기</div><small style="color:var(--muted);font-size:11px">글자 단위</small></div><div style="text-align:center"><div class="frame" style="width:110px;padding:8px;font-size:11.5px;text-align:left;word-break:keep-all;line-height:1.5">바이브코딩으로 신청페이지 만들기</div><small style="color:var(--muted);font-size:11px">단어 단위</small></div></div>
+          <p class="cap">단어가 안 끊기게</p>
+        </div>
+        <p class="desc">줄이 넘어갈 때 단어 중간이 끊기지 않게 하는 거예요. "단어 단위로"라고 말해요.</p>
+      </article>
     </div>
   </section>
 </div>
@@ -1357,6 +1886,7 @@ footer a{text-decoration:none;color:var(--ink2)}
   var secs=[].slice.call(document.querySelectorAll('.sec'));
   var grps=[].slice.call(document.querySelectorAll('.grp'));
   var q=document.getElementById('q'),cnt=document.getElementById('count'),empty=document.getElementById('empty');
+  cnt.textContent=cards.length+'개';
 
   // 검색 (검색바 · 필터)
   q.addEventListener('input',function(){
