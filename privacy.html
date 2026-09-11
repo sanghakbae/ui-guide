@@ -6,10 +6,11 @@
 <title>개인정보처리방침 · UI 용어 사전</title>
 <meta name="robots" content="noindex">
 <link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#F3F2EE">
+<meta name="theme-color" id="themeColor" content="#F3F2EE">
+<script>try{var t=localStorage.getItem('ui-theme');if(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('themeColor').content=t==='dark'?'#121212':'#F3F2EE';}else if(matchMedia('(prefers-color-scheme: dark)').matches){document.getElementById('themeColor').content='#121212';}}catch(e){}</script>
 <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" crossorigin="anonymous">
 <style>
 :root{--bg:#F3F2EE;--card:#FFFFFF;--line:#E6E5E0;--soft:#EDECE8;--ink:#1A1A1A;--ink2:#4A4A48;--muted:#8C8B86}
 html[data-theme="dark"]{--bg:#121212;--card:#1C1C1C;--line:#2C2C2C;--soft:#2A2A2A;--ink:#F2F2F0;--ink2:#C9C9C5;--muted:#8A8A86}
@@ -61,11 +62,11 @@ footer a{text-decoration:none;color:var(--ink2)}
   <div class="card">
     <h2>2. 수집하는 개인정보 항목과 방법</h2>
     <table>
-      <tr><th>구분</th><td>항목</td><td>수집 방법</td></tr>
-      <tr><th>Google 로그인</th><td>이름, 이메일 주소, 프로필 사진 URL, Google 계정 고유 ID</td><td>이용자가 "Google 로그인"을 눌러 동의했을 때 Google(Firebase Authentication)을 통해 수집</td></tr>
-      <tr><th>자동 수집</th><td>접속 일시, 방문 페이지, 브라우저·기기 종류, 화면 크기, 대략적인 지역(국가/도시), 쿠키 및 분석용 식별자</td><td>서비스 이용 과정에서 Google Analytics(Firebase)를 통해 자동 수집</td></tr>
-      <tr><th>방문 기록</th><td>로그인한 계정의 이름·이메일·ID, 접속 시각, 본 페이지, 표시 언어, 대략적인 국가, 브라우저 종류, 화면 크기, 유입 경로</td><td>로그인 후 페이지를 열 때 Firebase(Firestore)에 자동 기록. 운영자(관리자)만 열람</td></tr>
-      <tr><th>기기 저장</th><td>다크 모드 설정, 로그인 상태(토큰), 오프라인용 페이지 캐시</td><td>이용자의 브라우저(로컬 저장소·서비스 워커)에만 저장되며 서비스 운영자에게 전송되지 않음</td></tr>
+      <thead><tr><th scope="col">구분</th><th scope="col">항목</th><th scope="col">수집 방법</th></tr></thead>
+      <tr><th scope="row">Google 로그인</th><td>이름, 이메일 주소, 프로필 사진 URL, Google 계정 고유 ID</td><td>이용자가 "Google 로그인"을 눌러 동의했을 때 Google(Firebase Authentication)을 통해 수집</td></tr>
+      <tr><th scope="row">자동 수집</th><td>접속 일시, 방문 페이지, 브라우저·기기 종류, 화면 크기, 대략적인 지역(국가/도시), 쿠키 및 분석용 식별자</td><td>서비스 이용 과정에서 Google Analytics(Firebase)를 통해 자동 수집</td></tr>
+      <tr><th scope="row">방문 기록</th><td>로그인한 계정의 이름·이메일·ID, 접속 시각, 본 페이지, 표시 언어, 대략적인 국가, 브라우저 종류, 화면 크기, 유입 경로</td><td>로그인 후 페이지를 열 때 Firebase(Firestore)에 자동 기록. 운영자(관리자)만 열람</td></tr>
+      <tr><th scope="row">기기 저장</th><td>다크 모드 설정, 로그인 상태(토큰), 오프라인용 페이지 캐시</td><td>이용자의 브라우저(로컬 저장소·서비스 워커)에만 저장되며 서비스 운영자에게 전송되지 않음</td></tr>
     </table>
   </div>
 
@@ -92,12 +93,12 @@ footer a{text-decoration:none;color:var(--ink2)}
     <h2>5. 개인정보의 처리 위탁 및 국외 이전</h2>
     <p>서비스는 로그인과 방문 분석을 위해 아래 업체의 서비스를 이용하며, 이 과정에서 개인정보가 국외(미국 등 Google 데이터센터 소재지)로 이전됩니다.</p>
     <table>
-      <tr><th>수탁·이전받는 자</th><td>Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA)</td></tr>
-      <tr><th>이전 항목</th><td>2항의 Google 로그인 정보, 자동 수집 정보</td></tr>
-      <tr><th>이전 목적</th><td>Firebase Authentication(로그인 처리), Cloud Firestore(방문 기록 저장), Google Analytics(방문 분석)</td></tr>
-      <tr><th>이전 시점·방법</th><td>로그인 또는 페이지 방문 시 네트워크를 통해 전송</td></tr>
-      <tr><th>보유 기간</th><td>4항의 보유 기간과 동일</td></tr>
-      <tr><th>거부 방법</th><td>Google 로그인을 사용하지 않거나, 브라우저의 쿠키·추적 차단 기능을 사용할 수 있습니다. 다만 이 경우 로그인 기능은 이용할 수 없습니다.</td></tr>
+      <tr><th scope="row">수탁·이전받는 자</th><td>Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA)</td></tr>
+      <tr><th scope="row">이전 항목</th><td>2항의 Google 로그인 정보, 자동 수집 정보</td></tr>
+      <tr><th scope="row">이전 목적</th><td>Firebase Authentication(로그인 처리), Cloud Firestore(방문 기록 저장), Google Analytics(방문 분석)</td></tr>
+      <tr><th scope="row">이전 시점·방법</th><td>로그인 또는 페이지 방문 시 네트워크를 통해 전송</td></tr>
+      <tr><th scope="row">보유 기간</th><td>4항의 보유 기간과 동일</td></tr>
+      <tr><th scope="row">거부 방법</th><td>Google 로그인을 사용하지 않거나, 브라우저의 쿠키·추적 차단 기능을 사용할 수 있습니다. 다만 이 경우 로그인 기능은 이용할 수 없습니다.</td></tr>
     </table>
     <p>Google의 개인정보 처리에 관한 자세한 내용은 <a href="https://policies.google.com/privacy?hl=ko" target="_blank" rel="noopener">Google 개인정보처리방침</a>을 참고하세요.</p>
   </div>
@@ -161,7 +162,6 @@ footer a{text-decoration:none;color:var(--ink2)}
   <div>UI 용어 사전 · <a href="./">홈</a> · <a href="https://github.com/sanghakbae/ui-guide">GitHub</a></div>
 </footer>
 <script>
-try{var t=localStorage.getItem('ui-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
 if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js').catch(function(){});}
 </script>
 </body>

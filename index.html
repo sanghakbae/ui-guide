@@ -9,13 +9,14 @@
 <meta property="og:description" content="화면 만들 때 쓰는 UI 용어 156개, 그림으로 한 번에.">
 <link rel="manifest" href="./manifest.json">
 <meta name="theme-color" id="themeColor" content="#F3F2EE">
+<script>try{var t=localStorage.getItem('ui-theme');if(t){document.documentElement.setAttribute('data-theme',t);var m=document.getElementById('themeColor');if(m)m.content=t==='dark'?'#121212':'#F3F2EE';}}catch(e){}</script>
 <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="UI 사전">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" crossorigin="anonymous">
 <style>
 :root{
   --bg:#F3F2EE; --card:#FFFFFF; --stage:#FAFAF8; --line:#E6E5E0; --soft:#EDECE8; --soft2:#DDDCD6;
@@ -75,7 +76,7 @@ html[data-theme="dark"] .gbtn{background:#fff;color:#1f1f1f;border-color:#fff}
 .auth .menu button{width:100%;text-align:left;padding:9px 12px;border:0;background:none;font:inherit;font-size:13px;color:var(--ink);border-radius:8px;cursor:pointer}
 .auth .menu button:hover{background:var(--soft)}
 #installBtn{cursor:pointer;padding:7px 12px}
-.live-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,16px);opacity:0;transition:opacity .3s,transform .3s;z-index:70;pointer-events:none;background:var(--ink);color:var(--card);padding:11px 16px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.18);white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
+.live-toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);opacity:0;transition:opacity .3s,transform .3s;z-index:70;pointer-events:none;background:var(--ink);color:var(--card);padding:11px 16px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.18);white-space:nowrap;max-width:calc(100vw - 32px);overflow:hidden;text-overflow:ellipsis}
 .live-toast.show{opacity:1;transform:translate(-50%,0)}
 
 /* ── 히어로 ── */
@@ -114,8 +115,8 @@ html[data-theme="dark"] .gbtn{background:#fff;color:#1f1f1f;border-color:#fff}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
 .card.in{opacity:1;transform:none}
 .ch{height:56px;padding:0 20px;display:flex;align-items:center;border-bottom:1px solid var(--line);flex:none}
-.ch h3{margin:0;font-size:17px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ch h3 span{color:var(--muted);font-weight:500;font-size:14px;margin-left:6px}
+.ch h4{margin:0;font-size:17px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ch h4 span{color:var(--muted);font-weight:500;font-size:14px;margin-left:6px}
 .cb{background:var(--stage);flex:none;height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;position:relative;overflow:hidden}
 .cb.stretch{align-items:stretch}
 .cb.tight{padding:0}
@@ -182,7 +183,7 @@ html[data-theme="dark"] .dim{background:#4a4a4a}
 .alert.y{border-color:var(--yellow);background:color-mix(in srgb,var(--yellow) 9%,var(--card));color:var(--yellow)}
 .alert.r{border-color:var(--red);background:color-mix(in srgb,var(--red) 9%,var(--card));color:var(--red)}
 .spin{width:30px;height:30px;border-radius:50%;border:3px solid var(--soft2);border-top-color:var(--ink);animation:spin .9s linear infinite}
-.spin.xs{width:14px;height:14px;border-width:2px;border-color:rgba(255,255,255,.35);border-top-color:#fff}
+.spin.xs{width:14px;height:14px;border-width:2px;border-color:color-mix(in srgb,currentColor 35%,transparent);border-top-color:currentColor}
 @keyframes spin{to{transform:rotate(360deg)}}
 .skel{background:linear-gradient(90deg,var(--soft) 25%,var(--soft2) 50%,var(--soft) 75%);background-size:200% 100%;animation:sh 1.4s infinite;border-radius:6px}
 @keyframes sh{to{background-position:-200% 0}}
@@ -212,7 +213,7 @@ html[data-theme="dark"] .dim{background:#4a4a4a}
 .pop{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.12);width:180px;font-size:13px;overflow:hidden}
 .pop .u{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);font-weight:600}
 .pop .m{padding:8px 12px;text-align:center;color:var(--ink2)}
-.code{background:#1a1a1a;color:#e8e8e8;border-radius:10px;padding:14px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.7;width:100%;max-width:320px;position:relative;text-align:left;white-space:pre}
+.code{background:#1a1a1a;color:#e8e8e8;border-radius:10px;box-shadow:0 0 0 1px var(--line);padding:14px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.7;width:100%;max-width:320px;position:relative;text-align:left;white-space:pre}
 .code .c{color:#8a8a8a}
 .code .copy{position:absolute;right:12px;top:10px;font-size:11px;color:#aaa;font-family:inherit}
 .timeline{position:relative;padding-left:20px;text-align:left}
@@ -248,7 +249,7 @@ html[data-theme="dark"] .dim{background:#4a4a4a}
 .cal .g em{font-style:normal;padding:4px 0;border-radius:6px}
 .cal .g em.sel{background:var(--ink);color:var(--card);font-weight:700}
 .otp{display:flex;gap:8px}
-.otp span{width:40px;height:46px;border:1px solid var(--line);border-radius:8px;background:var(--card);display:inline-flex;align-items:center;justify-content:center;font-size:18px;font-weight:700}
+.otp span{width:38px;height:44px;border:1px solid var(--line);border-radius:8px;background:var(--card);display:inline-flex;align-items:center;justify-content:center;font-size:18px;font-weight:700}
 .otp span.cur{border:2px solid var(--ink)}
 .slider{width:100%;max-width:280px}
 .slider .track{height:3px;background:var(--line);position:relative;border-radius:2px;margin:12px 0 6px}
@@ -301,6 +302,7 @@ html[data-theme="dark"] .dim{background:#4a4a4a}
 html[data-theme="dark"] .btn.active{background:#c8c8c8}
 .btn.focus{outline:3px solid color-mix(in srgb,var(--ink) 25%,transparent);outline-offset:2px}
 .btn.disabled{background:var(--soft2);color:var(--muted)}
+.btn:disabled,.gbig:disabled{opacity:.55;cursor:progress}
 
 /* ── 추가 부품 ── */
 .tabs{display:flex;border-bottom:1px solid var(--line);width:100%;max-width:280px;font-size:13px;background:var(--card);border-radius:10px 10px 0 0}
@@ -397,10 +399,10 @@ html[data-theme="dark"] .btn.active{background:#c8c8c8}
 .hier .b{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
 
 /* ── 푸터 · FAB ── */
-footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 20px 60px;color:var(--muted);font-size:12.5px;text-align:center}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 20px calc(60px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:12.5px;text-align:center}
 footer a{text-decoration:none;color:var(--ink2)}
-#toTop{position:fixed;right:20px;bottom:20px;z-index:40;opacity:0;pointer-events:none;transition:opacity .3s;cursor:pointer;border:0;font-family:inherit}
-#toTop.show{opacity:1;pointer-events:auto}
+#toTop{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s,visibility .3s;cursor:pointer;border:0;font-family:inherit}
+#toTop.show{opacity:1;visibility:visible;pointer-events:auto}
 
 /* ── 반응형 ── */
 @media (max-width:760px){
@@ -411,7 +413,7 @@ footer a{text-decoration:none;color:var(--ink2)}
   .sec{margin-bottom:48px}
   .sec-h h2{font-size:21px}
   .ch{padding:0 16px}
-  .ch h3{font-size:16px}
+  .ch h4{font-size:16px}
   .cb{padding:18px 16px}
   .desc{padding:12px 16px;font-size:13px}
   .theme span{display:none}
@@ -425,6 +427,7 @@ footer a{text-decoration:none;color:var(--ink2)}
   html{scroll-padding-top:136px}
   .search{margin-bottom:36px}
   .search input{font-size:16px}
+  .live-toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 }
 @media (prefers-reduced-motion:reduce){
   .card{opacity:1;transform:none;transition:none}
@@ -434,7 +437,9 @@ footer a{text-decoration:none;color:var(--ink2)}
 /* ── 로그인 게이트 ── */
 body.locked .hero,body.locked #main,body.locked footer,body.locked #toTop,body.locked .gnb,body.locked #auth{display:none!important}
 body:not(.locked) .gate{display:none}
-.gate{min-height:calc(100vh - 58px);display:flex;align-items:center;justify-content:center;padding:40px 20px}
+body.locked{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.gate{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.gate-note{margin:14px auto 0;max-width:440px;font-size:12.5px;color:var(--ink2);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;line-height:1.6}
 .gate-box{max-width:820px;text-align:center}
 .nb{white-space:nowrap}
 @media (min-width:900px){.gate-box h1,.hero h1{white-space:nowrap}}
@@ -450,7 +455,7 @@ body:not(.locked) .gate{display:none}
 .gate-box .preview{display:flex;gap:8px;justify-content:center;margin:0 0 26px;opacity:.9}
 .gate-box .preview i{width:64px;height:44px;border-radius:10px;background:var(--card);border:1px solid var(--line);display:block}
 .gate-box .preview i:nth-child(2){background:var(--ink);border-color:var(--ink)}
-@media (max-width:760px){.gate{min-height:calc(100vh - 99px);padding:32px 20px}.gate-box p{font-size:14px}}
+@media (max-width:760px){.gate{padding:32px 20px}.gate-box p{font-size:14px}}
 </style>
 </head>
 <body class="locked checking">
@@ -462,11 +467,11 @@ body:not(.locked) .gate{display:none}
       <a href="#layout">레이아웃</a><a href="#nav">내비게이션</a><a href="#button">버튼</a><a href="#form">폼</a><a href="#state">상태</a><a href="#element">작은 요소</a><a href="#feedback">피드백</a><a href="#content">콘텐츠</a><a href="#commerce">커머스</a><a href="#concept">개념</a>
     </nav>
     <button class="langbtn" id="langBtn" aria-label="Switch language">EN</button>
-    <div class="theme"><span>다크 모드</span><button class="switch" id="themeBtn" aria-label="다크 모드 켜기/끄기"></button></div>
+    <div class="theme"><span>다크 모드</span><button class="switch" id="themeBtn" role="switch" aria-checked="false" aria-label="다크 모드"></button></div>
     <button class="btn sm light" id="installBtn" hidden>앱 설치</button>
     <div class="auth" id="auth">
       <button class="btn sm light gbtn" id="loginBtn" aria-label="Google로 로그인"><svg class="glogo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google 로그인</span></button>
-      <button class="avatarbtn" id="userBtn" hidden aria-label="계정 메뉴"></button>
+      <button class="avatarbtn" id="userBtn" hidden aria-label="계정 메뉴" aria-haspopup="true" aria-expanded="false" aria-controls="userMenu"></button>
       <div class="menu" id="userMenu" hidden>
         <div class="u"><b id="uName"></b><small id="uMail"></small></div>
         <a class="mlink" id="adminLink" href="./admin.html" hidden>관리자 페이지</a>
@@ -483,10 +488,11 @@ body:not(.locked) .gate{display:none}
     <p>디자이너·개발자·AI한테 화면을 설명하려면 이름을 알아야 해요. 156개 UI 용어를 그림과 한 줄 설명으로 정리했어요.</p>
     <div class="preview" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="gate-cta">
-      <span class="spin" id="gateSpin" aria-label="로그인 상태 확인 중"></span>
+      <span class="spin" id="gateSpin" role="status" aria-label="로그인 상태 확인 중"></span>
       <button class="btn gbig" id="gateLogin" hidden><svg class="glogo" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span>Google로 로그인</span></button>
     </div>
     <small>Google 계정의 이름·이메일·프로필 사진만 받아요. <a href="./privacy.html">개인정보처리방침</a></small>
+    <p class="gate-note" id="gateNote" hidden></p>
   </div>
 </section>
 
@@ -499,10 +505,10 @@ body:not(.locked) .gate{display:none}
 <div class="wrap" id="main">
   <div class="search">
     <svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-    <input id="q" type="search" placeholder="용어 검색 · 예) 토스트, 여백" autocomplete="off">
-    <span class="count" id="count">156개</span>
+    <input id="q" type="search" placeholder="용어 검색 · 예) 토스트, 여백" autocomplete="off" aria-label="용어 검색" aria-describedby="count">
+    <span class="count" id="count" role="status" aria-live="polite">156개</span>
   </div>
-  <div class="empty" id="empty"><b>검색 결과가 없어요</b>다른 말로 찾아보세요. 영어로 쳐도 돼요.</div>
+  <div class="empty" id="empty" role="status" aria-live="polite"><b>검색 결과가 없어요</b>다른 말로 찾아보세요. 영어로 쳐도 돼요.</div>
 
   <!-- ══════════════ 레이아웃 ══════════════ -->
   <section class="sec" id="layout">
@@ -510,10 +516,10 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">화면의 큰 뼈대. "어디에 뭐가 있는지"를 말할 때 쓰는 이름들이에요.</p>
     <div class="grid">
 
-      <h4 class="grp">페이지 뼈대 <small>위에서 아래로</small></h4>
+      <h3 class="grp">페이지 뼈대 <small>위에서 아래로</small></h3>
 
       <article class="card" data-k="header 헤더 상단 로고 메뉴">
-        <div class="ch"><h3>헤더 <span>Header</span></h3></div>
+        <div class="ch"><h4>헤더 <span>Header</span></h4></div>
         <div class="cb">
           <div class="screen">
             <div class="bar"><span class="sq"></span><span style="margin-left:auto;display:flex;gap:10px;align-items:center"><b>소개</b><b>가격</b><span class="btn xs">신청</span></span></div>
@@ -524,8 +530,8 @@ body:not(.locked) .gate{display:none}
         <p class="desc">모든 페이지에 똑같이 붙는 맨 위 영역이에요. 보통 로고, 메뉴, 신청 버튼이 들어가요.</p>
       </article>
 
-      <article class="card" data-k="navbar navigation gnb 네비게이션 바 내비 메뉴">
-        <div class="ch"><h3>네비게이션 바 <span>Navbar / GNB</span></h3></div>
+      <article class="card" data-k="navbar navigation gnb 내비게이션 바 네비게이션 바 내비 메뉴">
+        <div class="ch"><h4>내비게이션 바 <span>Navbar / GNB</span></h4></div>
         <div class="cb">
           <div class="screen">
             <div class="bar"><span class="sq"></span><b style="text-decoration:underline;text-underline-offset:4px">홈</b><span>소개</span><span>가격</span><span>문의</span></div>
@@ -537,7 +543,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="hero 히어로 첫 화면 메인 배너">
-        <div class="ch"><h3>히어로 <span>Hero</span></h3></div>
+        <div class="ch"><h4>히어로 <span>Hero</span></h4></div>
         <div class="cb">
           <div style="text-align:center">
             <div style="font-size:22px;font-weight:800;line-height:1.25;letter-spacing:-.02em">AI로 사이트<br>10분이면 됩니다</div>
@@ -550,7 +556,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="sidebar 사이드바 옆 메뉴 세로">
-        <div class="ch"><h3>사이드바 <span>Sidebar</span></h3></div>
+        <div class="ch"><h4>사이드바 <span>Sidebar</span></h4></div>
         <div class="cb">
           <div class="screen" style="display:flex;gap:8px;height:120px">
             <div class="frame" style="width:78px;padding:8px;display:grid;gap:6px;align-content:start"><span class="ph" style="background:var(--ink);height:14px"></span><span class="ph"></span><span class="ph"></span><span class="ph"></span></div>
@@ -562,7 +568,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="footer 푸터 하단 바닥">
-        <div class="ch"><h3>푸터 <span>Footer</span></h3></div>
+        <div class="ch"><h4>푸터 <span>Footer</span></h4></div>
         <div class="cb">
           <div class="screen">
             <div class="frame" style="height:80px"></div>
@@ -574,7 +580,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="layout 레이아웃 배치 구조">
-        <div class="ch"><h3>레이아웃 <span>Layout</span></h3></div>
+        <div class="ch"><h4>레이아웃 <span>Layout</span></h4></div>
         <div class="cb">
           <div class="screen">
             <div class="box" style="height:16px"></div>
@@ -586,10 +592,10 @@ body:not(.locked) .gate{display:none}
         <p class="desc">화면의 큰 영역을 어디에 둘지 정한 뼈대예요. 레이아웃이 먼저, 내용은 그다음이에요.</p>
       </article>
 
-      <h4 class="grp">내용 배치 <small>안에 뭘 어떻게 놓을지</small></h4>
+      <h3 class="grp">내용 배치 <small>안에 뭘 어떻게 놓을지</small></h3>
 
       <article class="card" data-k="section 섹션 구역 영역">
-        <div class="ch"><h3>섹션 <span>Section</span></h3></div>
+        <div class="ch"><h4>섹션 <span>Section</span></h4></div>
         <div class="cb stretch">
           <div class="frame" style="padding:12px;text-align:center;font-size:12px;color:var(--muted)">섹션 1</div>
           <div class="frame" style="padding:12px;text-align:center;font-size:12px;font-weight:700;border:1.5px solid var(--ink)">섹션 2</div>
@@ -600,7 +606,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="container 컨테이너 최대 너비 가운데">
-        <div class="ch"><h3>컨테이너 <span>Container</span></h3></div>
+        <div class="ch"><h4>컨테이너 <span>Container</span></h4></div>
         <div class="cb">
           <div style="width:100%;border:1.5px dashed var(--soft2);border-radius:8px;padding:12px 30px">
             <div class="frame" style="height:70px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--muted)">내용</div>
@@ -611,7 +617,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="grid 그리드 격자 열">
-        <div class="ch"><h3>그리드 <span>Grid</span></h3></div>
+        <div class="ch"><h4>그리드 <span>Grid</span></h4></div>
         <div class="cb">
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:300px"><i class="box" style="height:36px"></i><i class="box" style="height:36px"></i><i class="box" style="height:36px"></i><i class="box" style="height:36px"></i><i class="box" style="height:36px"></i><i class="box" style="height:36px"></i></div>
           <p class="cap">3열 그리드</p>
@@ -620,7 +626,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="card 카드 네모 박스">
-        <div class="ch"><h3>카드 <span>Card</span></h3></div>
+        <div class="ch"><h4>카드 <span>Card</span></h4></div>
         <div class="cb">
           <div class="frame" style="width:100%;max-width:240px;padding:12px"><div class="box" style="height:48px;margin-bottom:10px"></div><span class="ph" style="display:block;width:90%;margin-bottom:6px"></span><span class="ph" style="display:block;width:60%"></span></div>
           <p class="cap">정보 한 묶음을 담은 네모</p>
@@ -629,7 +635,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="card grid 카드 그리드 목록">
-        <div class="ch"><h3>카드 그리드 <span>Card Grid</span></h3></div>
+        <div class="ch"><h4>카드 그리드 <span>Card Grid</span></h4></div>
         <div class="cb">
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%;max-width:300px">
             <div class="frame" style="padding:8px"><div class="box" style="height:32px;margin-bottom:8px"></div><span class="ph" style="display:block;width:90%;margin-bottom:4px;height:6px"></span><span class="ph" style="display:block;width:60%;height:6px"></span></div>
@@ -642,7 +648,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="table 테이블 표">
-        <div class="ch"><h3>테이블 <span>Table</span></h3></div>
+        <div class="ch"><h4>테이블 <span>Table</span></h4></div>
         <div class="cb">
           <table class="tbl"><thead><tr><th>이름</th><th>날짜</th><th>상태</th></tr></thead><tbody><tr><td>이지우</td><td>09.09</td><td class="up"><b>완료</b></td></tr><tr><td>김하나</td><td>09.08</td><td style="color:var(--muted)">대기</td></tr><tr><td>박서준</td><td>09.07</td><td class="up"><b>완료</b></td></tr></tbody></table>
           <p class="cap">행과 열로 된 표</p>
@@ -659,10 +665,10 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">돌아다니는 데 쓰는 것들. "여기서 저기로 어떻게 가는지"를 말할 때 쓰는 이름들이에요.</p>
     <div class="grid">
 
-      <h4 class="grp">메뉴 <small>펼치고 숨기고</small></h4>
+      <h3 class="grp">메뉴 <small>펼치고 숨기고</small></h3>
 
       <article class="card" data-k="tabs 탭 전환">
-        <div class="ch"><h3>탭 <span>Tabs</span></h3></div>
+        <div class="ch"><h4>탭 <span>Tabs</span></h4></div>
         <div class="cb"><div class="tabs"><span class="on">전체</span><span>디자인</span><span>개발</span></div><div class="frame" style="width:100%;max-width:280px;height:56px;border-top:0;border-radius:0 0 10px 10px;margin-top:-12px"></div>
           <p class="cap">눌러서 내용만 바꾸는 메뉴</p>
         </div>
@@ -670,7 +676,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="hamburger menu 햄버거 메뉴 줄 세 개 모바일 메뉴">
-        <div class="ch"><h3>햄버거 메뉴 <span>Hamburger Menu</span></h3></div>
+        <div class="ch"><h4>햄버거 메뉴 <span>Hamburger Menu</span></h4></div>
         <div class="cb"><div class="screen" style="max-width:220px"><div class="bar"><span class="sq"></span><span style="margin-left:auto;display:flex;flex-direction:column;gap:3px"><i style="width:14px;height:2px;background:var(--ink);border-radius:2px;display:block"></i><i style="width:14px;height:2px;background:var(--ink);border-radius:2px;display:block"></i><i style="width:14px;height:2px;background:var(--ink);border-radius:2px;display:block"></i></span></div></div><span class="burger"><i></i><i></i><i></i></span>
           <p class="cap">줄 세 개(≡) 메뉴 버튼</p>
         </div>
@@ -678,7 +684,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="drawer side panel 드로어 옆에서 나오는 메뉴">
-        <div class="ch"><h3>드로어 <span>Drawer</span></h3></div>
+        <div class="ch"><h4>드로어 <span>Drawer</span></h4></div>
         <div class="cb"><div class="drawerdemo"><div class="dimm"></div><div class="panel"><span class="ph" style="width:70%;background:var(--ink);height:12px"></span><span class="ph" style="width:80%"></span><span class="ph" style="width:60%"></span><span class="ph" style="width:75%"></span></div></div>
           <p class="cap">옆에서 스르륵 나오는 메뉴 판</p>
         </div>
@@ -686,7 +692,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="dropdown menu 드롭다운 메뉴 펼침">
-        <div class="ch"><h3>드롭다운 메뉴 <span>Dropdown Menu</span></h3></div>
+        <div class="ch"><h4>드롭다운 메뉴 <span>Dropdown Menu</span></h4></div>
         <div class="cb"><div style="text-align:left"><span class="btn sm light">정렬 ▾</span><div class="dd" style="margin-top:6px"><div class="on">최신순</div><div>인기순</div><div>가격순</div></div></div>
           <p class="cap">버튼 아래로 펼쳐지는 메뉴</p>
         </div>
@@ -694,7 +700,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="kebab overflow menu 더보기 메뉴 점 세 개">
-        <div class="ch"><h3>더보기 메뉴 <span>Kebab / Overflow Menu</span></h3></div>
+        <div class="ch"><h4>더보기 메뉴 <span>Kebab / Overflow Menu</span></h4></div>
         <div class="cb"><div style="display:flex;gap:10px;align-items:flex-start"><span class="kebab">⋮</span><div class="dd" style="width:120px"><div>수정</div><div>복사</div><div class="danger">삭제</div></div></div>
           <p class="cap">점 세 개(⋮) 누르면 나오는 메뉴</p>
         </div>
@@ -702,17 +708,17 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="accordion collapse 아코디언 펼치기 접기">
-        <div class="ch"><h3>아코디언 <span>Accordion</span></h3></div>
+        <div class="ch"><h4>아코디언 <span>Accordion</span></h4></div>
         <div class="cb"><div class="acc"><div class="open">환불이 되나요? <span>˄</span></div><p>7일 안에는 전액 환불돼요.</p><div>결제 방법은요? <span>˅</span></div><div>세금계산서도 되나요? <span>˅</span></div></div>
           <p class="cap">눌러서 펼치고 접는 목록</p>
         </div>
         <p class="desc">제목을 누르면 내용이 펼쳐지고 다시 누르면 접혀요. FAQ에 딱이에요.</p>
       </article>
 
-      <h4 class="grp">위치 · 이동 <small>지금 어디인지, 어디로 갈지</small></h4>
+      <h3 class="grp">위치 · 이동 <small>지금 어디인지, 어디로 갈지</small></h3>
 
       <article class="card" data-k="breadcrumb 브레드크럼 경로 홈">
-        <div class="ch"><h3>브레드크럼 <span>Breadcrumb</span></h3></div>
+        <div class="ch"><h4>브레드크럼 <span>Breadcrumb</span></h4></div>
         <div class="cb"><div class="crumb">홈 <span>›</span> 강의 <span>›</span> <b>바이브코딩 입문</b></div>
           <p class="cap">홈 > 카테고리 > 현재 페이지</p>
         </div>
@@ -720,7 +726,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="pagination 페이지네이션 페이지 번호 다음">
-        <div class="ch"><h3>페이지네이션 <span>Pagination</span></h3></div>
+        <div class="ch"><h4>페이지네이션 <span>Pagination</span></h4></div>
         <div class="cb"><div class="pager"><span class="nav">‹</span><span class="on">1</span><span>2</span><span>3</span><span>…</span><span>12</span><span class="nav">›</span></div>
           <p class="cap">1 2 3 … 다음 페이지 번호</p>
         </div>
@@ -728,7 +734,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="stepper steps 단계 표시 진행 단계">
-        <div class="ch"><h3>단계 표시 <span>Stepper</span></h3></div>
+        <div class="ch"><h4>단계 표시 <span>Stepper</span></h4></div>
         <div class="cb"><div class="steps"><div class="done"><i>✓</i>정보 입력</div><hr><div class="cur"><i>2</i>결제</div><hr><div><i>3</i>완료</div></div>
           <p class="cap">1단계 → 2단계 → 3단계</p>
         </div>
@@ -736,7 +742,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="bottom tab bar navigation 하단 탭바 앱 하단 메뉴">
-        <div class="ch"><h3>하단 탭바 <span>Bottom Tab Bar</span></h3></div>
+        <div class="ch"><h4>하단 탭바 <span>Bottom Tab Bar</span></h4></div>
         <div class="cb"><div class="tabbar"><div class="on"><svg viewBox="0 0 24 24" class="icon"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>홈</div><div><svg viewBox="0 0 24 24" class="icon"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>검색</div><div><svg viewBox="0 0 24 24" class="icon"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>알림</div><div><svg viewBox="0 0 24 24" class="icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>내 정보</div></div>
           <p class="cap">폰 맨 아래 아이콘 메뉴 줄</p>
         </div>
@@ -744,7 +750,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="carousel slider swiper 캐러셀 슬라이드 배너">
-        <div class="ch"><h3>캐러셀 <span>Carousel</span></h3></div>
+        <div class="ch"><h4>캐러셀 <span>Carousel</span></h4></div>
         <div class="cb"><div class="carousel"><div class="track"><i></i><i></i></div><div class="dots"><i class="on"></i><i></i><i></i></div></div>
           <p class="cap">옆으로 넘기는 슬라이드 배너</p>
         </div>
@@ -752,7 +758,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="filter sort 필터 정렬 거르기 순서">
-        <div class="ch"><h3>필터 · 정렬 <span>Filter / Sort</span></h3></div>
+        <div class="ch"><h4>필터 · 정렬 <span>Filter / Sort</span></h4></div>
         <div class="cb"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center"><span class="chip on">전체</span><span class="chip">무료</span><span class="chip">유료</span><span class="chip gray" style="margin-left:6px">최신순 ▾</span></div>
           <p class="cap">조건으로 거르고 순서 바꾸기</p>
         </div>
@@ -767,40 +773,40 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">누르는 것들. 중요도에 따라 모양이 달라져요.</p>
     <div class="grid">
 
-      <h4 class="grp">중요도별 <small>제일 중요한 것부터</small></h4>
+      <h3 class="grp">중요도별 <small>제일 중요한 것부터</small></h3>
 
       <article class="card" data-k="button 버튼">
-        <div class="ch"><h3>버튼 <span>Button</span></h3></div>
+        <div class="ch"><h4>버튼 <span>Button</span></h4></div>
         <div class="cb"><span class="btn">신청하기</span><p class="cap">누르는 것 전부를 버튼이라고 해요</p></div>
         <p class="desc">누르면 뭔가 일어나는 요소예요. 모양이 달라도 누르는 거면 다 버튼이에요.</p>
       </article>
 
       <article class="card" data-k="primary 프라이머리 버튼 주요">
-        <div class="ch"><h3>프라이머리 버튼 <span>Primary</span></h3></div>
+        <div class="ch"><h4>프라이머리 버튼 <span>Primary</span></h4></div>
         <div class="cb"><span class="btn">신청하기</span><p class="cap">꽉 찬 색 · 한 화면에 하나만</p></div>
         <p class="desc">제일 중요한 버튼이에요. 색을 꽉 채워서 눈에 띄게 하고, 한 화면에 하나만 둬요.</p>
       </article>
 
       <article class="card" data-k="secondary 세컨더리 버튼 보조 테두리">
-        <div class="ch"><h3>세컨더리 버튼 <span>Secondary</span></h3></div>
+        <div class="ch"><h4>세컨더리 버튼 <span>Secondary</span></h4></div>
         <div class="cb"><span class="btn outline">더 알아보기</span><p class="cap">테두리만 · 두 번째로 중요한 것</p></div>
         <p class="desc">프라이머리 옆에 두는 두 번째 선택지예요. 테두리만 있어서 덜 튀어요.</p>
       </article>
 
       <article class="card" data-k="ghost text 고스트 텍스트 버튼 취소">
-        <div class="ch"><h3>고스트 버튼 <span>Ghost / Text</span></h3></div>
+        <div class="ch"><h4>고스트 버튼 <span>Ghost / Text</span></h4></div>
         <div class="cb"><span class="btn ghost">취소</span><p class="cap">배경 없이 글자만</p></div>
         <p class="desc">배경도 테두리도 없는 글자 버튼이에요. 취소, 건너뛰기처럼 안 눌러도 되는 것에 써요.</p>
       </article>
 
       <article class="card" data-k="destructive delete 삭제 버튼 빨강 위험">
-        <div class="ch"><h3>삭제 버튼 <span>Destructive</span></h3></div>
+        <div class="ch"><h4>삭제 버튼 <span>Destructive</span></h4></div>
         <div class="cb"><span class="btn danger">삭제</span><p class="cap">되돌릴 수 없는 것만 빨강</p></div>
         <p class="desc">지우기처럼 되돌릴 수 없는 행동에 쓰는 빨간 버튼이에요. 아무 데나 빨강을 쓰면 힘이 빠져요.</p>
       </article>
 
       <article class="card" data-k="cta call to action 씨티에이 행동 유도">
-        <div class="ch"><h3>씨티에이 <span>CTA</span></h3></div>
+        <div class="ch"><h4>씨티에이 <span>CTA</span></h4></div>
         <div class="cb">
           <div style="text-align:center"><div style="font-size:18px;font-weight:800;margin-bottom:10px">지금 시작해보세요</div><span class="btn">무료로 시작하기</span></div>
           <p class="cap">제일 중요한 행동 하나</p>
@@ -808,16 +814,16 @@ body:not(.locked) .gate{display:none}
         <p class="desc">Call To Action. 이 페이지에서 꼭 하길 바라는 행동 하나예요. 신청, 구매, 시작하기 같은 것.</p>
       </article>
 
-      <h4 class="grp">모양별 <small>글자 대신 아이콘, 여러 개 묶기</small></h4>
+      <h3 class="grp">모양별 <small>글자 대신 아이콘, 여러 개 묶기</small></h3>
 
       <article class="card" data-k="icon button 아이콘 버튼">
-        <div class="ch"><h3>아이콘 버튼 <span>Icon Button</span></h3></div>
+        <div class="ch"><h4>아이콘 버튼 <span>Icon Button</span></h4></div>
         <div class="cb"><div class="row"><span class="iconbtn">✕</span><span class="iconbtn">♡</span><span class="iconbtn">↗</span></div><p class="cap">아이콘만 · 글자 없음</p></div>
         <p class="desc">글자 없이 아이콘만 있는 버튼이에요. 닫기, 좋아요, 공유처럼 뜻이 뻔한 것에 써요.</p>
       </article>
 
       <article class="card" data-k="fab floating action button 플로팅 버튼 떠있는">
-        <div class="ch"><h3>플로팅 버튼 <span>FAB</span></h3></div>
+        <div class="ch"><h4>플로팅 버튼 <span>FAB</span></h4></div>
         <div class="cb stretch" style="justify-content:flex-start">
           <span class="ph" style="width:85%"></span><span class="ph" style="width:70%"></span>
           <span class="fab" style="position:absolute;right:18px;bottom:18px">+</span>
@@ -827,13 +833,13 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="link 링크 하이퍼링크 밑줄">
-        <div class="ch"><h3>링크 <span>Link</span></h3></div>
+        <div class="ch"><h4>링크 <span>Link</span></h4></div>
         <div class="cb"><div style="font-size:14px">자세한 내용은 <b style="text-decoration:underline;text-underline-offset:3px">이 문서</b>를 봐주세요.</div><p class="cap">버튼이 아니라 글자 링크</p></div>
         <p class="desc">누르면 다른 곳으로 가는 글자예요. 밑줄이나 다른 색으로 표시해요.</p>
       </article>
 
       <article class="card" data-k="button group 버튼 그룹 세그먼트 탭">
-        <div class="ch"><h3>버튼 그룹 <span>Button Group</span></h3></div>
+        <div class="ch"><h4>버튼 그룹 <span>Button Group</span></h4></div>
         <div class="cb">
           <div style="display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--card);font-size:13px"><span style="padding:8px 16px;background:var(--ink);color:var(--card);font-weight:600">일간</span><span style="padding:8px 16px;color:var(--muted);border-left:1px solid var(--line)">주간</span><span style="padding:8px 16px;color:var(--muted);border-left:1px solid var(--line)">월간</span></div>
           <p class="cap">버튼 여러 개를 붙여놓은 것</p>
@@ -841,10 +847,10 @@ body:not(.locked) .gate{display:none}
         <p class="desc">관련 있는 버튼을 한 줄로 붙여 놓은 거예요. 보기 방식을 바꿀 때 많이 써요.</p>
       </article>
 
-      <h4 class="grp">가입 · 상담 <small>외부 서비스와 이어지는 버튼</small></h4>
+      <h3 class="grp">가입 · 상담 <small>외부 서비스와 이어지는 버튼</small></h3>
 
       <article class="card" data-k="social login 소셜 로그인 버튼 카카오 네이버 구글">
-        <div class="ch"><h3>소셜 로그인 버튼 <span>Social Login</span></h3></div>
+        <div class="ch"><h4>소셜 로그인 버튼 <span>Social Login</span></h4></div>
         <div class="cb"><div class="social"><span style="background:#fff;color:#1a1a1a;border:1px solid #e6e5e0"><svg class="glogo" style="width:14px;height:14px" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google로 시작하기</span><span style="background:#FEE500;color:#191919">카카오로 시작하기</span><span style="background:#03C75A;color:#fff">네이버로 시작하기</span></div>
           <p class="cap">카카오 노랑 · 네이버 초록 · Google 흰색</p>
         </div>
@@ -852,7 +858,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="chat widget live chat 채팅 상담 버튼 카카오 채널 채널톡">
-        <div class="ch"><h3>채팅 상담 버튼 <span>Chat Widget</span></h3></div>
+        <div class="ch"><h4>채팅 상담 버튼 <span>Chat Widget</span></h4></div>
         <div class="cb stretch" style="justify-content:flex-start;gap:8px"><span class="ph" style="width:85%"></span><span class="ph" style="width:70%"></span><span class="ph" style="width:78%"></span><span class="fab" style="position:absolute;right:18px;bottom:18px;background:#FEE500;color:#191919"><svg viewBox="0 0 24 24" class="icon" style="width:22px;height:22px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         </div>
         <p class="desc">화면 구석에 떠 있는 상담 버튼이에요. 누르면 채팅창이 열려요. 카카오 채널, 채널톡이 대표예요.</p>
@@ -866,10 +872,10 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">사용자한테 뭔가를 받아내는 칸들. 신청서, 문의, 로그인이 전부 폼이에요.</p>
     <div class="grid">
 
-      <h4 class="grp">글자 넣기 <small>타이핑하는 칸</small></h4>
+      <h3 class="grp">글자 넣기 <small>타이핑하는 칸</small></h3>
 
       <article class="card" data-k="form 폼 양식 신청서">
-        <div class="ch"><h3>폼 <span>Form</span></h3></div>
+        <div class="ch"><h4>폼 <span>Form</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px">
             <label class="lbl">이름 <span class="req">*</span></label><div class="input p" style="margin-bottom:10px">이지우</div>
@@ -882,7 +888,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="input 인풋 입력칸 텍스트 필드">
-        <div class="ch"><h3>인풋 <span>Input</span></h3></div>
+        <div class="ch"><h4>인풋 <span>Input</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px">
             <label class="lbl">이름 <span class="req">*</span></label><div class="input focus" style="margin-bottom:10px">이지우</div>
@@ -894,7 +900,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="textarea 텍스트에어리어 여러 줄 문의">
-        <div class="ch"><h3>텍스트에어리어 <span>Textarea</span></h3></div>
+        <div class="ch"><h4>텍스트에어리어 <span>Textarea</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px"><label class="lbl">문의 내용</label><div class="input p tall">어떤 걸 만들고 싶으신지<br>편하게 적어주세요</div></div>
           <p class="cap">여러 줄 넣는 큰 칸</p>
@@ -903,7 +909,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="search bar 검색바 검색창">
-        <div class="ch"><h3>검색바 <span>Search Bar</span></h3></div>
+        <div class="ch"><h4>검색바 <span>Search Bar</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px">
             <div class="input" style="display:flex;gap:8px;align-items:center"><svg viewBox="0 0 24 24" class="icon" style="width:14px;height:14px;color:var(--muted)"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>바이브코딩</div>
@@ -915,7 +921,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="autocomplete 자동완성 추천 후보">
-        <div class="ch"><h3>자동완성 <span>Autocomplete</span></h3></div>
+        <div class="ch"><h4>자동완성 <span>Autocomplete</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px">
             <div class="input focus">바이브<span style="color:var(--muted)">코딩</span></div>
@@ -926,10 +932,10 @@ body:not(.locked) .gate{display:none}
         <p class="desc">몇 글자 치면 맞는 후보를 보여주는 거예요. 검색이나 주소 입력에 써요.</p>
       </article>
 
-      <h4 class="grp">고르기 <small>정해진 것 중에서 선택</small></h4>
+      <h3 class="grp">고르기 <small>정해진 것 중에서 선택</small></h3>
 
       <article class="card" data-k="select dropdown 셀렉트 드롭다운 선택">
-        <div class="ch"><h3>셀렉트 <span>Select</span></h3></div>
+        <div class="ch"><h4>셀렉트 <span>Select</span></h4></div>
         <div class="cb">
           <div class="select"><label class="lbl">학년</label><div class="input focus">3학년<span class="arrow">▼</span></div><div class="menu"><div>1학년</div><div>2학년</div><div class="sel">3학년</div></div></div>
           <p class="cap">목록에서 하나 고르기</p>
@@ -938,7 +944,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="checkbox 체크박스 여러개 선택">
-        <div class="ch"><h3>체크박스 <span>Checkbox</span></h3></div>
+        <div class="ch"><h4>체크박스 <span>Checkbox</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:200px"><label class="lbl">여러 개 고를 수 있어요</label><div class="check"><i class="on">✓</i>마케팅</div><div class="check"><i class="on">✓</i>개발</div><div class="check"><i></i>디자인</div></div>
           <p class="cap">네모 체크 · 여러 개 가능</p>
@@ -947,7 +953,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="radio 라디오 버튼 하나만 선택">
-        <div class="ch"><h3>라디오 버튼 <span>Radio</span></h3></div>
+        <div class="ch"><h4>라디오 버튼 <span>Radio</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:200px"><label class="lbl">하나만 골라주세요</label><div class="check"><i class="r on"></i>처음이에요</div><div class="check"><i class="r"></i>해본 적 있어요</div><div class="check"><i class="r"></i>잘해요</div></div>
           <p class="cap">동그라미 · 하나만 가능</p>
@@ -956,7 +962,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="toggle switch 토글 스위치 켜기 끄기 온오프">
-        <div class="ch"><h3>토글 / 스위치 <span>Toggle</span></h3></div>
+        <div class="ch"><h4>토글 / 스위치 <span>Toggle</span></h4></div>
         <div class="cb">
           <div class="toggle">알림 받기<span class="switch on"></span></div>
           <div class="toggle">다크 모드<span class="switch"></span></div>
@@ -966,7 +972,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="slider range 슬라이더 범위 끌기">
-        <div class="ch"><h3>슬라이더 <span>Slider</span></h3></div>
+        <div class="ch"><h4>슬라이더 <span>Slider</span></h4></div>
         <div class="cb">
           <div class="slider"><div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:var(--muted)">예산</span><b>45만원</b></div><div class="track"><span class="knob"></span></div><div class="lbls"><span>0</span><span>100만원</span></div></div>
           <p class="cap">끌어서 값 정하기</p>
@@ -975,7 +981,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="number stepper counter 수량 조절 카운터 플러스 마이너스">
-        <div class="ch"><h3>수량 조절 <span>Number Stepper</span></h3></div>
+        <div class="ch"><h4>수량 조절 <span>Number Stepper</span></h4></div>
         <div class="cb">
           <div style="display:inline-flex;border:1px solid var(--line);border-radius:8px;background:var(--card);overflow:hidden;font-size:14px"><span style="padding:8px 14px;color:var(--muted)">−</span><span style="padding:8px 18px;font-weight:700;border-left:1px solid var(--line);border-right:1px solid var(--line)">2</span><span style="padding:8px 14px;color:var(--muted)">+</span></div>
           <p class="cap">카운터라고도 해요</p>
@@ -984,25 +990,25 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="rating star 별점 평점">
-        <div class="ch"><h3>별점 <span>Rating</span></h3></div>
+        <div class="ch"><h4>별점 <span>Rating</span></h4></div>
         <div class="cb"><div style="text-align:center"><div class="stars">★★★★<i>★</i></div><div style="font-size:13px;font-weight:600">4.0</div></div><p class="cap">반 칸 단위도 됩니다</p></div>
         <p class="desc">별 개수로 점수를 매기는 거예요. 후기에 써요.</p>
       </article>
 
       <article class="card" data-k="color picker 컬러피커 색상 선택 팔레트">
-        <div class="ch"><h3>컬러피커 <span>Color Picker</span></h3></div>
+        <div class="ch"><h4>컬러피커 <span>Color Picker</span></h4></div>
         <div class="cb">
-          <div class="row" style="gap:10px"><span class="dot" style="width:26px;height:26px;background:#1a1a1a"></span><span class="dot" style="width:26px;height:26px;background:#E1785C;box-shadow:0 0 0 2px var(--card),0 0 0 3.5px #E1785C"></span><span class="dot" style="width:26px;height:26px;background:#2E6B4E"></span><span class="dot" style="width:26px;height:26px;background:#8A6A1F"></span><span class="dot" style="width:26px;height:26px;background:#4A6FA5"></span></div>
+          <div class="row" style="gap:10px"><span class="dot" style="width:26px;height:26px;background:var(--ink);box-shadow:0 0 0 1px var(--line)"></span><span class="dot" style="width:26px;height:26px;background:#E1785C;box-shadow:0 0 0 2px var(--card),0 0 0 3.5px #E1785C"></span><span class="dot" style="width:26px;height:26px;background:#2E6B4E"></span><span class="dot" style="width:26px;height:26px;background:#8A6A1F"></span><span class="dot" style="width:26px;height:26px;background:#4A6FA5"></span></div>
           <div class="input" style="width:auto;padding:6px 18px;font-size:13px;font-weight:600">#E1785C</div>
           <p class="cap">색 고르기</p>
         </div>
         <p class="desc">색을 고르는 도구예요. "주황색"보다 #E1785C 같은 코드로 말하면 정확해요.</p>
       </article>
 
-      <h4 class="grp">특수 입력 <small>날짜 · 시간 · 인증 · 파일</small></h4>
+      <h3 class="grp">특수 입력 <small>날짜 · 시간 · 인증 · 파일</small></h3>
 
       <article class="card" data-k="date picker calendar 데이트피커 날짜 달력">
-        <div class="ch"><h3>데이트피커 <span>Date Picker</span></h3></div>
+        <div class="ch"><h4>데이트피커 <span>Date Picker</span></h4></div>
         <div class="cb">
           <div class="cal"><div class="head">2026. 09. 15<span>▦</span></div><div class="g"><i>일</i><i>월</i><i>화</i><i>수</i><i>목</i><i>금</i><i>토</i><em>13</em><em>14</em><em class="sel">15</em><em>16</em><em>17</em><em>18</em><em>19</em><em>20</em><em>21</em><em>22</em><em>23</em><em>24</em><em>25</em><em>26</em></div></div>
           <p class="cap">달력에서 날짜 고르기</p>
@@ -1011,7 +1017,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="time picker 타임피커 시간 선택">
-        <div class="ch"><h3>타임피커 <span>Time Picker</span></h3></div>
+        <div class="ch"><h4>타임피커 <span>Time Picker</span></h4></div>
         <div class="cb">
           <div class="input" style="width:auto;padding:8px 16px;display:flex;gap:30px;align-items:center;font-weight:600">14 : 30 <span style="color:var(--muted);font-size:12px">◷</span></div>
           <div class="row" style="gap:6px"><span class="chip" style="color:var(--muted)">13</span><span class="chip" style="border:1.5px solid var(--ink);font-weight:700">14</span><span class="chip" style="color:var(--muted)">15</span></div>
@@ -1021,13 +1027,13 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="otp input 인증번호 입력 코드 6자리">
-        <div class="ch"><h3>인증번호 입력 <span>OTP Input</span></h3></div>
-        <div class="cb"><div class="otp"><span>4</span><span>7</span><span class="cur"></span><span></span></div><p class="cap">한 칸씩 자동으로 넘어가게</p></div>
+        <div class="ch"><h4>인증번호 입력 <span>OTP Input</span></h4></div>
+        <div class="cb"><div class="otp"><span>4</span><span>7</span><span class="cur"></span><span></span><span></span><span></span></div><p class="cap">한 칸씩 자동으로 넘어가게</p></div>
         <p class="desc">문자로 온 인증번호를 한 자리씩 넣는 칸이에요. 한 칸 채우면 다음 칸으로 넘어가요.</p>
       </article>
 
       <article class="card" data-k="tag input 태그 입력 키워드 칩">
-        <div class="ch"><h3>태그 입력 <span>Tag Input</span></h3></div>
+        <div class="ch"><h4>태그 입력 <span>Tag Input</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:270px"><label class="lbl">관심 분야</label><div class="input" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:7px 10px;border-color:var(--ink)"><span class="chip gray xs">디자인 ✕</span><span class="chip gray xs">AI ✕</span><span style="color:var(--muted);font-size:12px">입력하고 엔터…</span></div></div>
           <p class="cap">엔터 치면 칩으로 바뀌어요</p>
@@ -1036,13 +1042,13 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="file upload 파일 업로더 업로드 첨부">
-        <div class="ch"><h3>파일 업로더 <span>File Upload</span></h3></div>
+        <div class="ch"><h4>파일 업로더 <span>File Upload</span></h4></div>
         <div class="cb"><div class="upload"><span class="ic">⇧</span>여기로 끌어다 놓으세요<small>이미지 · 최대 5MB</small></div><p class="cap">파일 올리는 칸</p></div>
         <p class="desc">파일을 올리는 영역이에요. 클릭해서 고르거나 끌어다 놓아요.</p>
       </article>
 
       <article class="card" data-k="drag and drop 드래그 앤 드롭 끌어서 놓기 순서">
-        <div class="ch"><h3>드래그 앤 드롭 <span>Drag and Drop</span></h3></div>
+        <div class="ch"><h4>드래그 앤 드롭 <span>Drag and Drop</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:18px"><div class="frame" style="width:56px;height:56px;transform:rotate(-8deg);box-shadow:0 8px 16px rgba(0,0,0,.12)"></div><span style="color:var(--muted)">→</span><div style="width:80px;height:56px;border:1.5px dashed var(--soft2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11.5px;color:var(--muted)">여기에 놓기</div></div>
           <p class="cap">끌어다 놓기</p>
@@ -1050,10 +1056,10 @@ body:not(.locked) .gate{display:none}
         <p class="desc">마우스로 잡아서 원하는 곳에 놓는 동작이에요. 순서 바꾸기, 파일 올리기에 써요.</p>
       </article>
 
-      <h4 class="grp">칸 주변 글자 <small>이름표 · 예시 · 안내 · 검사</small></h4>
+      <h3 class="grp">칸 주변 글자 <small>이름표 · 예시 · 안내 · 검사 · 보내기</small></h3>
 
       <article class="card" data-k="label 라벨 이름표 필수">
-        <div class="ch"><h3>라벨 <span>Label</span></h3></div>
+        <div class="ch"><h4>라벨 <span>Label</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px"><label class="lbl strong">이메일 <span class="req">*</span></label><div class="input p">example@gmail.com</div><div class="help" style="color:var(--red)">↑ 입력란 위 이름표가 라벨이에요</div></div>
         </div>
@@ -1061,7 +1067,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="placeholder 플레이스홀더 예시 글자 힌트">
-        <div class="ch"><h3>플레이스홀더 <span>Placeholder</span></h3></div>
+        <div class="ch"><h4>플레이스홀더 <span>Placeholder</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px"><label class="lbl">이메일</label><div class="input p">example@gmail.com</div><div class="help" style="color:var(--red)">↑ 흐리게 미리 써 있는 예시 글자</div></div>
         </div>
@@ -1069,7 +1075,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="helper text 헬퍼 텍스트 안내 문구 힌트">
-        <div class="ch"><h3>헬퍼 텍스트 <span>Helper Text</span></h3></div>
+        <div class="ch"><h4>헬퍼 텍스트 <span>Helper Text</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px"><label class="lbl">비밀번호</label><div class="input">••••••••</div><div class="help">영문·숫자 포함 8자 이상</div><div class="help" style="color:var(--red)">↑ 칸 아래 회색 안내 문구</div></div>
         </div>
@@ -1077,7 +1083,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="validation 유효성 검사 검증 형식">
-        <div class="ch"><h3>유효성 검사 <span>Validation</span></h3></div>
+        <div class="ch"><h4>유효성 검사 <span>Validation</span></h4></div>
         <div class="cb">
           <div class="field" style="max-width:260px"><label class="lbl">이메일 <span class="req">*</span></label><div class="input err">jiwoo@@gmail</div><div class="help err">이메일 형식이 아니에요</div></div>
           <p class="cap">형식이 맞는지 확인하는 것</p>
@@ -1086,23 +1092,23 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="submit 제출 보내기 전송">
-        <div class="ch"><h3>제출 <span>Submit</span></h3></div>
+        <div class="ch"><h4>제출 <span>Submit</span></h4></div>
         <div class="cb"><span class="btn">보내기</span><div style="font-size:13px;color:var(--green);display:flex;gap:6px;align-items:center"><span class="dot" style="width:16px;height:16px;background:var(--green);color:#fff;font-size:10px;display:inline-flex;align-items:center;justify-content:center">✓</span>신청 완료됐어요</div><p class="cap">폼 내용을 보내는 것</p></div>
         <p class="desc">폼에 적은 내용을 서버로 보내는 행동이에요. 보내기 버튼이 제출 버튼이에요.</p>
       </article>
 
-      <h4 class="grp">한국식 가입 · 주문 <small>한국 서비스에서 꼭 나오는 칸</small></h4>
+      <h3 class="grp">한국식 가입 · 주문 <small>한국 서비스에서 꼭 나오는 칸</small></h3>
 
       <article class="card" data-k="terms agreement 약관 전체 동의 필수 선택 체크">
-        <div class="ch"><h3>약관 전체 동의 <span>Terms Agreement</span></h3></div>
-        <div class="cb"><div class="field" style="max-width:230px"><div class="check" style="font-weight:700;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:4px"><i class="on">✓</i>전체 동의</div><div class="check"><i class="on">✓</i><span><span style="color:var(--red)">[필수]</span> 이용약관</span></div><div class="check"><i class="on">✓</i><span><span style="color:var(--red)">[필수]</span> 개인정보 수집</span></div><div class="check"><i></i><span><span style="color:var(--muted)">[선택]</span> 마케팅 수신</span></div></div>
+        <div class="ch"><h4>약관 전체 동의 <span>Terms Agreement</span></h4></div>
+        <div class="cb"><div class="field" style="max-width:230px"><div class="check" style="font-weight:700;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:4px"><i class="on">✓</i>전체 동의</div><div class="check"><i class="on">✓</i><span><span style="color:var(--red)">[필수]</span> 이용약관</span></div><div class="check"><i class="on">✓</i><span><span style="color:var(--red)">[필수]</span> 개인정보 수집</span></div><div class="check"><i class="on">✓</i><span><span style="color:var(--muted)">[선택]</span> 마케팅 수신</span></div></div>
           <p class="cap">전체 동의 + [필수] [선택] 체크</p>
         </div>
         <p class="desc">가입할 때 약관을 한 번에 또는 하나씩 동의하는 칸이에요. 필수·선택을 구분해요.</p>
       </article>
 
       <article class="card" data-k="identity verification 본인인증 휴대폰 인증 PASS 통신사">
-        <div class="ch"><h3>본인인증 <span>Identity Verification</span></h3></div>
+        <div class="ch"><h4>본인인증 <span>Identity Verification</span></h4></div>
         <div class="cb"><div class="field" style="max-width:250px"><div class="row" style="justify-content:flex-start;gap:6px;margin-bottom:8px"><span class="chip on xs" style="padding:4px 10px">SKT</span><span class="chip xs" style="padding:4px 10px">KT</span><span class="chip xs" style="padding:4px 10px">LG U+</span></div><div class="input p" style="margin-bottom:8px">휴대폰 번호</div><span class="btn block sm">인증번호 받기</span></div>
           <p class="cap">통신사 선택 → 휴대폰 인증</p>
         </div>
@@ -1110,7 +1116,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="address search postcode 주소 찾기 우편번호 검색">
-        <div class="ch"><h3>주소 찾기 <span>Address Search</span></h3></div>
+        <div class="ch"><h4>주소 찾기 <span>Address Search</span></h4></div>
         <div class="cb"><div class="field" style="max-width:250px"><div style="display:flex;gap:6px;margin-bottom:6px"><div class="input" style="flex:1">06236</div><span class="btn sm light" style="white-space:nowrap">주소 찾기</span></div><div class="input" style="margin-bottom:6px">서울 강남구 테헤란로 152</div><div class="input p">상세 주소</div></div>
           <p class="cap">우편번호 찾기 → 주소 자동 입력</p>
         </div>
@@ -1125,66 +1131,66 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">같은 버튼, 같은 입력칸도 상황에 따라 모습이 바뀌어요. "호버 때 어둡게 해줘"처럼 말해요.</p>
     <div class="grid states">
 
-      <h4 class="grp">버튼의 상태 <small>손을 대기 전부터 처리 중까지</small></h4>
+      <h3 class="grp">버튼의 상태 <small>손을 대기 전부터 처리 중까지</small></h3>
 
       <article class="card" data-k="default 기본 상태 평소">
-        <div class="ch"><h3>기본 <span>Default</span></h3></div>
+        <div class="ch"><h4>기본 <span>Default</span></h4></div>
         <div class="cb"><span class="btn">보내기</span><p class="cap">아무것도 안 한 상태</p></div>
         <p class="desc">손대지 않았을 때 보이는 평소 모습이에요. 다른 상태는 전부 여기서 출발해요.</p>
       </article>
 
       <article class="card" data-k="hover 호버 마우스 올림">
-        <div class="ch"><h3>호버 <span>Hover</span></h3></div>
+        <div class="ch"><h4>호버 <span>Hover</span></h4></div>
         <div class="cb"><span class="btn hover">보내기</span><p class="cap">마우스 올렸을 때</p></div>
         <p class="desc">마우스를 올리면 살짝 바뀌는 상태예요. 누를 수 있다는 신호예요. 모바일에는 호버가 없어요.</p>
       </article>
 
       <article class="card" data-k="active pressed 액티브 누름 클릭">
-        <div class="ch"><h3>액티브 <span>Active / Pressed</span></h3></div>
+        <div class="ch"><h4>액티브 <span>Active / Pressed</span></h4></div>
         <div class="cb"><span class="btn active">보내기</span><p class="cap">누르는 순간</p></div>
         <p class="desc">누르는 순간의 모습이에요. 살짝 눌린 느낌을 줘요.</p>
       </article>
 
       <article class="card" data-k="focus 포커스 탭 키보드 테두리">
-        <div class="ch"><h3>포커스 <span>Focus</span></h3></div>
+        <div class="ch"><h4>포커스 <span>Focus</span></h4></div>
         <div class="cb"><span class="btn focus">보내기</span><p class="cap">탭 키로 선택됐을 때</p></div>
         <p class="desc">키보드 탭으로 옮겨 다닐 때 지금 어디인지 보여주는 테두리예요. 접근성에 꼭 필요해요.</p>
       </article>
 
       <article class="card" data-k="disabled 디스에이블드 비활성 회색 못 누름">
-        <div class="ch"><h3>디스에이블드 <span>Disabled</span></h3></div>
+        <div class="ch"><h4>디스에이블드 <span>Disabled</span></h4></div>
         <div class="cb"><span class="btn disabled">보내기</span><p class="cap">못 누르게 회색</p></div>
         <p class="desc">조건이 안 돼서 못 누르는 상태예요. 회색으로 흐리게 보여줘요.</p>
       </article>
 
       <article class="card" data-k="loading 로딩 처리 중 대기">
-        <div class="ch"><h3>로딩 <span>Loading</span></h3></div>
+        <div class="ch"><h4>로딩 <span>Loading</span></h4></div>
         <div class="cb"><span class="btn"><span class="spin xs"></span>보내는 중</span><p class="cap">처리 중</p></div>
         <p class="desc">서버가 처리하는 동안이에요. 두 번 눌리지 않게 막고 돌아가는 표시를 보여줘요.</p>
       </article>
 
-      <h4 class="grp">입력칸의 상태 <small>고르고, 틀리고, 맞고</small></h4>
+      <h3 class="grp">입력칸의 상태 <small>고르고, 틀리고, 맞고</small></h3>
 
       <article class="card" data-k="selected 선택됨 골라진">
-        <div class="ch"><h3>선택됨 <span>Selected</span></h3></div>
+        <div class="ch"><h4>선택됨 <span>Selected</span></h4></div>
         <div class="cb"><div class="row"><span class="chip on">디자인</span><span class="chip">개발</span><span class="chip">마케팅</span></div><p class="cap">골라진 상태</p></div>
         <p class="desc">여러 개 중 골라진 상태예요. 색을 채워서 구분해요.</p>
       </article>
 
       <article class="card" data-k="error invalid 에러 오류 잘못됨 빨강">
-        <div class="ch"><h3>에러 <span>Error / Invalid</span></h3></div>
+        <div class="ch"><h4>에러 <span>Error / Invalid</span></h4></div>
         <div class="cb"><div class="field" style="max-width:260px;text-align:center"><div class="input err" style="text-align:center">jiwoo@@gmail</div><div class="help err">이메일 형식이 아니에요</div></div><p class="cap">잘못된 상태</p></div>
         <p class="desc">입력이 틀렸을 때예요. 빨간 테두리와 이유를 같이 보여줘요.</p>
       </article>
 
       <article class="card" data-k="success 성공 확인 초록">
-        <div class="ch"><h3>성공 <span>Success</span></h3></div>
+        <div class="ch"><h4>성공 <span>Success</span></h4></div>
         <div class="cb"><div class="field" style="max-width:260px;text-align:center"><div class="input ok" style="display:flex;justify-content:space-between">jiwoo@gmail.com <span style="color:var(--green)">✓</span></div><div class="help ok">확인됐어요</div></div><p class="cap">잘된 상태</p></div>
         <p class="desc">잘 됐을 때예요. 초록색으로 확인 표시를 줘요.</p>
       </article>
 
       <article class="card" data-k="read-only readonly 읽기 전용 수정 불가">
-        <div class="ch"><h3>읽기 전용 <span>Read-only</span></h3></div>
+        <div class="ch"><h4>읽기 전용 <span>Read-only</span></h4></div>
         <div class="cb"><div class="field" style="max-width:260px"><div class="input ro" style="text-align:center">jiwoo@gmail.com</div></div><p class="cap">보이지만 고칠 수 없는 상태</p></div>
         <p class="desc">값은 보이지만 고칠 수 없는 상태예요. 디스에이블드와 달리 복사는 돼요.</p>
       </article>
@@ -1197,10 +1203,10 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">화면 곳곳에 붙는 작은 것들. 이름을 알면 "여기 배지 달아줘" 한마디로 끝나요.</p>
     <div class="grid">
 
-      <h4 class="grp">표시 <small>숫자 · 상태 · 라벨</small></h4>
+      <h3 class="grp">표시 <small>숫자 · 상태 · 라벨</small></h3>
 
       <article class="card" data-k="badge 배지 숫자 점 알림 개수">
-        <div class="ch"><h3>배지 <span>Badge</span></h3></div>
+        <div class="ch"><h4>배지 <span>Badge</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:40px"><span style="position:relative;display:inline-block"><span class="box" style="width:34px;height:34px;display:block"></span><span style="position:absolute;top:-6px;right:-8px;background:var(--red);color:#fff;font-size:10px;font-weight:700;min-width:18px;height:18px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px">3</span></span><span style="position:relative;display:inline-block"><span class="box" style="width:34px;height:34px;display:block"></span><span class="dot" style="position:absolute;top:-2px;right:-2px;background:var(--red)"></span></span></div>
           <p class="cap">숫자 또는 점</p>
@@ -1209,7 +1215,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="status dot 상태 점 온라인 오프라인">
-        <div class="ch"><h3>상태 점 <span>Status Dot</span></h3></div>
+        <div class="ch"><h4>상태 점 <span>Status Dot</span></h4></div>
         <div class="cb">
           <div style="display:grid;gap:8px;font-size:13.5px"><div style="display:flex;gap:8px;align-items:center"><span class="dot" style="background:var(--green)"></span>온라인</div><div style="display:flex;gap:8px;align-items:center"><span class="dot" style="background:var(--yellow)"></span>자리 비움</div><div style="display:flex;gap:8px;align-items:center;color:var(--muted)"><span class="dot" style="background:var(--soft2)"></span>오프라인</div></div>
           <p class="cap">색으로 상태를 보여주는 점</p>
@@ -1218,35 +1224,35 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="chip tag 칩 태그 필터 라벨">
-        <div class="ch"><h3>칩 / 태그 <span>Chip</span></h3></div>
+        <div class="ch"><h4>칩 / 태그 <span>Chip</span></h4></div>
         <div class="cb"><div class="row" style="gap:6px"><span class="chip on">전체</span><span class="chip">디자인</span><span class="chip">개발</span><span class="chip">마케팅</span><span class="chip gray">AI ✕</span></div><p class="cap">눌러서 거르는 필터로 많이 써요</p></div>
         <p class="desc">작은 알약 모양 라벨이에요. 필터로도 쓰고, ✕가 붙으면 지울 수 있어요.</p>
       </article>
 
       <article class="card" data-k="kbd keyboard key 키보드 키 단축키">
-        <div class="ch"><h3>키보드 키 <span>Kbd</span></h3></div>
+        <div class="ch"><h4>키보드 키 <span>Kbd</span></h4></div>
         <div class="cb"><div style="font-size:14px;display:flex;gap:8px;align-items:center">검색은 <span class="kbd">⌘</span><span class="kbd">K</span></div><p class="cap">단축키를 키 모양으로 보여주는 것</p></div>
         <p class="desc">단축키를 실제 키 모양으로 그린 거예요. 문서나 도움말에 써요.</p>
       </article>
 
-      <h4 class="grp">사람 <small>누가 있는지</small></h4>
+      <h3 class="grp">사람 <small>누가 있는지</small></h3>
 
       <article class="card" data-k="avatar 아바타 프로필 사진 이니셜">
-        <div class="ch"><h3>아바타 <span>Avatar</span></h3></div>
+        <div class="ch"><h4>아바타 <span>Avatar</span></h4></div>
         <div class="cb"><span class="avatar">쥬</span><p class="cap">사진 없으면 첫 글자로</p></div>
         <p class="desc">사람을 나타내는 동그란 사진이에요. 사진이 없으면 이름 첫 글자를 넣어요.</p>
       </article>
 
       <article class="card" data-k="avatar group 아바타 그룹 참여자 겹침">
-        <div class="ch"><h3>아바타 그룹 <span>Avatar Group</span></h3></div>
+        <div class="ch"><h4>아바타 그룹 <span>Avatar Group</span></h4></div>
         <div class="cb"><div style="display:flex"><span class="avatar" style="border:2px solid var(--stage);z-index:3">쥬</span><span class="avatar g2" style="border:2px solid var(--stage);margin-left:-12px;z-index:2">하</span><span class="avatar g3" style="border:2px solid var(--stage);margin-left:-12px;font-size:13px;font-weight:600">+9</span></div><p class="cap">겹쳐 놓은 아바타들</p></div>
         <p class="desc">아바타 여러 개를 겹쳐 놓은 거예요. "이 사람들이 참여 중"을 보여줄 때 써요.</p>
       </article>
 
-      <h4 class="grp">장식 <small>구분하고 뜻을 전하는 것</small></h4>
+      <h3 class="grp">장식 <small>구분하고 뜻을 전하는 것</small></h3>
 
       <article class="card" data-k="divider 디바이더 구분선 선">
-        <div class="ch"><h3>디바이더 <span>Divider</span></h3></div>
+        <div class="ch"><h4>디바이더 <span>Divider</span></h4></div>
         <div class="cb stretch">
           <span class="ph" style="width:85%"></span><span class="ph" style="width:60%"></span>
           <hr style="border:0;border-top:1px solid var(--soft2);margin:4px 0;width:100%">
@@ -1257,7 +1263,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="icon 아이콘 lucide 기호">
-        <div class="ch"><h3>아이콘 <span>Icon</span></h3></div>
+        <div class="ch"><h4>아이콘 <span>Icon</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:22px">
             <svg viewBox="0 0 24 24" class="icon" style="width:28px;height:28px"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
@@ -1278,109 +1284,109 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">뭔가 일어났을 때 알려주는 것들, 그리고 화면 위에 덮이는 것들.</p>
     <div class="grid">
 
-      <h4 class="grp">덮는 창 <small>화면 위에 뜨는 것</small></h4>
+      <h3 class="grp">덮는 창 <small>화면 위에 뜨는 것</small></h3>
 
       <article class="card" data-k="modal dialog 모달 다이얼로그 팝업 창">
-        <div class="ch"><h3>모달 <span>Modal / Dialog</span></h3></div>
+        <div class="ch"><h4>모달 <span>Modal / Dialog</span></h4></div>
         <div class="cb tight"><div class="dim"></div><div class="dialog"><b>정말 삭제할까요?</b><small>되돌릴 수 없어요</small><div class="row" style="gap:6px"><span class="btn sm light">취소</span><span class="btn sm danger">삭제</span></div></div></div>
         <p class="desc">화면 가운데 떠서 뒤를 막는 창이에요. 닫기 전엔 다른 걸 못 해요. 중요한 확인에만 써요.</p>
       </article>
 
       <article class="card" data-k="overlay dim backdrop 오버레이 딤 어둡게">
-        <div class="ch"><h3>오버레이 / 딤 <span>Overlay</span></h3></div>
+        <div class="ch"><h4>오버레이 / 딤 <span>Overlay</span></h4></div>
         <div class="cb tight"><div class="dim"></div><div style="position:absolute;top:18px;left:20px;right:20px;display:grid;gap:8px;opacity:.35"><span class="ph" style="width:100%;background:#fff"></span><span class="ph" style="width:80%;background:#fff"></span></div><div style="position:relative;color:#fff;font-size:13px;font-weight:600">뒤를 어둡게 덮는 층</div></div>
         <p class="desc">모달 뒤를 어둡게 덮는 반투명 층이에요. 시선을 앞에 집중시켜요.</p>
       </article>
 
       <article class="card" data-k="bottom sheet 바텀 시트 아래에서 올라오는">
-        <div class="ch"><h3>바텀 시트 <span>Bottom Sheet</span></h3></div>
+        <div class="ch"><h4>바텀 시트 <span>Bottom Sheet</span></h4></div>
         <div class="cb tight" style="justify-content:flex-end;align-items:stretch"><div class="dim"></div><div style="position:relative;background:var(--card);border-radius:14px 14px 0 0;padding:8px 18px 18px"><div style="width:32px;height:4px;border-radius:2px;background:var(--soft2);margin:0 auto 12px"></div><div style="font-size:14px;font-weight:700;margin-bottom:10px">공유하기</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px"><i class="box" style="height:30px"></i><i class="box" style="height:30px"></i><i class="box" style="height:30px"></i></div></div></div>
         <p class="desc">화면 아래에서 올라오는 판이에요. 모바일에서 모달 대신 많이 써요.</p>
       </article>
 
       <article class="card" data-k="confirmation confirm 확인 창 한 번 더 물어보기">
-        <div class="ch"><h3>확인 창 <span>Confirmation</span></h3></div>
+        <div class="ch"><h4>확인 창 <span>Confirmation</span></h4></div>
         <div class="cb"><div class="frame" style="padding:16px 20px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.08)"><b style="font-size:14px">정말 나가시겠어요?</b><div style="font-size:12px;color:var(--muted);margin:2px 0 12px">작성한 내용이 사라져요</div><div class="row" style="gap:6px"><span class="btn sm light">계속 쓰기</span><span class="btn sm">나가기</span></div></div><p class="cap">한 번 더 물어보는 창</p></div>
         <p class="desc">되돌리기 어려운 행동 앞에서 한 번 더 물어보는 창이에요. 모달의 한 종류예요.</p>
       </article>
 
-      <h4 class="grp">알려주기 <small>잠깐 뜨거나, 붙어 있거나</small></h4>
+      <h3 class="grp">알려주기 <small>잠깐 뜨거나, 붙어 있거나</small></h3>
 
       <article class="card" data-k="toast snackbar 토스트 스낵바 잠깐 알림">
-        <div class="ch"><h3>토스트 <span>Toast</span></h3></div>
+        <div class="ch"><h4>토스트 <span>Toast</span></h4></div>
         <div class="cb stretch" style="justify-content:flex-start;gap:8px"><span class="ph" style="width:80%"></span><span class="ph" style="width:65%"></span><span class="ph" style="width:72%"></span><div class="toast" style="max-width:none;margin-top:auto"><span class="dot" style="width:18px;height:18px;background:var(--green);color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center">✓</span>신청 완료됐어요</div></div>
         <p class="desc">아래나 위에 잠깐 떴다가 저절로 사라지는 짧은 알림이에요. "저장됐어요" 같은 것.</p>
       </article>
 
       <article class="card" data-k="alert 알럿 안내 띠 경고 성공 오류">
-        <div class="ch"><h3>알럿 <span>Alert</span></h3></div>
+        <div class="ch"><h4>알럿 <span>Alert</span></h4></div>
         <div class="cb" style="gap:8px"><div class="alert g">저장했어요</div><div class="alert y">곧 마감돼요</div><div class="alert r">이메일 형식이 아니에요</div><p class="cap">색으로 구분되는 안내 띠</p></div>
         <p class="desc">페이지 안에 붙어 있는 안내 띠예요. 초록은 성공, 노랑은 주의, 빨강은 오류.</p>
       </article>
 
       <article class="card" data-k="field error inline error 인라인 에러 필드 오류">
-        <div class="ch"><h3>인라인 에러 <span>Field Error</span></h3></div>
+        <div class="ch"><h4>인라인 에러 <span>Field Error</span></h4></div>
         <div class="cb"><div class="field" style="max-width:280px"><label class="lbl">이메일 <span class="req">*</span></label><div class="input err">jiwoo@@gmail</div><div class="help err">이메일 형식이 아니에요</div></div><p class="cap">알럿보다 이게 나아요</p></div>
         <p class="desc">틀린 칸 바로 아래에 붙는 오류 문구예요. 어디가 틀렸는지 바로 보여서 알럿보다 나아요.</p>
       </article>
 
       <article class="card" data-k="cookie banner 쿠키 배너 동의">
-        <div class="ch"><h3>쿠키 배너 <span>Cookie Banner</span></h3></div>
+        <div class="ch"><h4>쿠키 배너 <span>Cookie Banner</span></h4></div>
         <div class="cb stretch" style="justify-content:flex-end;gap:8px"><span class="ph" style="width:70%"></span><span class="ph" style="width:85%"></span><div class="cookie" style="max-width:none;margin-top:8px">더 나은 경험을 위해 쿠키를 사용해요.<div class="row"><span class="btn sm light">거부</span><span class="btn sm">동의</span></div></div></div>
         <p class="desc">쿠키 사용 동의를 받는 띠예요. 유럽 사용자가 있으면 필요해요.</p>
       </article>
 
-      <h4 class="grp">설명 <small>올리거나 눌러서 보는 것</small></h4>
+      <h3 class="grp">설명 <small>올리거나 눌러서 보는 것</small></h3>
 
       <article class="card" data-k="tooltip 툴팁 말풍선 설명">
-        <div class="ch"><h3>툴팁 <span>Tooltip</span></h3></div>
+        <div class="ch"><h4>툴팁 <span>Tooltip</span></h4></div>
         <div class="cb"><div style="text-align:center"><div class="tip" style="margin-bottom:12px">AEO는 AI 검색 최적화예요</div><div style="font-size:14px;display:flex;gap:6px;align-items:center;justify-content:center">AEO란? <span class="dot" style="width:16px;height:16px;background:var(--soft2);color:var(--muted);font-size:10px;display:inline-flex;align-items:center;justify-content:center">?</span></div></div><p class="cap">올리면 뜨는 작은 설명</p></div>
         <p class="desc">마우스를 올리면 뜨는 짧은 설명 말풍선이에요. 손을 떼면 사라져요.</p>
       </article>
 
       <article class="card" data-k="popover 팝오버 메뉴 작은 판">
-        <div class="ch"><h3>팝오버 <span>Popover</span></h3></div>
+        <div class="ch"><h4>팝오버 <span>Popover</span></h4></div>
         <div class="cb"><div class="pop"><div class="u"><span class="avatar sm">쥬</span>이지우</div><div class="m">설정</div><div class="m" style="padding-top:0">로그아웃</div></div><p class="cap">눌러서 여는 작은 판</p></div>
         <p class="desc">눌러서 여는 작은 판이에요. 툴팁보다 크고, 안에 버튼이 들어가요.</p>
       </article>
 
-      <h4 class="grp">기다리기 · 비어 있기 <small>내용이 아직 없을 때</small></h4>
+      <h3 class="grp">기다리기 · 비어 있기 <small>내용이 아직 없을 때</small></h3>
 
       <article class="card" data-k="progress bar 프로그레스 바 진행률 막대">
-        <div class="ch"><h3>프로그레스 바 <span>Progress Bar</span></h3></div>
+        <div class="ch"><h4>프로그레스 바 <span>Progress Bar</span></h4></div>
         <div class="cb"><div class="progress"><div class="head"><span>업로드 중</span><span>68%</span></div><div class="track"><i></i></div><small>약 12초 남았어요</small></div><p class="cap">얼마나 됐는지 막대</p></div>
         <p class="desc">얼마나 진행됐는지 막대로 보여줘요. 끝나는 시점을 알 때 써요.</p>
       </article>
 
       <article class="card" data-k="spinner loader 스피너 로딩 빙글">
-        <div class="ch"><h3>스피너 <span>Spinner</span></h3></div>
+        <div class="ch"><h4>스피너 <span>Spinner</span></h4></div>
         <div class="cb"><span class="spin"></span><p class="cap">불러오는 중…</p></div>
         <p class="desc">빙글 도는 로딩 표시예요. 얼마나 걸릴지 모를 때 써요.</p>
       </article>
 
       <article class="card" data-k="skeleton 스켈레톤 로딩 자리 회색">
-        <div class="ch"><h3>스켈레톤 <span>Skeleton</span></h3></div>
+        <div class="ch"><h4>스켈레톤 <span>Skeleton</span></h4></div>
         <div class="cb stretch" style="gap:10px"><div style="display:flex;gap:10px;align-items:center"><span class="skel" style="width:40px;height:40px;border-radius:50%;flex-shrink:0"></span><div style="flex:1;display:grid;gap:8px"><span class="skel" style="height:10px;width:60%"></span><span class="skel" style="height:10px;width:40%"></span></div></div><span class="skel" style="height:10px;width:100%"></span><span class="skel" style="height:10px;width:90%"></span><span class="skel" style="height:10px;width:65%"></span><p class="cap">내용 자리를 회색으로 미리 그려두기</p></div>
         <p class="desc">내용이 오기 전에 자리만 회색으로 그려 두는 거예요. 스피너보다 덜 답답해요.</p>
       </article>
 
       <article class="card" data-k="empty state 엠프티 스테이트 빈 화면 없음">
-        <div class="ch"><h3>엠프티 스테이트 <span>Empty State</span></h3></div>
+        <div class="ch"><h4>엠프티 스테이트 <span>Empty State</span></h4></div>
         <div class="cb"><div style="text-align:center"><div style="width:40px;height:40px;border:1.5px dashed var(--soft2);border-radius:10px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center"><span style="width:14px;height:14px;border:1.5px solid var(--soft2);border-radius:3px"></span></div><b style="font-size:14px">아직 신청이 없어요</b><div style="font-size:12px;color:var(--muted);margin:2px 0 10px">링크를 공유해보세요</div><span class="btn xs" style="padding:6px 12px;font-size:12px">링크 복사</span></div><p class="cap">비었을 때 보여주는 화면</p></div>
         <p class="desc">아무것도 없을 때 보여주는 화면이에요. 빈 채로 두지 말고 다음 할 일을 알려줘요.</p>
       </article>
 
-      <h4 class="grp">한국 웹에서 흔한 것 <small>들어오자마자 뜨는 것들</small></h4>
+      <h3 class="grp">한국 웹에서 흔한 것 <small>팝업 · 설치 유도 · 공유</small></h3>
 
       <article class="card" data-k="promo popup 팝업 배너 이벤트 팝업 오늘 하루 보지 않기">
-        <div class="ch"><h3>팝업 배너 <span>Promo Popup</span></h3></div>
+        <div class="ch"><h4>팝업 배너 <span>Promo Popup</span></h4></div>
         <div class="cb tight"><div class="dim"></div><div class="dialog" style="padding:12px 14px 10px;width:170px"><div class="box" style="height:56px;margin-bottom:8px;background:#edece8"></div><b style="font-size:13px">9월 무료 이벤트</b><div style="display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:#888;margin-top:8px"><span>☐ 오늘 하루 보지 않기</span><span>닫기 ✕</span></div></div>
         </div>
         <p class="desc">들어오자마자 뜨는 이벤트 창이에요. "오늘 하루 보지 않기"를 꼭 같이 둬요.</p>
       </article>
 
       <article class="card" data-k="app install banner smart banner 앱 설치 배너 앱으로 보기">
-        <div class="ch"><h3>앱 설치 배너 <span>App Install Banner</span></h3></div>
+        <div class="ch"><h4>앱 설치 배너 <span>App Install Banner</span></h4></div>
         <div class="cb stretch" style="justify-content:flex-start;gap:8px"><div class="frame" style="width:100%;display:flex;align-items:center;gap:8px;padding:8px 10px;font-size:11.5px"><span class="sq" style="width:26px;height:26px;border-radius:7px"></span><span style="flex:1;text-align:left"><b>앱에서 더 편하게</b><br><span style="color:var(--muted);font-size:10.5px">알림 · 오프라인 지원</span></span><span class="btn xs">앱 열기</span><span style="color:var(--muted)">✕</span></div><span class="ph" style="width:80%"></span><span class="ph" style="width:65%"></span>
           <p class="cap">'앱으로 보기' 상단 띠</p>
         </div>
@@ -1388,7 +1394,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="share sheet 공유 시트 공유하기 카톡 링크 복사">
-        <div class="ch"><h3>공유 시트 <span>Share Sheet</span></h3></div>
+        <div class="ch"><h4>공유 시트 <span>Share Sheet</span></h4></div>
         <div class="cb tight" style="justify-content:flex-end;align-items:stretch"><div class="dim"></div><div style="position:relative;background:var(--card);border-radius:14px 14px 0 0;padding:8px 16px 16px;margin-top:auto"><div style="width:32px;height:4px;border-radius:2px;background:var(--soft2);margin:0 auto 10px"></div><div style="font-size:13px;font-weight:700;margin-bottom:10px">공유하기</div><div style="display:flex;justify-content:space-around;font-size:10px;color:var(--muted)"><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:#FEE500;display:block;margin:0 auto 4px"></span>카카오톡</div><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:var(--soft);display:block;margin:0 auto 4px"></span>링크 복사</div><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:var(--soft);display:block;margin:0 auto 4px"></span>문자</div><div style="text-align:center"><span class="dot" style="width:36px;height:36px;background:var(--soft);display:block;margin:0 auto 4px"></span>더보기</div></div></div>
         </div>
         <p class="desc">공유 버튼을 누르면 아래에서 올라오는 창이에요. 바텀 시트의 한 종류예요.</p>
@@ -1402,88 +1408,88 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">내용을 담아 보여주는 덩어리들. 랜딩 페이지 만들 때 이 이름들을 조합해요.</p>
     <div class="grid">
 
-      <h4 class="grp">목록 · 순서 <small>여러 개를 나열</small></h4>
+      <h3 class="grp">목록 · 순서 <small>여러 개를 나열</small></h3>
 
       <article class="card" data-k="list 리스트 목록">
-        <div class="ch"><h3>리스트 <span>List</span></h3></div>
+        <div class="ch"><h4>리스트 <span>List</span></h4></div>
         <div class="cb"><div class="list"><div class="item"><span class="thumb"></span><div class="t"><b>신청서 자동화</b><small>09.09 · 완료</small></div><span class="chev">›</span></div><div class="item"><span class="thumb"></span><div class="t"><b>랜딩 페이지</b><small>09.08 · 진행중</small></div><span class="chev">›</span></div><div class="item"><span class="thumb"></span><div class="t"><b>포트폴리오</b><small>09.07 · 대기</small></div><span class="chev">›</span></div></div><p class="cap">같은 모양 항목을 세로로 나열</p></div>
         <p class="desc">같은 모양의 항목을 세로로 늘어놓은 거예요. 글 목록, 신청 목록.</p>
       </article>
 
       <article class="card" data-k="timeline 타임라인 연혁 순서 진행">
-        <div class="ch"><h3>타임라인 <span>Timeline</span></h3></div>
+        <div class="ch"><h4>타임라인 <span>Timeline</span></h4></div>
         <div class="cb"><div class="timeline"><div><b>아이디어 정리</b><small>09.01</small></div><div><b>첫 화면 완성</b><small>09.05</small></div><div class="todo">배포<small>예정</small></div></div><p class="cap">시간 순서로 나열</p></div>
         <p class="desc">일어난 일을 시간 순서로 세로 선에 붙인 거예요. 진행 과정, 회사 연혁.</p>
       </article>
 
       <article class="card" data-k="notification 알림 목록 새 소식">
-        <div class="ch"><h3>알림 목록 <span>Notification</span></h3></div>
+        <div class="ch"><h4>알림 목록 <span>Notification</span></h4></div>
         <div class="cb"><div class="notif"><div><span class="dot" style="background:var(--red);margin-top:6px"></span><div><b>새 신청이 들어왔어요</b><small>방금</small></div></div><div style="padding-left:30px"><div><b style="font-weight:500">배포가 완료됐어요</b><small>2시간 전</small></div></div><div style="padding-left:30px"><div><b style="font-weight:500">도메인이 연결됐어요</b><small>어제</small></div></div></div><p class="cap">새 소식 목록</p></div>
         <p class="desc">새로 온 소식을 시간 순으로 쌓은 목록이에요. 안 읽은 건 점으로 표시해요.</p>
       </article>
 
       <article class="card" data-k="gallery 갤러리 사진 격자">
-        <div class="ch"><h3>갤러리 <span>Gallery</span></h3></div>
+        <div class="ch"><h4>갤러리 <span>Gallery</span></h4></div>
         <div class="cb"><div class="gallery"><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="cap">사진을 격자로 나열</p></div>
         <p class="desc">사진을 격자로 늘어놓은 거예요. 포트폴리오, 상품 사진.</p>
       </article>
 
       <article class="card" data-k="lightbox 라이트박스 사진 크게 보기 확대">
-        <div class="ch"><h3>라이트박스 <span>Lightbox</span></h3></div>
+        <div class="ch"><h4>라이트박스 <span>Lightbox</span></h4></div>
         <div class="cb tight"><div class="dim"></div><span style="position:absolute;top:12px;right:16px;color:#fff;font-size:16px">✕</span><div style="position:relative;width:170px;height:110px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.3)"></div><p class="cap on-dark">사진 눌러서 크게 보기</p></div>
         <p class="desc">사진을 누르면 화면 가득 크게 보여주는 거예요. 갤러리와 짝으로 써요.</p>
       </article>
 
-      <h4 class="grp">숫자 · 가격 <small>자랑하고 비교하기</small></h4>
+      <h3 class="grp">숫자 · 가격 <small>자랑하고 비교하기</small></h3>
 
       <article class="card" data-k="stats 통계 숫자 지표">
-        <div class="ch"><h3>통계 <span>Stats</span></h3></div>
+        <div class="ch"><h4>통계 <span>Stats</span></h4></div>
         <div class="cb"><div class="stat"><div><b>2,060</b><small>누적 신청</small></div><div><b>98%</b><small>만족도</small></div><div><b>10분</b><small>평균 제작</small></div></div><p class="cap">큰 숫자 세 개</p></div>
         <p class="desc">자랑할 숫자를 크게 보여주는 거예요. 세 개 정도가 딱 좋아요.</p>
       </article>
 
       <article class="card" data-k="stat card 통계 카드 지표 변화량 대시보드">
-        <div class="ch"><h3>통계 카드 <span>Stat Card</span></h3></div>
+        <div class="ch"><h4>통계 카드 <span>Stat Card</span></h4></div>
         <div class="cb"><div class="row" style="gap:10px"><div class="statcard"><small>이번 주 신청</small><b>48</b><i class="up">▲ 12%</i></div><div class="statcard"><small>전환율</small><b>6.2%</b><i class="down">▼ 3%</i></div></div><p class="cap">숫자와 변화량</p></div>
         <p class="desc">숫자 하나에 변화량까지 붙인 카드예요. 대시보드에 써요.</p>
       </article>
 
       <article class="card" data-k="pricing table 가격표 요금제 플랜">
-        <div class="ch"><h3>가격표 <span>Pricing Table</span></h3></div>
+        <div class="ch"><h4>가격표 <span>Pricing Table</span></h4></div>
         <div class="cb"><div style="display:flex;gap:8px;width:100%;max-width:320px;align-items:stretch"><div class="plan">무료<b>0원</b>기본 기능<br>월 3회</div><div class="plan hot"><span class="tag">인기</span>프로<b>9,900원</b>전체 기능<br>무제한</div><div class="plan">팀<b>문의</b>전담 지원<br>보안</div></div><p class="cap">요금제 비교 표</p></div>
         <p class="desc">요금제를 나란히 비교하는 표예요. 추천 플랜에 "인기" 표시를 해요.</p>
       </article>
 
-      <h4 class="grp">신뢰 · 사람 <small>믿게 만드는 것</small></h4>
+      <h3 class="grp">신뢰 · 사람 <small>믿게 만드는 것</small></h3>
 
       <article class="card" data-k="testimonial 후기 리뷰 인용 사용자">
-        <div class="ch"><h3>후기 <span>Testimonial</span></h3></div>
+        <div class="ch"><h4>후기 <span>Testimonial</span></h4></div>
         <div class="cb"><div class="frame" style="width:100%;max-width:300px;padding:16px 18px;text-align:left"><div style="color:var(--muted);font-size:18px;line-height:1;font-family:Georgia,serif">“</div><div style="font-size:13.5px;margin:4px 0 12px">코딩 하나도 모르는데<br>이틀 만에 신청 페이지를 만들었어요.</div><div style="display:flex;gap:8px;align-items:center"><span class="avatar sm">김</span><div style="font-size:12px"><b>김하나</b><br><span style="color:var(--muted)">대학생</span></div></div></div><p class="cap">사용자의 한마디</p></div>
         <p class="desc">실제 사용자의 말을 인용한 거예요. 이름과 소속이 있으면 더 믿어요.</p>
       </article>
 
       <article class="card" data-k="logo cloud 로고 모음 고객사 파트너">
-        <div class="ch"><h3>로고 모음 <span>Logo Cloud</span></h3></div>
+        <div class="ch"><h4>로고 모음 <span>Logo Cloud</span></h4></div>
         <div class="cb"><div style="text-align:center"><div style="font-size:12px;color:var(--muted);margin-bottom:14px">이런 곳에서 쓰고 있어요</div><div class="row" style="gap:10px"><i class="box" style="width:54px;height:20px"></i><i class="box" style="width:44px;height:20px"></i><i class="box" style="width:60px;height:20px"></i><i class="box" style="width:40px;height:20px"></i></div></div><p class="cap">고객사 로고 나열</p></div>
         <p class="desc">쓰고 있는 회사 로고를 회색으로 늘어놓은 거예요. 신뢰를 주는 용도.</p>
       </article>
 
       <article class="card" data-k="profile card 프로필 카드 사람 팔로우">
-        <div class="ch"><h3>프로필 카드 <span>Profile Card</span></h3></div>
+        <div class="ch"><h4>프로필 카드 <span>Profile Card</span></h4></div>
         <div class="cb"><div class="frame" style="display:flex;align-items:center;gap:12px;padding:12px 16px;width:100%;max-width:260px"><span class="avatar">쥬</span><div style="flex:1;font-size:13px"><b>이지우</b><br><span style="color:var(--muted);font-size:11.5px">AI 활용 콘텐츠</span></div><span class="btn xs" style="padding:6px 12px;font-size:12px">팔로우</span></div><p class="cap">사람 소개 카드</p></div>
         <p class="desc">아바타, 이름, 한 줄 소개, 버튼이 든 사람 카드예요.</p>
       </article>
 
       <article class="card" data-k="blockquote 인용문 인용 강조">
-        <div class="ch"><h3>인용문 <span>Blockquote</span></h3></div>
+        <div class="ch"><h4>인용문 <span>Blockquote</span></h4></div>
         <div class="cb stretch" style="gap:10px"><span class="ph" style="width:70%"></span><div class="quote">이름을 아는 순간<br>수정 요청이 한 번에 통해요.</div><span class="ph" style="width:90%"></span><span class="ph" style="width:55%"></span><p class="cap">왼쪽 선이 있는 인용 문단</p></div>
         <p class="desc">다른 사람 말이나 강조할 문장을 왼쪽 선과 함께 띄운 거예요.</p>
       </article>
 
-      <h4 class="grp">기타 <small>코드 · 공지</small></h4>
+      <h3 class="grp">기타 <small>코드 · 공지</small></h3>
 
       <article class="card" data-k="code block 코드 블록 복사 명령어">
-        <div class="ch"><h3>코드 블록 <span>Code Block</span></h3></div>
+        <div class="ch"><h4>코드 블록 <span>Code Block</span></h4></div>
         <div class="cb"><div class="code"><span class="copy">복사</span><span class="c">// AI한테 그대로 붙여넣기</span>
 신청 페이지 만들어줘
 인풋 3개, 셀렉트 1개
@@ -1492,15 +1498,15 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="banner 배너 공지 띠 상단">
-        <div class="ch"><h3>배너 <span>Banner</span></h3></div>
+        <div class="ch"><h4>배너 <span>Banner</span></h4></div>
         <div class="cb stretch" style="justify-content:flex-start"><div class="banner" style="max-width:none">9월 한정 무료로 열려 있어요<span>✕</span></div><div class="frame" style="flex:1;min-height:60px"></div><p class="cap">위에 붙는 공지 띠</p></div>
         <p class="desc">페이지 위에 붙이는 공지 띠예요. 닫기 버튼을 꼭 같이 둬요.</p>
       </article>
 
-      <h4 class="grp">랜딩 페이지 블록 <small>"○○ 섹션 넣어줘"라고 말하는 것들</small></h4>
+      <h3 class="grp">랜딩 페이지 블록 <small>"○○ 섹션 넣어줘"라고 말하는 것들</small></h3>
 
       <article class="card" data-k="faq 자주 묻는 질문 FAQ 섹션">
-        <div class="ch"><h3>FAQ <span>FAQ</span></h3></div>
+        <div class="ch"><h4>FAQ <span>FAQ</span></h4></div>
         <div class="cb"><div class="acc"><div class="open">Q. 코딩 몰라도 되나요? <span>˄</span></div><p>네, 말로 설명만 하면 돼요.</p><div>Q. 얼마나 걸리나요? <span>˅</span></div><div>Q. 환불되나요? <span>˅</span></div></div>
           <p class="cap">질문 누르면 답이 펼쳐짐</p>
         </div>
@@ -1508,7 +1514,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="feature grid 기능 소개 섹션 아이콘 제목 설명">
-        <div class="ch"><h3>기능 소개 <span>Feature Grid</span></h3></div>
+        <div class="ch"><h4>기능 소개 <span>Feature Grid</span></h4></div>
         <div class="cb"><div class="featg"><div><i></i><b>빠름</b>10분이면 끝</div><div><i></i><b>쉬움</b>말로 하면 됨</div><div><i></i><b>무료</b>기본 기능 0원</div></div>
           <p class="cap">아이콘+제목+설명 3개 나란히</p>
         </div>
@@ -1516,7 +1522,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="how it works steps 단계 안내 사용 방법 순서">
-        <div class="ch"><h3>단계 안내 <span>How It Works</span></h3></div>
+        <div class="ch"><h4>단계 안내 <span>How It Works</span></h4></div>
         <div class="cb"><div class="steps"><div class="done"><i>1</i>가입하기</div><hr><div class="done"><i>2</i>링크 공유</div><hr><div class="done"><i>3</i>신청 받기</div></div>
           <p class="cap">1·2·3 번호 붙은 순서</p>
         </div>
@@ -1524,7 +1530,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="comparison table 비교표 경쟁 비교 체크">
-        <div class="ch"><h3>비교표 <span>Comparison Table</span></h3></div>
+        <div class="ch"><h4>비교표 <span>Comparison Table</span></h4></div>
         <div class="cb"><table class="cmp"><tr><th></th><th class="us" style="color:var(--ink)">우리</th><th>남들</th></tr><tr><td>무제한 제작</td><td class="us up">✓</td><td class="down">✕</td></tr><tr><td>한국어 지원</td><td class="us up">✓</td><td class="down">✕</td></tr><tr><td>월 요금</td><td class="us">9,900원</td><td>19,000원</td></tr></table>
           <p class="cap">우리 vs 남들 체크 표</p>
         </div>
@@ -1532,7 +1538,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="table of contents 목차 toc 소제목">
-        <div class="ch"><h3>목차 <span>Table of Contents</span></h3></div>
+        <div class="ch"><h4>목차 <span>Table of Contents</span></h4></div>
         <div class="cb"><div class="toc"><b>1. 시작하기</b><span>2. 화면 만들기</span><span class="sub">· 버튼</span><span class="sub">· 폼</span><span>3. 배포하기</span></div>
           <p class="cap">소제목 목록, 누르면 이동</p>
         </div>
@@ -1540,7 +1546,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="newsletter signup 뉴스레터 구독 이메일 구독">
-        <div class="ch"><h3>뉴스레터 구독 <span>Newsletter Signup</span></h3></div>
+        <div class="ch"><h4>뉴스레터 구독 <span>Newsletter Signup</span></h4></div>
         <div class="cb"><div class="field" style="max-width:270px;text-align:center"><div style="font-size:13px;font-weight:700;margin-bottom:8px">매주 팁을 받아보세요</div><div style="display:flex;gap:6px"><div class="input p" style="flex:1">이메일 주소</div><span class="btn sm">구독</span></div></div>
           <p class="cap">이메일 칸+구독 버튼 한 줄</p>
         </div>
@@ -1548,7 +1554,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="countdown timer 카운트다운 남은 시간 마감">
-        <div class="ch"><h3>카운트다운 <span>Countdown</span></h3></div>
+        <div class="ch"><h4>카운트다운 <span>Countdown</span></h4></div>
         <div class="cb"><div class="cd"><div>02<small>일</small></div><div>14<small>시간</small></div><div>37<small>분</small></div><div>09<small>초</small></div></div>
           <p class="cap">남은 시간이 줄어드는 숫자</p>
         </div>
@@ -1556,7 +1562,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="video embed 비디오 임베드 유튜브 영상">
-        <div class="ch"><h3>비디오 임베드 <span>Video Embed</span></h3></div>
+        <div class="ch"><h4>비디오 임베드 <span>Video Embed</span></h4></div>
         <div class="cb"><div style="width:100%;max-width:220px;aspect-ratio:16/9;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center"><span style="width:0;height:0;border-left:18px solid var(--card);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px"></span></div>
           <p class="cap">유튜브 영상 끼워 넣기</p>
         </div>
@@ -1564,7 +1570,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="team section 팀 소개 팀원 멤버">
-        <div class="ch"><h3>팀 소개 <span>Team Section</span></h3></div>
+        <div class="ch"><h4>팀 소개 <span>Team Section</span></h4></div>
         <div class="cb"><div class="team"><div><span class="avatar">배</span><b>배상학</b>대표</div><div><span class="avatar g2">이</span><b>이지우</b>디자인</div><div><span class="avatar g3">김</span><b>김하나</b>개발</div></div>
           <p class="cap">팀원 사진·이름·직함 격자</p>
         </div>
@@ -1580,10 +1586,10 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">쇼핑몰 만들 때 나오는 것들. 상품 하나를 보여주고 사게 만드는 부품이에요.</p>
     <div class="grid">
 
-      <h4 class="grp">상품 <small>보여주기</small></h4>
+      <h3 class="grp">상품 <small>보여주기</small></h3>
 
       <article class="card" data-k="product card 상품 카드 쇼핑몰 상품">
-        <div class="ch"><h3>상품 카드 <span>Product Card</span></h3></div>
+        <div class="ch"><h4>상품 카드 <span>Product Card</span></h4></div>
         <div class="cb"><div class="pcard"><div class="img"></div><div class="body"><b>코튼 셔츠</b><div class="price" style="font-size:14px">29,000원</div><small>★ 4.8 (120)</small></div></div>
           <p class="cap">사진 · 이름 · 가격 · 별점</p>
         </div>
@@ -1591,7 +1597,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="discount price 할인 가격 표시 정가 할인율">
-        <div class="ch"><h3>할인 가격 표시 <span>Discount Price</span></h3></div>
+        <div class="ch"><h4>할인 가격 표시 <span>Discount Price</span></h4></div>
         <div class="cb"><div class="price" style="font-size:22px"><s>39,000원</s><br><em>25%</em>29,000원</div>
           <p class="cap">원래 가격 줄 긋고 할인율 빨강</p>
         </div>
@@ -1599,7 +1605,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="coupon 쿠폰 할인 쿠폰">
-        <div class="ch"><h3>쿠폰 <span>Coupon</span></h3></div>
+        <div class="ch"><h4>쿠폰 <span>Coupon</span></h4></div>
         <div class="cb"><div class="coupon"><div class="l"><b>5,000원</b><small>첫 구매 할인 · 9.30까지</small></div><div class="r">받기</div></div>
           <p class="cap">점선으로 뜯는 쿠폰 모양</p>
         </div>
@@ -1607,17 +1613,17 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="wishlist like heart 찜 버튼 좋아요 하트">
-        <div class="ch"><h3>찜 버튼 <span>Wishlist</span></h3></div>
+        <div class="ch"><h4>찜 버튼 <span>Wishlist</span></h4></div>
         <div class="cb"><div class="row" style="gap:30px"><div style="text-align:center"><span class="iconbtn">♡</span><br><small style="color:var(--muted);font-size:11px">찜 전</small></div><div style="text-align:center"><span class="iconbtn" style="color:var(--red)">♥</span><br><small style="color:var(--muted);font-size:11px">찜 후</small></div></div>
           <p class="cap">♡ 눌러 ♥ 저장</p>
         </div>
         <p class="desc">마음에 드는 것을 저장하는 하트 버튼이에요. 누르면 채워져요.</p>
       </article>
 
-      <h4 class="grp">후기 · 구매 <small>사게 만들기</small></h4>
+      <h3 class="grp">후기 · 구매 <small>사게 만들기</small></h3>
 
       <article class="card" data-k="review card 리뷰 카드 구매 후기">
-        <div class="ch"><h3>리뷰 카드 <span>Review Card</span></h3></div>
+        <div class="ch"><h4>리뷰 카드 <span>Review Card</span></h4></div>
         <div class="cb"><div class="frame" style="width:100%;max-width:260px;padding:12px 14px;text-align:left;font-size:12.5px"><div class="stars" style="font-size:14px;letter-spacing:1px">★★★★★</div><div style="margin:4px 0 8px">핏이 예뻐요. 재구매 의사 있어요.</div><div style="display:flex;gap:8px;align-items:center"><span class="avatar sm">김</span><span style="font-size:11.5px"><b>김하나</b> <span style="color:var(--muted)">· 2일 전</span></span><span class="box" style="width:28px;height:28px;margin-left:auto;border-radius:6px"></span></div></div>
           <p class="cap">별점 + 후기 글 + 사진</p>
         </div>
@@ -1625,7 +1631,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="rating breakdown 별점 분포 별점 통계">
-        <div class="ch"><h3>별점 분포 <span>Rating Breakdown</span></h3></div>
+        <div class="ch"><h4>별점 분포 <span>Rating Breakdown</span></h4></div>
         <div class="cb"><div style="display:flex;gap:14px;align-items:center"><div style="text-align:center"><b style="font-size:28px;line-height:1">4.8</b><br><small style="color:var(--muted);font-size:11px">120개</small></div><div class="bars"><div>5★<i style="--w:70%"></i></div><div>4★<i style="--w:20%"></i></div><div>3★<i style="--w:6%"></i></div><div>2★<i style="--w:2%"></i></div><div>1★<i style="--w:2%"></i></div></div></div>
           <p class="cap">5점 몇 명, 4점 몇 명 막대</p>
         </div>
@@ -1633,7 +1639,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="sticky bottom bar purchase bar 하단 고정 구매 바 구매하기 장바구니">
-        <div class="ch"><h3>하단 고정 구매 바 <span>Sticky Bottom Bar</span></h3></div>
+        <div class="ch"><h4>하단 고정 구매 바 <span>Sticky Bottom Bar</span></h4></div>
         <div class="cb stretch" style="justify-content:flex-start;gap:8px"><span class="ph" style="width:85%"></span><span class="ph" style="width:60%"></span><span class="ph" style="width:75%"></span><div style="margin-top:auto;display:flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px"><span class="iconbtn" style="width:36px;height:36px">♡</span><span class="btn sm light" style="flex:1">장바구니</span><span class="btn sm" style="flex:1.3">구매하기</span></div>
         </div>
         <p class="desc">스크롤해도 화면 아래 붙어 있는 구매 버튼 줄이에요. 상품 상세 페이지 필수예요.</p>
@@ -1647,10 +1653,10 @@ body:not(.locked) .gate{display:none}
     <p class="sec-p">부품은 아니지만 꼭 나오는 말들. 화면 크기, 여백, 움직임에 관한 것들이에요.</p>
     <div class="grid">
 
-      <h4 class="grp">화면 크기 <small>폰 · 태블릿 · PC</small></h4>
+      <h3 class="grp">화면 크기 <small>폰 · 태블릿 · PC</small></h3>
 
       <article class="card" data-k="responsive 반응형 화면 크기 열">
-        <div class="ch"><h3>반응형 <span>Responsive</span></h3></div>
+        <div class="ch"><h4>반응형 <span>Responsive</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:14px;align-items:flex-end">
             <div style="text-align:center"><div class="mini" style="width:40px;height:60px;grid-template-columns:1fr;border:1.5px solid var(--ink)"><i></i><i></i></div><small style="color:var(--muted);font-size:11px">1열</small></div>
@@ -1659,11 +1665,11 @@ body:not(.locked) .gate{display:none}
           </div>
           <p class="cap">화면이 커질수록 열이 늘어나요</p>
         </div>
-        <p class="desc">화면 크기에 맞춰 배치가 바뀌는 거예요. 폰에서는 한 줄, PC에서는 세 줄. 이 페이지도 폰에서는 1열이에요.</p>
+        <p class="desc">화면 크기에 맞춰 배치가 바뀌는 거예요. 폰에서는 1열, PC에서는 3열. 이 페이지도 폰에서는 1열이에요.</p>
       </article>
 
       <article class="card" data-k="mobile first 모바일 먼저 우선">
-        <div class="ch"><h3>모바일 먼저 <span>Mobile First</span></h3></div>
+        <div class="ch"><h4>모바일 먼저 <span>Mobile First</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:16px;align-items:center">
             <div style="text-align:center"><div class="mini" style="width:40px;height:66px;grid-template-columns:1fr;border:1.5px solid var(--ink);box-shadow:0 0 0 3px var(--soft2)"><i></i><i></i></div><small style="font-size:11px;font-weight:700">여기부터</small></div>
@@ -1676,7 +1682,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="breakpoint 브레이크포인트 768 1024 경계">
-        <div class="ch"><h3>브레이크포인트 <span>Breakpoint</span></h3></div>
+        <div class="ch"><h4>브레이크포인트 <span>Breakpoint</span></h4></div>
         <div class="cb">
           <div class="brk"><span class="m" style="left:33%"><span>768px</span></span><span class="m" style="left:60%"><span>1024px</span></span><span class="lb" style="left:16%">모바일</span><span class="lb" style="left:46%">태블릿</span><span class="lb" style="left:80%">PC</span></div>
           <p class="cap">배치가 바뀌는 경계 너비</p>
@@ -1684,10 +1690,10 @@ body:not(.locked) .gate{display:none}
         <p class="desc">배치가 바뀌는 화면 너비 기준이에요. 보통 768px, 1024px을 써요.</p>
       </article>
 
-      <h4 class="grp">위치 <small>스크롤해도 그 자리</small></h4>
+      <h3 class="grp">위치 <small>스크롤해도 그 자리</small></h3>
 
       <article class="card" data-k="sticky 스티키 고정 헤더 따라오는">
-        <div class="ch"><h3>스티키 <span>Sticky</span></h3></div>
+        <div class="ch"><h4>스티키 <span>Sticky</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:14px;align-items:flex-start">
             <div style="text-align:center"><div class="frame" style="width:120px;overflow:hidden"><div style="background:var(--ink);color:var(--card);font-size:10px;padding:5px 8px;text-align:left">헤더</div><div style="padding:8px;display:grid;gap:5px"><span class="ph" style="width:90%"></span><span class="ph" style="width:70%"></span><span class="ph" style="width:80%"></span><span class="ph" style="width:60%"></span></div></div><small style="color:var(--muted);font-size:11px">처음</small></div>
@@ -1699,7 +1705,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="fixed 고정 위치 붙박이">
-        <div class="ch"><h3>고정 <span>Fixed</span></h3></div>
+        <div class="ch"><h4>고정 <span>Fixed</span></h4></div>
         <div class="cb">
           <div class="frame" style="width:100%;max-width:200px;padding:12px;display:grid;gap:7px;position:relative"><span class="ph" style="width:90%"></span><span class="ph" style="width:70%"></span><span class="ph" style="width:85%"></span><span class="ph" style="width:60%"></span><span class="ph" style="width:75%"></span><span class="fab" style="width:30px;height:30px;font-size:16px;position:absolute;right:10px;bottom:10px">+</span></div>
           <p class="cap">스크롤과 상관없이 화면에 붙박이</p>
@@ -1707,10 +1713,10 @@ body:not(.locked) .gate{display:none}
         <p class="desc">스크롤과 상관없이 늘 같은 자리에 있는 거예요. 플로팅 버튼, 채팅 아이콘.</p>
       </article>
 
-      <h4 class="grp">여백 <small>바깥 · 안쪽 · 사이</small></h4>
+      <h3 class="grp">여백 <small>바깥 · 안쪽 · 사이</small></h3>
 
       <article class="card" data-k="margin 마진 여백 바깥 이웃">
-        <div class="ch"><h3>여백 (바깥) <span>Margin</span></h3></div>
+        <div class="ch"><h4>여백 (바깥) <span>Margin</span></h4></div>
         <div class="cb">
           <div class="dash" style="padding:22px;position:relative"><span style="position:absolute;top:4px;left:10px;font-size:10px;color:var(--red);font-weight:600">margin</span><div class="box" style="width:170px;height:56px"></div></div>
           <p class="cap">요소 <b>바깥</b> 여백 · 이웃과의 거리</p>
@@ -1719,7 +1725,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="padding 패딩 여백 안쪽 테두리">
-        <div class="ch"><h3>여백 (안쪽) <span>Padding</span></h3></div>
+        <div class="ch"><h4>여백 (안쪽) <span>Padding</span></h4></div>
         <div class="cb">
           <div class="frame" style="padding:20px;position:relative"><span style="position:absolute;top:4px;left:10px;font-size:10px;color:var(--red);font-weight:600">padding</span><div class="dash" style="padding:0"><div class="box" style="width:170px;height:56px;border-radius:9px"></div></div></div>
           <p class="cap">요소 <b>안쪽</b> 여백 · 테두리와 글자 사이</p>
@@ -1728,7 +1734,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="gap spacing 간격 사이 요소">
-        <div class="ch"><h3>간격 <span>Gap / Spacing</span></h3></div>
+        <div class="ch"><h4>간격 <span>Gap / Spacing</span></h4></div>
         <div class="cb">
           <div style="display:flex;align-items:center;position:relative"><div class="box" style="width:80px;height:60px"></div><div style="width:34px;height:76px;border-left:1.5px dashed var(--red);border-right:1.5px dashed var(--red);position:relative"><span style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--red);font-weight:600">gap</span></div><div class="box" style="width:80px;height:60px"></div></div>
           <p class="cap">요소들 <b>사이</b> 간격</p>
@@ -1736,19 +1742,19 @@ body:not(.locked) .gate{display:none}
         <p class="desc">나란히 놓인 요소들 사이 거리예요. 그리드에서는 gap 하나로 한 번에 정해요.</p>
       </article>
 
-      <h4 class="grp">모양 <small>둥글기 · 그림자 · 테마</small></h4>
+      <h3 class="grp">모양 <small>둥글기 · 그림자 · 테마</small></h3>
 
       <article class="card" data-k="border radius 모서리 둥글기 라운드">
-        <div class="ch"><h3>모서리 둥글기 <span>Border Radius</span></h3></div>
+        <div class="ch"><h4>모서리 둥글기 <span>Border Radius</span></h4></div>
         <div class="cb">
-          <div class="row" style="gap:16px"><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:0"></div><small style="color:var(--muted);font-size:11px">0</small></div><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:10px"></div><small style="color:var(--muted);font-size:11px">10px</small></div><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:22px"></div><small style="color:var(--muted);font-size:11px">26px</small></div><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:999px"></div><small style="color:var(--muted);font-size:11px">999px</small></div></div>
+          <div class="row" style="gap:16px"><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:0"></div><small style="color:var(--muted);font-size:11px">0</small></div><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:10px"></div><small style="color:var(--muted);font-size:11px">10px</small></div><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:26px"></div><small style="color:var(--muted);font-size:11px">26px</small></div><div style="text-align:center"><div class="box" style="width:54px;height:54px;border-radius:999px"></div><small style="color:var(--muted);font-size:11px">999px</small></div></div>
           <p class="cap">숫자가 클수록 둥글어요</p>
         </div>
         <p class="desc">네모 모서리를 얼마나 둥글게 할지예요. 999px이면 완전 동그라미가 돼요.</p>
       </article>
 
       <article class="card" data-k="box shadow 그림자 섀도우 떠있는">
-        <div class="ch"><h3>그림자 <span>Box Shadow</span></h3></div>
+        <div class="ch"><h4>그림자 <span>Box Shadow</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:22px"><div style="text-align:center"><div class="frame" style="width:54px;height:54px"></div><small style="color:var(--muted);font-size:11px">없음</small></div><div style="text-align:center"><div class="frame" style="width:54px;height:54px;box-shadow:0 2px 6px rgba(0,0,0,.08)"></div><small style="color:var(--muted);font-size:11px">약하게</small></div><div style="text-align:center"><div class="frame" style="width:54px;height:54px;box-shadow:0 12px 28px rgba(0,0,0,.18)"></div><small style="color:var(--muted);font-size:11px">세게</small></div></div>
           <p class="cap">떠 있는 느낌</p>
@@ -1757,9 +1763,9 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="dark mode 다크 모드 테마 어두운">
-        <div class="ch"><h3>다크 모드 <span>Dark Mode</span></h3></div>
+        <div class="ch"><h4>다크 모드 <span>Dark Mode</span></h4></div>
         <div class="cb">
-          <div class="row" style="gap:12px"><div style="width:120px;background:#fff;border:1px solid #e6e5e0;border-radius:10px;padding:12px;display:grid;gap:6px"><span class="ph" style="width:80%;background:#edece8"></span><span class="ph" style="width:60%;background:#edece8"></span><span class="ph" style="width:70%;background:#edece8"></span><span style="margin-top:6px;background:#1a1a1a;color:#fff;font-size:10px;padding:5px;border-radius:5px;text-align:center;font-weight:600">버튼</span></div><div style="width:120px;background:#1a1a1a;border-radius:10px;padding:12px;display:grid;gap:6px"><span class="ph" style="width:80%;background:#3a3a3a"></span><span class="ph" style="width:60%;background:#3a3a3a"></span><span class="ph" style="width:70%;background:#3a3a3a"></span><span style="margin-top:6px;background:#fff;color:#1a1a1a;font-size:10px;padding:5px;border-radius:5px;text-align:center;font-weight:600">버튼</span></div></div>
+          <div class="row" style="gap:12px"><div style="width:120px;background:#fff;border:1px solid #e6e5e0;border-radius:10px;padding:12px;display:grid;gap:6px"><span class="ph" style="width:80%;background:#edece8"></span><span class="ph" style="width:60%;background:#edece8"></span><span class="ph" style="width:70%;background:#edece8"></span><span style="margin-top:6px;background:#1a1a1a;color:#fff;font-size:10px;padding:5px;border-radius:5px;text-align:center;font-weight:600">버튼</span></div><div style="width:120px;background:#1a1a1a;border:1px solid #3a3a3a;border-radius:10px;padding:12px;display:grid;gap:6px"><span class="ph" style="width:80%;background:#3a3a3a"></span><span class="ph" style="width:60%;background:#3a3a3a"></span><span class="ph" style="width:70%;background:#3a3a3a"></span><span style="margin-top:6px;background:#fff;color:#1a1a1a;font-size:10px;padding:5px;border-radius:5px;text-align:center;font-weight:600">버튼</span></div></div>
           <p class="cap">배경 어둡게 / 글자 밝게</p>
         </div>
         <p class="desc">배경을 어둡게, 글자를 밝게 뒤집은 테마예요. 오른쪽 위 스위치로 이 페이지도 바꿔 보세요.</p>
@@ -1767,7 +1773,7 @@ body:not(.locked) .gate{display:none}
 
 
       <article class="card" data-k="opacity 투명도 불투명 비침">
-        <div class="ch"><h3>투명도 <span>Opacity</span></h3></div>
+        <div class="ch"><h4>투명도 <span>Opacity</span></h4></div>
         <div class="cb"><div class="row" style="gap:14px"><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink)"></i><small style="color:var(--muted);font-size:11px">100%</small></div><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink);opacity:.6"></i><small style="color:var(--muted);font-size:11px">60%</small></div><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink);opacity:.3"></i><small style="color:var(--muted);font-size:11px">30%</small></div><div style="text-align:center"><i style="display:block;width:50px;height:50px;border-radius:12px;background:var(--ink);opacity:.08"></i><small style="color:var(--muted);font-size:11px">8%</small></div></div>
           <p class="cap">0% 안 보임 ~ 100% 또렷</p>
         </div>
@@ -1775,7 +1781,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="border 테두리 선 실선 점선 굵기">
-        <div class="ch"><h3>테두리 <span>Border</span></h3></div>
+        <div class="ch"><h4>테두리 <span>Border</span></h4></div>
         <div class="cb"><div class="row" style="gap:16px"><div style="text-align:center"><i style="display:block;width:54px;height:54px;border-radius:10px;border:1px solid var(--ink);background:var(--card)"></i><small style="color:var(--muted);font-size:11px">1px 실선</small></div><div style="text-align:center"><i style="display:block;width:54px;height:54px;border-radius:10px;border:3px solid var(--ink);background:var(--card)"></i><small style="color:var(--muted);font-size:11px">3px 굵게</small></div><div style="text-align:center"><i style="display:block;width:54px;height:54px;border-radius:10px;border:1.5px dashed var(--ink);background:var(--card)"></i><small style="color:var(--muted);font-size:11px">점선</small></div></div>
           <p class="cap">선 굵기 · 색 · 실선/점선</p>
         </div>
@@ -1783,7 +1789,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="gradient 그라데이션 그라디언트 배경 색 변화">
-        <div class="ch"><h3>그라데이션 <span>Gradient</span></h3></div>
+        <div class="ch"><h4>그라데이션 <span>Gradient</span></h4></div>
         <div class="cb"><div class="row" style="gap:14px"><div style="width:110px;height:64px;border-radius:12px;background:linear-gradient(135deg,#1a1a1a,#9a9a9a)"></div><div style="width:110px;height:64px;border-radius:12px;background:linear-gradient(135deg,#E1785C,#B93A2F)"></div></div>
           <p class="cap">색이 서서히 바뀌는 배경</p>
         </div>
@@ -1791,17 +1797,17 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="aspect ratio 비율 16:9 정사각형 가로세로">
-        <div class="ch"><h3>비율 <span>Aspect Ratio</span></h3></div>
+        <div class="ch"><h4>비율 <span>Aspect Ratio</span></h4></div>
         <div class="cb"><div class="row" style="gap:12px;align-items:flex-end"><div style="text-align:center"><i class="box" style="display:block;width:96px;height:54px"></i><small style="color:var(--muted);font-size:11px">16:9</small></div><div style="text-align:center"><i class="box" style="display:block;width:72px;height:54px"></i><small style="color:var(--muted);font-size:11px">4:3</small></div><div style="text-align:center"><i class="box" style="display:block;width:54px;height:54px"></i><small style="color:var(--muted);font-size:11px">1:1</small></div></div>
           <p class="cap">16:9 · 4:3 · 1:1 정사각형</p>
         </div>
         <p class="desc">가로세로 비율이에요. "사진 칸은 16:9로"라고 하면 크기가 달라도 모양이 같아요.</p>
       </article>
 
-      <h4 class="grp">움직임 <small>나타나고, 바뀌는 방식</small></h4>
+      <h3 class="grp">움직임 <small>나타나고, 바뀌는 방식</small></h3>
 
       <article class="card" data-k="fade in 페이드인 서서히 나타남 투명도">
-        <div class="ch"><h3>페이드인 <span>Fade In</span></h3></div>
+        <div class="ch"><h4>페이드인 <span>Fade In</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:14px"><div style="text-align:center"><i class="fade" style="display:block;width:52px;height:52px;border-radius:12px;background:var(--ink);opacity:.12"></i><small style="color:var(--muted);font-size:11px">12%</small></div><div style="text-align:center"><i style="display:block;width:52px;height:52px;border-radius:12px;background:var(--ink);opacity:.4"></i><small style="color:var(--muted);font-size:11px">40%</small></div><div style="text-align:center"><i style="display:block;width:52px;height:52px;border-radius:12px;background:var(--ink);opacity:.7"></i><small style="color:var(--muted);font-size:11px">70%</small></div><div style="text-align:center"><i style="display:block;width:52px;height:52px;border-radius:12px;background:var(--ink)"></i><small style="color:var(--muted);font-size:11px">100%</small></div></div>
           <p class="cap">서서히 나타남 · 보통 0.6초</p>
@@ -1810,7 +1816,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="scroll reveal animation 스크롤 애니메이션 화면에 들어오면">
-        <div class="ch"><h3>스크롤 애니메이션 <span>Scroll Reveal</span></h3></div>
+        <div class="ch"><h4>스크롤 애니메이션 <span>Scroll Reveal</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:14px;align-items:flex-start">
             <div style="text-align:center"><div class="frame" style="width:120px;padding:10px;display:grid;gap:8px"><i class="box" style="height:26px"></i><i class="box" style="height:26px;opacity:.2"></i></div><small style="color:var(--muted);font-size:11px">처음</small></div>
@@ -1822,7 +1828,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="transition 트랜지션 부드럽게 전환 0.2초">
-        <div class="ch"><h3>트랜지션 <span>Transition</span></h3></div>
+        <div class="ch"><h4>트랜지션 <span>Transition</span></h4></div>
         <div class="cb">
           <div class="row" style="gap:14px;align-items:flex-end"><div style="text-align:center"><span class="btn sm">보내기</span><br><small style="color:var(--muted);font-size:11px">기본</small></div><div style="text-align:center;padding-bottom:16px"><span style="color:var(--muted)">→</span><br><small style="color:var(--red);font-size:11px;font-weight:600">0.2초</small></div><div style="text-align:center"><span class="btn sm hover">보내기</span><br><small style="color:var(--muted);font-size:11px">호버</small></div></div>
           <p class="cap">뚝 바뀌지 않고 <b>부드럽게</b> 변하는 것</p>
@@ -1830,10 +1836,10 @@ body:not(.locked) .gate{display:none}
         <p class="desc">상태가 바뀔 때 뚝 바뀌지 않고 부드럽게 넘어가는 거예요. 0.2초면 충분해요.</p>
       </article>
 
-      <h4 class="grp">배치 <small>어디에 어떻게 놓을지</small></h4>
+      <h3 class="grp">배치 <small>어디에 어떻게 놓을지</small></h3>
 
       <article class="card" data-k="alignment align 정렬 왼쪽 가운데 오른쪽 맞춤">
-        <div class="ch"><h3>정렬 <span>Alignment</span></h3></div>
+        <div class="ch"><h4>정렬 <span>Alignment</span></h4></div>
         <div class="cb"><div class="ali"><div style="justify-content:flex-start"><i></i>왼쪽</div><div style="justify-content:center"><i></i>가운데</div><div style="justify-content:flex-end"><i></i>오른쪽</div></div>
           <p class="cap">왼쪽 · 가운데 · 오른쪽 맞춤</p>
         </div>
@@ -1841,7 +1847,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="centering center 가운데 맞춤 정중앙 중앙">
-        <div class="ch"><h3>가운데 맞춤 <span>Centering</span></h3></div>
+        <div class="ch"><h4>가운데 맞춤 <span>Centering</span></h4></div>
         <div class="cb"><div class="frame" style="width:180px;height:110px;position:relative;display:flex;align-items:center;justify-content:center"><i style="position:absolute;left:50%;top:0;bottom:0;border-left:1px dashed var(--red);opacity:.6"></i><i style="position:absolute;top:50%;left:0;right:0;border-top:1px dashed var(--red);opacity:.6"></i><span class="box" style="width:56px;height:36px;position:relative;background:var(--ink)"></span></div>
           <p class="cap">가로 · 세로 한복판에 두기</p>
         </div>
@@ -1849,7 +1855,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="horizontal scroll 가로 스크롤 옆으로 밀기">
-        <div class="ch"><h3>가로 스크롤 <span>Horizontal Scroll</span></h3></div>
+        <div class="ch"><h4>가로 스크롤 <span>Horizontal Scroll</span></h4></div>
         <div class="cb"><div class="hscroll"><i></i><i></i><i></i><i></i></div><div style="font-size:11px;color:var(--muted)">← 밀어서 보기 →</div>
           <p class="cap">옆으로 밀어서 보는 목록</p>
         </div>
@@ -1857,7 +1863,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="overflow 넘침 삐져나감 오버플로">
-        <div class="ch"><h3>넘침 <span>Overflow</span></h3></div>
+        <div class="ch"><h4>넘침 <span>Overflow</span></h4></div>
         <div class="cb"><div style="position:relative;width:150px;height:70px;border:1.5px dashed var(--soft2);border-radius:10px"><div class="box" style="position:absolute;left:14px;top:14px;width:190px;height:42px;background:var(--ink);opacity:.85;display:flex;align-items:center;padding-left:10px;color:var(--card);font-size:11px;white-space:nowrap">내용이 틀보다 길어요 →</div></div>
           <p class="cap">내용이 틀 밖으로 삐져나감</p>
         </div>
@@ -1865,17 +1871,17 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="z-index layer 겹침 순서 레이어 위 아래">
-        <div class="ch"><h3>겹침 순서 <span>z-index</span></h3></div>
+        <div class="ch"><h4>겹침 순서 <span>z-index</span></h4></div>
         <div class="cb"><div class="stack3"><div style="left:0;top:0;background:var(--soft)">1</div><div style="left:24px;top:22px">2</div><div style="left:48px;top:44px;background:var(--ink);color:var(--card);border-color:var(--ink)">3</div></div>
           <p class="cap">위에 올라올지 아래 깔릴지</p>
         </div>
         <p class="desc">요소가 겹칠 때 무엇이 위에 올지 정하는 순서예요. 숫자가 클수록 위예요.</p>
       </article>
 
-      <h4 class="grp">글자 <small>크기 · 굵기 · 줄</small></h4>
+      <h3 class="grp">글자 <small>크기 · 굵기 · 줄</small></h3>
 
       <article class="card" data-k="font size 글자 크기 폰트 크기 px">
-        <div class="ch"><h3>글자 크기 <span>Font Size</span></h3></div>
+        <div class="ch"><h4>글자 크기 <span>Font Size</span></h4></div>
         <div class="cb"><div class="tsize"><div><span style="font-size:12px">가</span><small>12px</small></div><div><span style="font-size:16px">가</span><small>16px</small></div><div><span style="font-size:24px">가</span><small>24px</small></div><div><span style="font-size:36px">가</span><small>36px</small></div></div>
           <p class="cap">12px · 16px · 24px · 36px</p>
         </div>
@@ -1883,15 +1889,15 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="font weight 글자 굵기 볼드 bold 두께">
-        <div class="ch"><h3>글자 굵기 <span>Font Weight</span></h3></div>
-        <div class="cb"><div class="tsize" style="font-size:20px;gap:22px"><div><span style="font-weight:400">보내기</span><small>400 보통</small></div><div><span style="font-weight:600">보내기</span><small>600 중간</small></div><div><span style="font-weight:800">보내기</span><small>800 굵게</small></div></div>
+        <div class="ch"><h4>글자 굵기 <span>Font Weight</span></h4></div>
+        <div class="cb"><div class="tsize" style="font-size:20px;gap:22px"><div><span style="font-weight:400">보내기</span><small>400 보통</small></div><div><span style="font-weight:600">보내기</span><small>600 중간</small></div><div><span style="font-weight:700">보내기</span><small>700 굵게</small></div></div>
           <p class="cap">보통 · 중간 · 굵게</p>
         </div>
         <p class="desc">글자 두께예요. 400이 보통, 700이 굵게. 숫자로 말하면 정확해요.</p>
       </article>
 
       <article class="card" data-k="typography hierarchy heading 글자 위계 제목 소제목 본문">
-        <div class="ch"><h3>글자 위계 <span>Hierarchy</span></h3></div>
+        <div class="ch"><h4>글자 위계 <span>Hierarchy</span></h4></div>
         <div class="cb"><div class="hier"><div class="h1">제목은 크고 굵게</div><div class="h2">소제목은 중간</div><div class="b">본문은 작고 가볍게, 여러 줄이 편하게 읽히도록 회색으로 둬요.</div></div>
           <p class="cap">제목 > 소제목 > 본문</p>
         </div>
@@ -1899,7 +1905,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="ellipsis truncate 말줄임표 말줄임 자르기">
-        <div class="ch"><h3>말줄임표 <span>Ellipsis</span></h3></div>
+        <div class="ch"><h4>말줄임표 <span>Ellipsis</span></h4></div>
         <div class="cb"><div class="field" style="max-width:220px"><div class="input" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:8px">바이브코딩으로 만든 신청 페이지 제작기 1편</div><div style="font-size:11px;color:var(--muted);text-align:center">한 줄 넘으면 …으로 잘림</div></div>
           <p class="cap">길면 …으로 자르기</p>
         </div>
@@ -1907,7 +1913,7 @@ body:not(.locked) .gate{display:none}
       </article>
 
       <article class="card" data-k="line break word wrap keep-all 줄바꿈 단어 끊김">
-        <div class="ch"><h3>줄바꿈 <span>Line Break</span></h3></div>
+        <div class="ch"><h4>줄바꿈 <span>Line Break</span></h4></div>
         <div class="cb"><div class="row" style="gap:10px;align-items:flex-start"><div style="text-align:center"><div class="frame" style="width:110px;padding:8px;font-size:11.5px;text-align:left;word-break:break-all;line-height:1.5">바이브코딩으로 신청페이지 만들기</div><small style="color:var(--muted);font-size:11px">글자 단위</small></div><div style="text-align:center"><div class="frame" style="width:110px;padding:8px;font-size:11.5px;text-align:left;word-break:keep-all;line-height:1.5">바이브코딩으로 신청페이지 만들기</div><small style="color:var(--muted);font-size:11px">단어 단위</small></div></div>
           <p class="cap">단어가 안 끊기게</p>
         </div>
@@ -1935,12 +1941,14 @@ body:not(.locked) .gate{display:none}
   cnt.textContent=fmtCount(cards.length);
 
   // 검색 (검색바 · 필터)
-  q.addEventListener('input',function(){
-    var v=q.value.trim().toLowerCase(),n=0;
+  function runSearch(e){
+    var v=q.value.trim().toLowerCase(),n=0,hits=[];
     cards.forEach(function(c){
-      var hit=!v||((c.dataset.k||'')+' '+c.querySelector('h3').textContent).toLowerCase().indexOf(v)>-1;
-      c.classList.toggle('hide',!hit); if(hit)n++;
+      var hit=!v||((c.dataset.k||'')+' '+c.querySelector('h4').textContent).toLowerCase().indexOf(v)>-1;
+      hits.push(hit); if(hit)n++;
     });
+    if(e&&e.isComposing&&n===0)return; // 한글 조합 중간 음절로 0건이 되는 깜빡임 방지
+    cards.forEach(function(c,i){c.classList.toggle('hide',!hits[i]);});
     grps.forEach(function(g){
       var el=g.nextElementSibling,any=false;
       while(el&&!el.classList.contains('grp')){ if(!el.classList.contains('hide'))any=true; el=el.nextElementSibling; }
@@ -1949,7 +1957,8 @@ body:not(.locked) .gate{display:none}
     secs.forEach(function(s){ s.classList.toggle('hide',!s.querySelector('.card:not(.hide)')); });
     cnt.textContent=fmtCount(n);
     empty.classList.toggle('show',n===0);
-  });
+  }
+  q.addEventListener('input',runSearch);q.addEventListener('compositionend',function(){runSearch();});
 
   // 스크롤 애니메이션 (Scroll Reveal)
   if('IntersectionObserver' in window){
@@ -1959,10 +1968,12 @@ body:not(.locked) .gate{display:none}
 
   // 다크 모드 (토글)
   var root=document.documentElement,btn=document.getElementById('themeBtn');
-  function setT(t){root.setAttribute('data-theme',t);btn.classList.toggle('on',t==='dark');var m=document.getElementById('themeColor');if(m)m.content=t==='dark'?'#121212':'#F3F2EE';try{localStorage.setItem('ui-theme',t);}catch(e){}}
+  function setT(t,persist){root.setAttribute('data-theme',t);btn.classList.toggle('on',t==='dark');btn.setAttribute('aria-checked',t==='dark'?'true':'false');var m=document.getElementById('themeColor');if(m)m.content=t==='dark'?'#121212':'#F3F2EE';if(persist){try{localStorage.setItem('ui-theme',t);}catch(e){}}}
   var saved=null;try{saved=localStorage.getItem('ui-theme');}catch(e){}
-  setT(saved||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
-  btn.addEventListener('click',function(){setT(root.getAttribute('data-theme')==='dark'?'light':'dark');});
+  var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  setT(saved||(mq.matches?'dark':'light'),false);
+  if(!saved&&mq.addEventListener)mq.addEventListener('change',function(ev){try{if(localStorage.getItem('ui-theme'))return;}catch(e){}setT(ev.matches?'dark':'light',false);});
+  btn.addEventListener('click',function(){setT(root.getAttribute('data-theme')==='dark'?'light':'dark',true);});
 
   // 현재 섹션 표시 (GNB) · 맨 위로 (FAB)
   var links=[].slice.call(document.querySelectorAll('#gnb a')),top=document.getElementById('toTop');
@@ -1979,6 +1990,23 @@ body:not(.locked) .gate{display:none}
   var toastEl=document.getElementById('liveToast'),toastT;
   window.showToast=function(msg){toastEl.textContent=msg;toastEl.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){toastEl.classList.remove('show');},2600);};
 
+  // 로그인 게이트: 모듈(Firebase) 로드에 실패해도 멈추지 않도록 여기서 관리
+  var gateLogin=document.getElementById('gateLogin'),gateSpin=document.getElementById('gateSpin'),gateNote=document.getElementById('gateNote');
+  var ua=navigator.userAgent||'';
+  window.__authEnv={inApp:/KAKAOTALK|Instagram|FBAN|FBAV|NAVER\(inapp|Line\/|; wv\)/i.test(ua),iosStandalone:navigator.standalone===true};
+  window.__setGate=function(state,msg){
+    document.body.classList.toggle('locked',state!=='open');
+    document.body.classList.toggle('checking',state==='checking');
+    gateSpin.hidden=state!=='checking';
+    gateLogin.hidden=state==='checking'||state==='open';
+    if(state==='locked'&&!msg){ if(window.__authEnv.inApp)msg=T('inApp'); else if(window.__authEnv.iosStandalone)msg=T('iosApp'); }
+    gateNote.hidden=!msg; gateNote.innerHTML=msg||'';
+    if(state==='open')window.dispatchEvent(new Event('scroll'));
+  };
+  window.__setGate('checking');
+  window.__gateTimer=setTimeout(function(){ if(document.body.classList.contains('checking')) window.__setGate('error',T('slow')); },8000);
+  gateLogin.addEventListener('click',function(){ if(!window.__doLogin) location.reload(); });
+
   // PWA: 서비스 워커 등록 · 앱 설치 버튼
   if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});}
   var installBtn=document.getElementById('installBtn'),deferredPrompt=null;
@@ -1993,10 +2021,10 @@ body:not(.locked) .gate{display:none}
     gateBtn:'Sign in with Google',gateSmall:'We only receive your Google name, email, and profile photo. <a href="./privacy.html">Privacy Policy</a>',
     darkMode:'Dark mode',install:'Install app',login:'Sign in',logout:'Sign out',admin:'Admin page',menu:'Account menu',
     footer1:'UI Glossary · Use these names when you describe a screen.',privacy:'Privacy Policy',langBtn:'한국어',
-    t:{out:'Signed out',inSuffix:', signed in',installed:'Installed as an app',closed:'Sign-in window was closed',notAllowed:'Enable Google sign-in in the Firebase console',domain:'This domain is not authorized',network:'Network error. Please try again',fail:'Sign-in failed'}};
-  var UI_KO={t:{out:'로그아웃됐어요',inSuffix:'님, 로그인됐어요',installed:'앱으로 설치됐어요',closed:'로그인 창이 닫혔어요',notAllowed:'Firebase 콘솔에서 Google 로그인을 켜 주세요',domain:'허용되지 않은 도메인이에요',network:'네트워크 오류예요. 다시 시도해 주세요',fail:'로그인에 실패했어요'},langBtn:'EN'};
+    t:{out:'Signed out',inSuffix:', signed in',installed:'Installed as an app',closed:'Sign-in window was closed',notAllowed:'Enable Google sign-in in the Firebase console',domain:'This domain is not authorized',network:'Network error. Please try again',fail:'Sign-in failed',slow:'Taking longer than usual. Check your connection and tap the button to retry.',redirectFail:'Sign-in didn\'t complete. Allow pop-ups and try again.',inApp:'Google sign-in is blocked inside KakaoTalk/Instagram. Open this page in Safari or Chrome.',iosApp:'Sign-in may not work in the installed app. If it fails, open ug.sanghak.kr in Safari.'}};
+  var UI_KO={t:{out:'로그아웃됐어요',inSuffix:'님, 로그인됐어요',installed:'앱으로 설치됐어요',closed:'로그인 창이 닫혔어요',notAllowed:'Firebase 콘솔에서 Google 로그인을 켜 주세요',domain:'허용되지 않은 도메인이에요',network:'네트워크 오류예요. 다시 시도해 주세요',fail:'로그인에 실패했어요',slow:'연결이 평소보다 느려요. 인터넷을 확인하고 버튼을 눌러 다시 시도해 주세요.',redirectFail:'로그인이 완료되지 않았어요. 팝업 차단을 해제하고 다시 시도해 주세요.',inApp:'카카오톡·인스타그램 안 브라우저에서는 Google 로그인이 막혀 있어요. 오른쪽 위 메뉴에서 \'다른 브라우저로 열기\'를 눌러 주세요.',iosApp:'홈 화면에 설치한 앱에서는 Google 로그인이 안 될 수 있어요. 안 되면 Safari에서 ug.sanghak.kr을 열어 로그인해 주세요.'},langBtn:'EN'};
   var LANG='ko',EN=null,enLoading=null,langBtn=document.getElementById('langBtn');
-  window.T=function(k){return (LANG==='en'?UI_EN:UI_KO).t[k];};
+  window.T=function(k){return ((typeof LANG!=='undefined'&&LANG==='en')?UI_EN:UI_KO).t[k];};
   function loadEn(){if(EN)return Promise.resolve(EN);if(!enLoading)enLoading=fetch('./i18n/en.json').then(function(r){return r.json();}).then(function(j){EN=j;return j;});return enLoading;}
   function swap(el,html){if(!el)return;if(!('ko' in el.dataset))el.dataset.ko=el.innerHTML;el.innerHTML=html;}
   function restore(el){if(el&&('ko' in el.dataset))el.innerHTML=el.dataset.ko;}
@@ -2010,17 +2038,17 @@ body:not(.locked) .gate{display:none}
     swap(document.querySelector('.theme span'),UI_EN.darkMode);swap(document.getElementById('installBtn'),UI_EN.install);swap(document.querySelector('#loginBtn span'),UI_EN.login);swap(document.getElementById('logoutBtn'),UI_EN.logout);swap(document.getElementById('adminLink'),UI_EN.admin);
     document.querySelectorAll('#gnb a').forEach(function(a){swap(a,UI_EN.gnb[a.getAttribute('href').slice(1)]||a.textContent);});
     swap(document.querySelector('footer div'),UI_EN.footer1);swap(document.querySelector('footer a[href="./privacy.html"]'),UI_EN.privacy);
-    document.querySelectorAll('.card h3').forEach(function(h3){var p=h3Parts(h3);h3.innerHTML=p.en+' <span>'+p.ko+'</span>';});
+    document.querySelectorAll('.card h4').forEach(function(h3){var p=h3Parts(h3);h3.innerHTML=p.en+' <span>'+p.ko+'</span>';});
     document.querySelectorAll('.sec').forEach(function(sec){var h2=sec.querySelector('.sec-h h2'),sp=sec.querySelector('.sec-h span');var ko=h2.dataset.ko||h2.textContent,en=sp.dataset.ko||sp.textContent;swap(h2,en);swap(sp,ko);
       if(EN&&EN.sections&&EN.sections[sec.id])swap(sec.querySelector('.sec-p'),EN.sections[sec.id].desc);});
-    if(EN){document.querySelectorAll('.card').forEach(function(c){var en=h3Parts(c.querySelector('h3')).en,tr=EN.cards&&EN.cards[en];if(!tr)return;var cap=c.querySelector('.cap');if(cap&&tr.cap)swap(cap,tr.cap);var d=c.querySelector('.desc');if(d&&tr.desc)swap(d,tr.desc);});
+    if(EN){document.querySelectorAll('.card').forEach(function(c){var en=h3Parts(c.querySelector('h4')).en,tr=EN.cards&&EN.cards[en];if(!tr)return;var cap=c.querySelector('.cap');if(cap&&tr.cap)swap(cap,tr.cap);var d=c.querySelector('.desc');if(d&&tr.desc)swap(d,tr.desc);});
       document.querySelectorAll('.grp').forEach(function(g,i){var tr=EN.groups&&EN.groups[i];if(tr)swap(g,tr.title+' <small>'+tr.sub+'</small>');});}
     langBtn.textContent=UI_EN.langBtn;cnt.textContent=fmtCount(document.querySelectorAll('.card:not(.hide)').length);
   }
   function applyKo(){
     document.documentElement.lang='ko';document.title='UI 용어 사전';
     document.querySelectorAll('[data-ko]').forEach(function(el){if(el.id==='q')el.placeholder=el.dataset.ko;else restore(el);});
-    document.querySelectorAll('.card h3').forEach(function(h3){if('ko' in h3.dataset)h3.innerHTML=h3.dataset.ko;});
+    document.querySelectorAll('.card h4').forEach(function(h3){if('ko' in h3.dataset)h3.innerHTML=h3.dataset.ko;});
     langBtn.textContent=UI_KO.langBtn;cnt.textContent=fmtCount(document.querySelectorAll('.card:not(.hide)').length);
   }
   window.setLang=function(lang,persist){LANG=lang;if(persist){try{localStorage.setItem('ui-lang',lang);}catch(e){}}
@@ -2079,42 +2107,41 @@ body:not(.locked) .gate{display:none}
   }
 
   // ── 로그인 게이트: checking(세션 확인 중) → locked(로그인 필요) / open ──
-  const gateLogin = $('gateLogin'), gateSpin = $('gateSpin');
-  function setGate(state) {
-    document.body.classList.toggle('locked', state !== 'open');
-    document.body.classList.toggle('checking', state === 'checking');
-    gateSpin.hidden = state !== 'checking';
-    gateLogin.hidden = state !== 'locked';
-    if (state === 'open') window.dispatchEvent(new Event('scroll'));
-  }
-  setGate('checking');
-  const gateTimer = setTimeout(() => { if (document.body.classList.contains('checking')) setGate('locked'); }, 8000);
+  const gateLogin = $('gateLogin');
+  const setGate = (state, msg) => window.__setGate(state, msg);
 
   async function doLogin(btn) {
-    btn.disabled = true;
+    btn.disabled = true; btn.setAttribute('aria-busy', 'true');
     try { await signInWithPopup(auth, provider); }
     catch (e) {
       if (e.code === 'auth/popup-blocked' || e.code === 'auth/operation-not-supported-in-this-environment') {
-        try { await signInWithRedirect(auth, provider); } catch (e2) { fail(e2); }
+        try { sessionStorage.setItem('ui-redirect', '1'); await signInWithRedirect(auth, provider); } catch (e2) { sessionStorage.removeItem('ui-redirect'); fail(e2); }
       } else fail(e);
     }
-    btn.disabled = false;
+    btn.disabled = false; btn.removeAttribute('aria-busy');
   }
+  window.__doLogin = doLogin;
   loginBtn.addEventListener('click', () => doLogin(loginBtn));
   gateLogin.addEventListener('click', () => doLogin(gateLogin));
-  getRedirectResult(auth).catch(fail);
-  userBtn.addEventListener('click', () => { menu.hidden = !menu.hidden; });
-  document.addEventListener('click', e => { if (!e.target.closest('#auth')) menu.hidden = true; });
-  logoutBtn.addEventListener('click', async () => { menu.hidden = true; await signOut(auth); showToast(T('out')); });
+  getRedirectResult(auth).then(r => {
+    const pending = sessionStorage.getItem('ui-redirect'); sessionStorage.removeItem('ui-redirect');
+    if (r && r.user) showToast((r.user.displayName || r.user.email || '') + T('inSuffix'));
+    else if (pending) showToast(T('redirectFail'));
+  }).catch(e => { sessionStorage.removeItem('ui-redirect'); fail(e); });
+  const openMenu = open => { menu.hidden = !open; userBtn.setAttribute('aria-expanded', open ? 'true' : 'false'); };
+  userBtn.addEventListener('click', () => openMenu(menu.hidden));
+  document.addEventListener('click', e => { if (!e.target.closest('#auth')) openMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { openMenu(false); userBtn.focus(); } });
+  logoutBtn.addEventListener('click', async () => { openMenu(false); await signOut(auth); showToast(T('out')); loginBtn.focus(); });
   let first = true;
   onAuthStateChanged(auth, user => {
-    clearTimeout(gateTimer);
+    clearTimeout(window.__gateTimer);
     setGate(user ? 'open' : 'locked');
-    loginBtn.hidden = !!user; userBtn.hidden = !user; menu.hidden = true;
+    loginBtn.hidden = !!user; userBtn.hidden = !user; openMenu(false);
     if (user) {
       const name = user.displayName || user.email || '사용자';
       userBtn.textContent = '';
-      if (user.photoURL) { const img = document.createElement('img'); img.src = user.photoURL; img.alt = ''; img.referrerPolicy = 'no-referrer'; userBtn.appendChild(img); }
+      if (user.photoURL) { const img = document.createElement('img'); img.src = user.photoURL; img.alt = ''; img.referrerPolicy = 'no-referrer'; img.onerror = () => { img.remove(); userBtn.textContent = name.slice(0, 1); }; userBtn.appendChild(img); }
       else userBtn.textContent = name.slice(0, 1);
       $('uName').textContent = name; $('uMail').textContent = user.email || '';
       $('adminLink').hidden = !ADMIN_EMAILS.includes(user.email);
